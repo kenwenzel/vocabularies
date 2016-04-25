@@ -1,0 +1,1 @@
+java -jar widoco-0.0.1-jar-with-dependencies.jar -ontFile aml.ttl -outFolder widocoGen -confFile config/config.properties -rewriteAll
