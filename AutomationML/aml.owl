@@ -1,0 +1,827 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/eis/vocabs/aml#"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:schema="http://schema.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:gr="http://purl.org/goodrelations/v1#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:aml="https://w3id.org/eis/vocabs/aml#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:geo-pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:om="http://www.wurvoc.org/vocabularies/om-1.8/"
+     xmlns:foaf="http://xmlns.com/foaf/spec/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:void="http://rdfs.org/ns/void#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+	 >
+	 
+    <owl:Ontology rdf:about="https://w3id.org/eis/vocabs/aml#">
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-03-23</dcterms:created>
+        <dcterms:creator>Irlan Grangel</dcterms:creator>
+        <skos:definition xml:lang="en">A vocabulary which represents the AutomationML Standard - IEC 62714.</skos:definition>
+        <vann:preferredNamespacePrefix>aml</vann:preferredNamespacePrefix>
+        <owl:versionInfo>0.1</owl:versionInfo>
+        <skos:prefLabel xml:lang="en">aml</skos:prefLabel>
+        <vann:preferredNamespaceUri>https://w3id.org/eis/vocabs/aml#</vann:preferredNamespaceUri>
+        <dcterms:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/"/>
+        <void:vocabulary rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <void:vocabulary rdf:resource="http://purl.org/dc/terms/"/>
+        <void:vocabulary rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+        <void:vocabulary rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+        <void:vocabulary rdf:resource="http://www.w3.org/2001/XMLSchema#"/>
+        <void:vocabulary rdf:resource="http://www.w3.org/2004/02/skos/core#"/>
+        <void:vocabulary rdf:resource="http://www.w3.org/XML/1998/namespace"/>
+        <void:vocabulary rdf:resource="http://xmlns.com/foaf/spec/"/>
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/eis/vocabs/aml#"/>
+        <void:vocabulary rdf:resource="https://w3id.org/eis/vocabs/aml#"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#rdfscomment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#rdfscomment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasAdditionalInformation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasAdditionalInformation">
+        <rdfs:label>has Additional Information</rdfs:label>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#AdditionalInformation"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#CAEXFile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasAttribute -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasAttribute">
+        <rdfs:label xml:lang="en">has Attribute</rdfs:label>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#Attribute"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#InternalElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasExternalInterface -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasExternalInterface">
+        <rdfs:label xml:lang="en">has External Interface</rdfs:label>
+        <rdfs:comment xml:lang="en">Connects an internal Element with an External Interface</rdfs:comment>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#ExternalInterface"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#InternalElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasExternalReference -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasExternalReference">
+        <rdfs:label xml:lang="en">has External Reference</rdfs:label>
+        <rdfs:comment>A CAEX File contains external references</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#CAEXFile"/>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#ExternalReference"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasInstanceHierarchy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasInstanceHierarchy">
+        <rdfs:label xml:lang="en">has Instance Hierarchy</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#CAEXFile"/>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#InstanceHierarchy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasInterfaceClass -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasInterfaceClass">
+        <rdfs:label xml:lang="en">has Interface Class</rdfs:label>
+        <rdfs:comment xml:lang="en">Model the relation between Interface Class Lib and Interface Class</rdfs:comment>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#InterfaceClass"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#InterfaceClassLib"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasInterfaceClassLib -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasInterfaceClassLib">
+        <rdfs:label xml:lang="en">has Interface Class Lib</rdfs:label>
+        <rdfs:comment xml:lang="en">Model the relation between CAEX File and Interface Class Lib</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#CAEXFile"/>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#InterfaceClassLib"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasInternalElement -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasInternalElement">
+        <rdfs:label xml:lang="en">has Internal Element</rdfs:label>
+        <rdfs:comment xml:lang="en">Hierarchy has many internal elements</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#InstanceHierarchy"/>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#InternalElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasProject -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasProject">
+        <rdfs:label>Related Project for the CAEX File</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#AdditionalInformation"/>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasRoleClass -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasRoleClass">
+        <rdfs:label xml:lang="en">has Role Class</rdfs:label>
+        <rdfs:comment xml:lang="en">A Role Class lib contains a Role Class</rdfs:comment>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#RoleClass"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#RoleClassLib"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasRoleClassLib -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasRoleClassLib">
+        <rdfs:label xml:lang="en">has Role Class Lib</rdfs:label>
+        <rdfs:comment xml:lang="en">A CAEX file contains a RoleClassLib</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#CAEXFile"/>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#RoleClassLib"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasRoleRequeriment -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasRoleRequeriment">
+        <rdfs:label xml:lang="en">has Role Requeriment</rdfs:label>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#InternalElement"/>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#RoleRequirements"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasSystemUnitClass -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasSystemUnitClass">
+        <rdfs:label>has System Unit Class</rdfs:label>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#SystemUnitClass"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#SystemUnitClassLib"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasSystemUnitClassLib -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasSystemUnitClassLib">
+        <rdfs:label xml:lang="en">hasSystemUnitClassLib</rdfs:label>
+        <rdfs:comment xml:lang="en">A CAEX File contains a SystemUnitClassLib</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#CAEXFile"/>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#SystemUnitClassLib"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasUnit">
+        <rdfs:label xml:lang="en">has Unit</rdfs:label>
+        <rdfs:comment xml:lang="en">An Attribute has Unit of Measure (e.g. kg, m/s, etc)</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#refBaseRoleClassPath -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#refBaseRoleClassPath">
+        <rdfs:label xml:lang="en">RefBaseRoleClassPath</rdfs:label>
+        <rdfs:comment xml:lang="en">RoleRequirements has Ref Base Role Class Path</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#RoleRequirements"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#supportedRoleClass -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#supportedRoleClass">
+        <rdfs:label xml:lang="en">Supported Role Class</rdfs:label>
+        <rdfs:comment xml:lang="en">Internal elements has Supported Role Class</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#InternalElement"/>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#SupportedRoleClass"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#SystemUnitClass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#unitExternalInterface -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/eis/vocabs/aml#unitExternalInterface">
+        <rdfs:label xml:lang="en">unit External Interface</rdfs:label>
+        <rdfs:comment xml:lang="en">Connects a System Unit Class with an External Interface</rdfs:comment>
+        <rdfs:range rdf:resource="https://w3id.org/eis/vocabs/aml#ExternalInterface"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#SystemUnitClass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://schema.org/name -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/name">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#Direction -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#Direction">
+        <rdfs:label xml:lang="en">Direction</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifies the Direction of an Order. The permitted values are In, Out.</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#Order"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#RefBaseSystemUnitPath -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#RefBaseSystemUnitPath">
+        <rdfs:label xml:lang="en">Ref Base System Unit Path</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#InternalElement"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#externalInterfaceId -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#externalInterfaceId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label xml:lang="en">External Interface Id</rdfs:label>
+        <rdfs:comment xml:lang="en">Unique Id of an External Interface</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#ExternalInterface"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#externalInterfaceName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#externalInterfaceName">
+        <rdfs:label xml:lang="en">external Interface Name</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#ExternalInterface"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#externalReferenceAlias -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#externalReferenceAlias">
+        <rdfs:label xml:lang="en">external Reference Alias</rdfs:label>
+        <rdfs:comment>A external Reference of a CAEX File has Alias</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#ExternalReference"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#externalReferencePath -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#externalReferencePath">
+        <rdfs:label xml:lang="en">external Reference Path</rdfs:label>
+        <rdfs:comment>A external Reference of a CAEX File contains path to the file</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#ExternalReference"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasAttributeName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasAttributeName">
+        <rdfs:label xml:lang="en">hasAttributeName</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#Attribute"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasAutomationMLVersion -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasAutomationMLVersion">
+        <rdfs:label>has Automation ML Version</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#AdditionalInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasDataType -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasDataType">
+        <rdfs:label xml:lang="en">hasDataType</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#Attribute"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasFileName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasFileName">
+        <rdfs:label>has File Name</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#CAEXFile"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasProjectId -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasProjectId">
+        <rdfs:label xml:lang="en">hasProjectId</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/identifier"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/title"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#Project"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasProjectTitle -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasProjectTitle">
+        <rdfs:label>has Project Release</rdfs:label>
+        <rdfs:label xml:lang="en">hasProjectTitle</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/elements/1.1/title"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#Project"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasSchemaVersion -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasSchemaVersion">
+        <rdfs:label>has Schema Version</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#CAEXFile"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasUnit -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasUnit">
+        <rdfs:label xml:lang="en">has Unit</rdfs:label>
+        <rdfs:comment xml:lang="en">An Attribute has Unit of Measure (e.g. kg, m/s, etc)</rdfs:comment>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#Attribute"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasValue">
+        <rdfs:label xml:lang="en">has Value</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#Attribute"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasVersion -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasVersion">
+        <rdfs:label xml:lang="en">has Version</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasWriterId -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasWriterId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label>has Writer Id</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#AdditionalInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasWriterName -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasWriterName">
+        <rdfs:label>has Writer Name</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#AdditionalInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasWriterRelease -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasWriterRelease">
+        <rdfs:label>has Writer Release</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#AdditionalInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasWriterVendor -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasWriterVendor">
+        <rdfs:label>has Writer Vendor</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#AdditionalInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasWriterVendorURL -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasWriterVendorURL">
+        <rdfs:label>has Writer Vendor URL</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#AdditionalInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasWriterVersion -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#hasWriterVersion">
+        <rdfs:label>has Writer Version</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#AdditionalInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#internalElementId -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#internalElementId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label xml:lang="en">internal Element Id</rdfs:label>
+        <rdfs:comment xml:lang="en">Unique Id of an Internal Element</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#InternalElement"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#lastWritingDate -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#lastWritingDate">
+        <rdfs:label>has Writer Release</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#AdditionalInformation"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#refBaseClassPath -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#refBaseClassPath">
+        <rdfs:label xml:lang="en">refBaseClassPath</rdfs:label>
+        <rdfs:comment xml:lang="en">Stores the name of the parent class</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#ExternalInterface"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#InterfaceClass"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#RoleClassLib"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#refBaseRoleClassPath -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#refBaseRoleClassPath">
+        <rdfs:label xml:lang="en">RefBaseRoleClassPath</rdfs:label>
+        <rdfs:comment xml:lang="en">RoleRequirements has Ref Base Role Class Path</rdfs:comment>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#refRoleClassPath -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/eis/vocabs/aml#refRoleClassPath">
+        <rdfs:label xml:lang="en">Ref Role Class Path</rdfs:label>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/aml#SupportedRoleClass"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#DatatypeProperty -->
+
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#DatatypeProperty"/>
+    
+
+
+    <!-- http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure -->
+
+    <owl:Class rdf:about="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"/>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#AdditionalInformation -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#AdditionalInformation">
+        <rdfs:label xml:lang="en">Additional Information</rdfs:label>
+        <rdfs:rdfscomment xml:lang="en">Additional Information for CAEX File</rdfs:rdfscomment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#Attribute -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#Attribute">
+        <rdfs:label xml:lang="en">Attribute</rdfs:label>
+        <rdfs:comment xml:lang="en">Attributes that belongs to internal elements</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#BaseInterface -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#BaseInterface">
+        <rdfs:label xml:lang="en">BaseInterface</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/eis/vocabs/aml#InterfaceClass"/>
+        <rdfs:comment xml:lang="en">Basic abstract interface; shall be used as parent for the description of all AML interface classes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#CAEXBasicObject -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#CAEXBasicObject">
+        <rdfs:label xml:lang="en">CAEX Basic Object</rdfs:label>
+        <rdfs:rdfscomment xml:lang="en">CAEX basis object that comprises a basic set of attributes and header information which exist for all CAEX elements.</rdfs:rdfscomment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#CAEXFile -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#CAEXFile">
+        <rdfs:label xml:lang="en">CAEX File</rdfs:label>
+        <rdfs:rdfscomment xml:lang="en">Root-element of the CAEX schema</rdfs:rdfscomment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#ExternalInterface -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#ExternalInterface">
+        <rdfs:label xml:lang="en">External Interface</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#ExternalReference -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#ExternalReference">
+        <rdfs:label xml:lang="en">External Reference</rdfs:label>
+        <rdfs:comment xml:lang="en">External Reference for a CAEX File</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#InstanceHierarchy -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#InstanceHierarchy">
+        <rdfs:label xml:lang="en">Instance Hierarchy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#InterfaceClass -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#InterfaceClass">
+        <rdfs:label xml:lang="en">Interface Class</rdfs:label>
+        <rdfs:comment xml:lang="en">Defines the relations between AML Objects. Should be identified with its tag name</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#InterfaceClassLib -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#InterfaceClassLib">
+        <rdfs:label xml:lang="en">Interface Class Lib</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#InternalElement -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#InternalElement">
+        <rdfs:label xml:lang="en">Internal Element</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#Order -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#Order">
+        <rdfs:label xml:lang="en">Order</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/eis/vocabs/aml#InterfaceClass"/>
+        <rdfs:comment xml:lang="en">Abstract class that shall be used for the descriptions description of orders, e.g. a successor or a predecessor.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#PPRConnector -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#PPRConnector">
+        <rdfs:label xml:lang="en">PPRConnector</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/eis/vocabs/aml#InterfaceClass"/>
+        <rdfs:comment xml:lang="en">Provide a high level relation between ports Relates resources, products and processes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#PortConnector -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#PortConnector">
+        <rdfs:label xml:lang="en">Order</rdfs:label>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/eis/vocabs/aml#InterfaceClass"/>
+        <rdfs:comment xml:lang="en">Provide a high level relation between ports</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#Project -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#Project">
+        <rdfs:label xml:lang="en">Project</rdfs:label>
+        <rdfs:rdfscomment xml:lang="en">A Project related to the header information with the CAEX File</rdfs:rdfscomment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#RoleClass -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#RoleClass">
+        <rdfs:label xml:lang="en">RoleClass</rdfs:label>
+        <rdfs:comment xml:lang="en">Describes an abstract functionality without defining the underlying technical implementation.  Example role classes are a Resource or Robot.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#RoleClassLib -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#RoleClassLib">
+        <rdfs:label xml:lang="en">RoleClassLib</rdfs:label>
+        <rdfs:comment xml:lang="en">Definitions of abstract characteristics of CAEX objects and thus serve the automatic semantic interpretation of user-defined AML objects</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#RoleRequirements -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#RoleRequirements">
+        <rdfs:label xml:lang="en">Role Requirements</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#SupportedRoleClass -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#SupportedRoleClass">
+        <rdfs:label xml:lang="en">Supported Role Class</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#SystemUnitClass -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#SystemUnitClass">
+        <rdfs:label xml:lang="en">System Unit Class</rdfs:label>
+        <rdfs:rdfscomment xml:lang="en">Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed.</rdfs:rdfscomment>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#SystemUnitClassLib -->
+
+    <owl:Class rdf:about="https://w3id.org/eis/vocabs/aml#SystemUnitClassLib">
+        <rdfs:label xml:lang="en">System Unit ClassLib</rdfs:label>
+        <rdfs:rdfscomment xml:lang="en">Store vendor specific AML classes</rdfs:rdfscomment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml# -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/eis/vocabs/aml#">
+        <dc:title>AutomationML Vocabulary</dc:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#InterfaceClassLib -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/eis/vocabs/aml#InterfaceClassLib">
+        <schema:name xml:lang="en">MyInterfaces</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/eis/vocabs/aml#hasVersion -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/eis/vocabs/aml#hasVersion">
+        <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#DatatypeProperty"/>
+        <rdfs:label xml:lang="en">has Version</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.5-SNAPSHOT) http://owlapi.sourceforge.net -->
+
