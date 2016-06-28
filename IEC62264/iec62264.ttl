@@ -1,0 +1,770 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/spec/> .
+@prefix rami:    <http://iais.fraunhofer.de/vocabs/rami#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema:  <http://schema.org/> .
+@prefix iec62264:     <https://w3id.org/eis/vocabs/iec62264#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix ssn:     <http://purl.oclc.org/NET/ssnx/ssn#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix vcard:   <http://www.w3.org/2006/vcard/ns#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix xml:     <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix om:      <http://www.wurvoc.org/vocabularies/om-1.8/> .
+@prefix geo:     <http://geovocab.org/geometry#> .
+
+
+iec62264:   a owl:Ontology ;
+      skos:definition "A vocabulary which represents the IEC 62264-1:2013 standard."@en ;
+      rdfs:isDefinedBy iec62264: ;
+      skos:prefLabel "iec62264"@en ;
+      dct:created "2016-04-01"^^xsd:date ;
+      dct:creator "Irlan Grangel" , "Niklas Petersen" ;
+      vann:preferredNamespacePrefix "iec62264" ;
+      vann:preferredNamespaceUri "https://w3id.org/eis/vocabs/iec62264#" ;
+      void:vocabulary rdfs: , dc: , rdf: , xsd: , foaf: , skos: , dct: , <http://www.w3.org/XML/1998/namespace> , iec62264: ;
+	.  
+
+iec62264:Enterprise
+      a owl:Class ;
+	  skos:prefLabel "Enterprise"@en ,
+	                 "Unternehmen"@de;
+	  skos:altLabel "Company"@en, 
+	                "Betrieb"@de ;
+	  skos:definition "An enterprise is an organizational element that is a collection of one or more sites. Most enterprises correspond to either entire companies or a division in a large corporation. The enterprise is responsible for determining what products will be manufactured, at which sites they will be manufactured, and in general how they will be manufactured"@en ,
+	                  "Ein Unternehmen repräsentiert eine Sammlung von Standorten/Stätten und Bereichen. Ein Unternehmen kann auch eine Tochtergesellschaft einer Organisation darstellen. Die Verantwortung eines Unternehmens liegt in der Festlegung und Einrichtung von Werken, an denen die Produkte hergestellt werden"@de ;
+      rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.7" ;					  
+      rami:hasRAMIHierarchyLevel rami:Enterprise ;
+	  rdfs:seeAlso <https://en.wikipedia.org/wiki/Company> ,
+	               <http://dbpedia.org/ontology/company> ;
+	  dc:source "This definition comprises material from RAMI4.0, Wikipedia, WikiData and DBpedia, IEC 62264-1:2013, 5.3.7 and Design Patterns for Flexible Manufacturing by Dennis Brandl, 2007."@en ;
+	.   
+
+iec62264:Site
+      a owl:Class ;
+      skos:prefLabel "Site"@en, 
+	                 "Standort"@de ;
+      skos:altLabel "Enterprise Location"@en, 
+	                "Stätte"@de ;
+	  skos:definition "A Plant (Site) is a physical, geographical, or logical grouping determined by the enterprise. A plant contains one or more areas. Its boundaries are often based on organizational or business criteria, as opposed to technical criteria. A geographical location and main production capability usually identifies a Plant. Plants generally have well-defined manufacturing capabilities. Production lines, process cells, and production units are part of a plant."@en ,
+	                  "Ein Werk (Standort) ist eine physische, geographische oder logische Gruppierung, die durch das Unternehmen definiert wird. Ein Werk kann aus einem oder mehreren Bereichen bestehen. Die Grenzen basieren auf Unternehmens- oder Geschäftskriterien. Eine graphische Zuordnung und wesentliche Produktioniecähigkeiten definieren ein Werk. Dieser kann Bereiche, Produktionsslinien, Produktionszellen und Produktionseinheiten beinhalten."@de;
+	  rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.3" ;
+	  rami:hasRAMIHierarchyLevel rami:WorkCenter ;
+	.  
+
+iec62264:Area
+      a owl:Class ;
+      skos:prefLabel "Area"@en, 
+	                 "Bereich"@de ;
+	  skos:altLabel "Manufacturing departments"@en ,
+                    "Production Area"@en ;
+	  skos:definition "An area is a physical, geographical, or logical entity determined by the Plant. Its boundaries are usually defined based on organizational or business criteria, as opposed to technical criteria. The main production capability and geographical location within a site usually identify areas, such as production area, storage area, or a finishing area. It should be used for production buildings and their subdivisions (structure/hall). It is also used as an element of a hierarchical organisation."@en ,
+	                  "Ein Bereich ist ein physisches, geographisches oder logisches Element, welches durch das Werk definiert wird. Die Grenzen basieren auf Unternehmens- oder Geschäftskriterien.  Eine geografische Zuordnung und wesentliche Produktionsfähigkeiten definieren den Bereich innerhalb eines Werks, z.B. Produktionsbereich, Lagerbereich oder Endfertigung."@de ;
+	  rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.4" ;
+	  rami:hasRAMIHierarchyLevel rami:WorkCenter ;
+	.  
+
+iec62264:WorkCenter
+      a owl:Class ;
+	  skos:prefLabel "Work Center"@en, 
+	                 "Arbeitsplatz"@de; 
+	  skos:definition "The term Work Center is used to describe an element that can be a process cell, production line, production unit or storage zone. It describes a section of a production facility where all tasks associated with a particular process (e.g. assembling, painting, welding) are performed. Work centers are  elements of the equipment hierarchy under an area. For manufacturing operations management there are specific terms for work centers and work units that apply to batch production, continuous production, discrete or repetitive production, and for storage and movement of materials and equipment. The generic term work center may be used when the specific type of the equipment element is not significant for the purpose of the discussion."@en ,
+	                  "Ein Arbeitsplatz wird verwendet, um ein Element zu beschreiben, wie z.B. eine Verarbeitungszelle, Produktionslinie, Produktionseinheit oder einen Lagerbereich. Der Arbeitsplatz beschreibt einen Bereich in der Produktionshalle, an dem prozessnahe Aufgaben, wie z.B. Montage, Lackierung, Schweißen durchgeführt werden. Arbeitsplätze sind Elemente in der Hierarchie \"Equipment\" unterhalb der Bereiche. Innerhalb des Fertigungsindustrie gibt es spezifische Terminologien für Arbeitsplätze und Arbeitseinheiten, die für Batchproduktion, kontinuierlicher Produktion, repetitiver Produktion, Lagerung und Verkehr von Materialien und Equipment genutzt werden. Der generische Begriff \"Arbeitsplatz\" kann genutzt werden, sofern die Spezifikation des Equipments unbedeutsam ist."@de;
+      rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.5" ;
+	  rami:hasRAMIHierarchyLevel rami:WorkCenter ;
+	.
+
+
+iec62264:StorageZone
+      a owl:Class ;
+      rdfs:subClassOf iec62264:WorkCenter ;
+	  skos:prefLabel "Storage Zone"@en, 
+	                 "Lagerbereich"@de;
+      skos:definition "The term Storage Zone is used to describe equipment whose primary purpose is to store material. Storage zones are at the lowest level of material movement equipment for discrete, batch and continuous manufacturing processes. An storage zone typically has the capability needed for the receipt, storage, retrieval, movement and shipment of materials. This may include the movement of materials from one work centre to another work centre within or between enterprises. Storage zones may feed production lines, process cells, and production units. They are also usually the ultimate recipient of the produced product, and they may lie in between process cells, production lines, and production units. Storage zones can be as simple as a space on the plant floor to hold barrels, or as complex as tank farms and automated storage and retrieval warehouses. Storage zones may be made up of storage units. Storage units provide a finer level of granularity for identifying storage locations than storage zones"@en ,
+	                  "Der Begriff Lagerbereich beschreibt Equipment, deren Aufgabe darin besteht, Materialien zu speichern. Lagerbereiche sind auf der untersten Ebene der Materialbewegungsausrüstung für diskrete, diskontinuierliche und kontinuierliche Fertigungsprozesse. Ein Lagerbereich kann in der Regel für Empfang, Speicherung, Abruf, Bewegung und Versand der Materialien benötigt werden. Dies beinhaltet ebenfalls die Bewegung von Materialien von einem Arbeitsplatz zum anderen oder zwischen den Unternehmen. Lagerbereiche bedienen Produktionslinien, Verarbeitungszellen und Produktionseinheiten. Sie sind die Endnutzer des hergestellten Produktes und können zwischen den Verarbeitungszellen, Produktionslinien und Produktionseinheiten liegen. Lagerbereiche können Bereiche in der Maschinenhalle sein, die Fässer beinhalten oder Tanklager, automatisierte Lagerbereiche oder Lagerhallen für den Warenausgang. Lagerbereiche können aus Lagereinheiten bestehen. Im Gegensatz zu Lagerbereichen verfügen die Lagereinheiten über ein höheres Präzisionsniveau für die Identifizierung von Lagerorten."@de ;
+	  skos:note "Equipment used for Storage or movement along with Storage Units"@en ;
+	  skos:example "Warehouse, Trailer yard, Tank Farm, Silo Farm, Ship Terminal, Rail Yard, Holding Area"@en;
+	  rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.9" ;
+	.
+
+iec62264:StorageZoneStatus a owl:Class ;	  
+      skos:prefLabel "Storage Zone"@en , 
+	                 "Status Produktionslinie"@de;
+	  skos:definition "A storage zone typically has the capability needed for the receipt, storage, retrieval, movement and shipment of materials."@en ;
+	  rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.9" ;
+	  owl:oneOf (iec62264:Receipt iec62264:Storage iec62264:Retrieval iec62264:Movement iec62264:Shipment);
+	.	
+	
+iec62264:StorageZoneMaterial a owl:Class ;	  
+      skos:prefLabel "Storage Zone Material"@en ;
+	  skos:definition "An storage zone performs an action (change of status) over the materials in a given period of time."@en ;
+	.		
+	  	 
+iec62264:ProductionLine
+      a owl:Class ;
+      rdfs:subClassOf iec62264:WorkCenter ;
+      skos:prefLabel "Production Line"@en , 
+	                 "Produktionslinie"@de ;
+	  skos:altLabel "Processing line"@en , 
+	                "Fertigungslinie"@de , 
+					"Fertigungsstraße"@de , 
+					"Produktionsstraße"@de ;
+      skos:definition "A production line is a set of sequential operations established in a factory whereby materials are put through a refining process to produce an end-product that is suitable for onward consumption; or components are assembled to make a finished article. Typically, raw materials such as metal ores or agricultural products such as foodstuffs or textile source plants (cotton, flax) require a sequence of treatments to render them useful. For metal, the processes include crushing, smelting and further refining. For plants, the useful material has to be separated from husks or contaminants and then treated for onward sale."@en ,
+	                  "Eine Fertigungsstraße ist eine räumliche Abfolge von Fertigungseinrichtungen, auf denen in zeitlicher Abfolge Fertigungsschritte an einem Werkstück oder teilfertigen Produkt durchgeführt werden. Die Fertigungsstraße beschreibt die Fertigung aus der Perspektive der Umgebung der Fertigung, während die Fertigungslinie die Fertigung aus der Perspektive der zu fertigenden Teile beschreibt. So kann es für verschiedene Werkstücke verschiedene Fertigungslinien geben, die unterschiedliche Teile der Fertigungsstraße nutzen"@en , "A production line is a set of sequential operations established in a factory whereby materials are put through a refining process to produce an end-product that is suitable for onward consumption; or components are assembled to make a finished article. Typically, raw materials such as metal ores or agricultural products such as foodstuffs or textile source plants (cotton, flax) require a sequence of treatments to render them useful. For metal, the processes include crushing, smelting and further refining. For plants, the useful material has to be separated from husks or contaminants and then treated for onward sale"@en ;
+      rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.7" ;
+	  rdfs:seeAlso <https://de.wikipedia.org/wiki/Fertigungslinie> , 
+	               <https://de.wikipedia.org/wiki/Fertigungsstra%C3%9Fe> ,
+	               <https://en.wikipedia.org/wiki/Production_line> ,
+	               <http://dbpedia.org/page/Production_line> ,	  
+	               <https://www.wikidata.org/wiki/Q10858068> ;
+	  skos:note "Equipment used in repetitive or discrete Production along with Work Cells"@en ;
+	  dc:source "This definition comprises material from RAMI4.0, Wikipedia, WikiData and DBpedia."@en ;
+	.  
+	  
+iec62264:ProductionUnit
+      a owl:Class ;
+      rdfs:subClassOf iec62264:WorkCenter ;
+      skos:prefLabel "Produktionseinheit"@de , 
+	                 "Production Unit"@en ;
+	  skos:definition "Production units are in the lowest level of equipment for continuous manufacturing processes. They are composed of units and units are composed lower level elements, such as equipment modules, sensors, and actuators. A production unit generally encompasses all of the equipment required for a segment of continuous production that operates in a relatively autonomous manner. It generally converts, separates, or reacts one or more feed stocks to produce intermediate or final products. The major processing activity or product generated often identifies the production unit. It generally converts, separates, or reacts one or more feed stocks to produce intermediate or final products."@en ,
+                      "Produktionseinheiten befinden sich in der untersten Ebene im Equipment für kontinuierliche Fertigungsprozesse. Sie bestehen aus Einheiten, die wiederum aus Unterelementen, wie z.B. Gerätemodule, Sensoren und Aktoren bestehen. Eine Produktionseinheit umfasst in der Regel alle Equipments, die für ein Segment in der kontinuierlichen Produktion, die relativ autonom arbeitet nötig sind. Die Produktionseinheit wandelt, trennt oder lässt Einsatzmaterialien miteinander reagieren, um Zwischen- oder Endprodukte herzustellen. Die Hauptverarbeitungsaktivität oder das erzeugte Produkt identifiziert oft die Produktionseinheit."@de;
+	  skos:note "Equipment used in Continuous Production along with Unit"@en ;
+	  rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.6" ;
+	.  
+
+iec62264:WorkUnit
+      a owl:Class ;
+	  skos:prefLabel "WorkUnit"@en , 
+	                 "Geräteelement"@de; 
+	  skos:definition "Work Unit is an equipment element under a work center that performs production, storage and material movements. Work Unit refers to the unit in a batch process and similar structures in all types of manufacturing"@en , 
+	                  "Ein Geräteelement innerhalb eines Arbeitsplatzes, dass Aktivitäten wie Produktion, Lagerung sowie Materialtransport durchführt. Eine Arbeitseinheit bezieht sich auf die Einheit in einem Batch-Verfahren und ähnlichen Varianten in der Herstellung."@de;
+	  rdfs:isDefinedBy "IEC 62264-1:2013, 3.1.45" ;		
+      rdfs:subClassOf rami:Object ;	  
+      rami:hasRAMIHierarchyLevel rami:Station ;
+	.  
+
+iec62264:StorageUnit
+      a owl:Class ;
+      rdfs:subClassOf iec62264:WorkUnit ;
+      skos:prefLabel "StorageUnit"@en, 
+	                 "Lagereinheit"@de;
+	  skos:definition "Storage units are at the lowest level of material movement equipment for discrete, batch and continuous manufacturing processes. An Storage Unit typically has the capability needed for the receipt, storage, retrieval, movement and shipment of materials. This may include the movement of materials from one work centre to another work centre within or between enterprises."@en ,
+	                  "Lagereinheiten befinden sich auf der untersten Ebene im Equipment für diskrete, batch und kontinuierliche Fertigungsprozesse. Eine Lagereinheit hat in der Regel die Möglichkeiten Materialien zu speichern, abzurufen und zu verschicken. Dies beinhaltet den Verkehr von Materialien zwischen Arbeitsplätzen sowie ganzen Unternehmen."@de; 
+	  rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.9" ;
+	  skos:note "Equipment used for Storage or movement along with Storage Zones"@en ;
+	  skos:example "Rack/bin/slot, Trailer, Container, Tank, Pipe Section, Ship, Railcar, Pallet, Barrel"@en ;
+	.  
+
+iec62264:WorkCell
+      a owl:Class ;
+      rdfs:subClassOf iec62264:WorkUnit ;
+      skos:prefLabel "WorkCell"@en, 
+	                 "Arbeitsbereich"@de;
+	  skos:definition "A workcell is an arrangement of resources in a manufacturing environment to improve the quality, speed and cost of the process. Workcells are designed to improve these by improving process flow and eliminating waste.Work cells are in the lowest levels of equipment for discrete manufacturing processes. Work cells are usually only identified when there is flexibility in the routing of work within a production line. Work cells may be composed of lower-level elements."@en ,
+	                  "Ein Arbeitsbereich ist eine Einrichtung von Ressourcen innerhalb einer Fertigung, um die Qualität, Geschwindigkeit und Kosten des Prozesses zu verbessern. Arbeitsbereiche dienen dazu den Prozessablauf zu optimieren und Abfallprodukte zu eliminieren. Arbeitsbereiche befinden sich in der untersten Ebene im Equipment für diskrete Fertigungsprozesse. Arbeitsbereiche werden identifiziert, sofern die Arbeitsverteilung innerhalb einer Produktionslinie flexibel ist. Arbeitsbereiche können aus untergeordneten Elementen bestehen."@de;
+	  rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.8" ;
+	  skos:note "Equipment used in repetitive or discrete production along with Production Lines"@en ;
+	  rdfs:seeAlso <https://en.wikipedia.org/wiki/Workcell> , 
+	               <http://www.freebase.com/m/0b8l0f> ;
+	.
+	
+iec62264:Unit
+      a owl:Class ;
+      rdfs:subClassOf iec62264:WorkUnit ;
+      skos:prefLabel "Unit"@en ,
+	                 "Gerät"@de ;
+	  skos:definition "A Unit is a physical and control equipment that can carry out one or more processing activities. Examples include activites such as reacting or mixing materials. Unit is in the lowest level of equipment for batch manufacturing processes. The major processing capability or family of products produced often identifies the process cell."@en ,
+	                  "Ein Gerät ist ein physikalisches und Kontroll Equipment, das eine oder mehrere Prozessaktivitäten auiecührt. Beispiele für Prozessaktivitäten sind Reaktionen oder Materialmischung. Dieses Gerät befindet sich auf der untersten Ebene im Equipment für Batch Fertigungsprozesse. " ;
+	  rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.8" ;
+	  rami:hasRAMIHierarchyLevel rami:RAMIHierarchyLevel ;
+	.  
+   
+iec62264:ProcessCell 
+      a owl:Class ;
+      rdfs:subClassOf iec62264:WorkCenter ;
+      skos:prefLabel "Process Cell"@en , 
+	                 "Prozesszelle"@de ;
+      skos:definition "Process cells are in the lowest level of batch manufacturing processes. The major processing capability or family of products produced often identifies the process cell"@en ,
+	                  "Prozesszellen befinden sich auf der untersten Ebene im Batch-Fertigungsprozess. Eine Prozesszelle beinhaltet alle Geräte, die für die Produktion von einem oder mehrerer Batches nötig sind. Eine Prozesszelle erzeugt einen Batch and generiert Produktionsinformationen durch Rohstoffe und Energie, durch die Definition der Batch - Herstellung und des Zeitpunktes. Eine Prozesszelle befindet sich im Produktionsweg in der Mitte eines Bereichs. Prozesszellen befinden sich auf der untersten Ebene im Batch-Fertigungsprozess."@de;
+	  skos:note "Equipment used in Batch Production along with Unit"@en ,
+	            "Ein Equipment, welches in der Batch-Fertigung mit einem Gerät genutzt wird."@de;
+	  rdfs:isDefinedBy "IEC 62264-1:2013, 5.3.8" ;
+	.  
+	  
+iec62264:ProductionCapability 
+      a owl:Class ;
+      skos:prefLabel "Production Capability"@en, 
+	                 "Produktioniecähigkeit"@de ;
+      skos:altLabel "Production Capacity"@en, 
+	                "Produktionskapazität"@de ;
+	  skos:definition "The Production Capability Information includes the current capacity, the future expected capacity of the resource and a history of capacity of the resource."@en ,
+					  "Informationen zu der Produktioniecähigkeit beinhalten die aktuelle Kapazität, die künftig zu erwartende Kapazität und die Historie der Kapazität einer Ressource."@de; 	
+	  rdfs:isDefinedBy "IEC 62264 8.3.2.2" ;
+	.  
+
+iec62264:EquipmentModule
+      a owl:Class ;
+      skos:prefLabel "Equipment Module"@en, "Technische Einrichtung"@de ;
+      skos:definition "An Equipment Module is a functional group of equipment that can carry out a finite number of specific minor processing activities"@en ,
+	                  "Ein Gerätemodul repräsentiert eine funktionalle Gruppe von Geräten, die eine bestimmte Anzahl an spezifischen Fertigungsaktivitäten auiecühren können."@de;
+	  rdfs:isDefinedBy "ISA Draft 88.00.05" ;
+	.
+	  
+iec62264:ControlModule
+      a owl:Class ;
+      skos:prefLabel "Control Module"@en, "Steuereinrichtung"@de ;
+      skos:definition "A Control Module comprises a collection of sensors, actuators, other control modules, and associated process equipment that, from the point of view of control, is operated as a single entity"@en ,
+	                  "Eine Steuereinrichtung umfasst eine Sammlung von Sensoren, Antrieben, anderen Steuereinrichtungen und zugehörigem Prozessequipment, das  aus der Sicht der Steuerung als eine Einheit betrieben wird. "@de;
+	  rdfs:isDefinedBy "S88 Standard" ;
+	. 
+
+iec62264:ProductionLineStatus a owl:Class ;	  
+      skos:prefLabel "Production Line Status"@en , 
+	                 "Status Produktionslinie"@de;
+	  skos:definition "The different Status of the production Line (i.e. investment planning, planned, construction, commissioning/test, operational, maintenance, terminated)."@en ,
+	                  "Verschiedene Stati einer Produktionslinie (i.e. Investitionsplanung, Konstruktion, Inbetriebnahme, Instandhaltung, Auflösung"@de ;
+	  owl:oneOf (iec62264:InvestmentPlanning iec62264:Planned iec62264:Construction iec62264:Commissioning iec62264:Operational iec62264:Maintenance iec62264:Terminated);
+	.
+
+iec62264:ManufacturingCapability a owl:Class ;
+      skos:prefLabel "Manufacturing Capability"@en ;
+      skos:definition "Manufacturing capability refers to the technical and physical limitations of a manufacturing component. It comprises the technological processing capability, the physical size and weight of the object, and the production capacity"@en ;
+      dc:source "This definition comprises material from Fundamentals of modern manufacturing Groover, M. P. (2007). John Wiley & Sons."@en ;
+	.  
+
+iec62264:ProcessingCapability a owl:Class ;
+      skos:prefLabel "Processing Capability"@en ;
+	  skos:definition "Technological processing capability is closely related to material type and a set of functions/processes that the component can perform. Certain manufacturing processes are suited to certain materials, whereas other processes are suited to other materials."@en ;
+      dc:source "This definition comprises material from Fundamentals of modern manufacturing Groover, M. P. (2007). John Wiley & Sons."@en ;	  
+	.  
+
+iec62264:Material	  
+      a owl:Class ;
+	  skos:prefLabel "Material"@en, "Material"@de ;
+	  skos:definition "Material which is used in a machine to make a Product specified by a work order"@en ,
+	                  "Material, welches für die Herstellung eines Produktes in einer Maschine genutzt wird und einem spezifischen Fertigungsauftrag zugeordnet ist."@de ;
+    .
+
+iec62264:MaintenanceHistory a owl:Class;
+      skos:prefLabel "Maintenance History"@en ;
+      skos:definition "Maintains a history of past events or problems to aid in diagnosing problems, such as equipment performances, maintenance personnel performances, or instrumentation reliabilities."@en ;
+      rdfs:isDefinedBy "5.2.4.12" ;	  
+    . 	
+	
+# Material properties -----------------------------------	
+
+iec62264:materialId a owl:DatatypeProperty;
+      a owl:FunctionalProperty ;
+      skos:prefLabel "Has Material"@en ;
+      skos:definition "Unique identification of the Material according to the Schaeffler identification nomenclature."@en ;
+      rdfs:domain iec62264:Material ;	  
+      rdfs:range xsd:integer ;
+	.  
+	  
+iec62264:hasMaterialNumber
+	  a owl:DatatypeProperty ;
+	  skos:prefLabel "has Material number"@en ;
+	  skos:definition "Points to a number of certain Material."@en ;
+	  rdfs:domain iec62264:Material ;
+	  rdfs:range xsd:integer ;
+	.
+
+iec62264:hasMaterialDescription
+	  a owl:DatatypeProperty ;
+	  skos:prefLabel "has Material Description"@en ;
+	  skos:definition "Points to a Material description text."@en ;
+	  rdfs:domain iec62264:Material ;
+	  rdfs:range xsd:string ;
+	.  
+	
+# Enterprise properties -----------------------------------
+
+iec62264:hasSite a owl:ObjectProperty;
+      skos:prefLabel "Has Site"@en ;
+      skos:definition "The Enterprise may contain Plants (Sites)."@en ;
+      rdfs:domain iec62264:Enterprise ;	  
+      rdfs:range iec62264:Site ;
+	.  
+	
+iec62264:hasArea a owl:ObjectProperty;
+      skos:prefLabel "Has Area"@en ;
+      skos:definition "The Site(s) in Enterprises may contain Areas."@en ;
+      rdfs:domain iec62264:Site ;	  
+      rdfs:range iec62264:Area ;
+	.  
+	
+iec62264:hasWorkCenter a owl:ObjectProperty;
+      skos:prefLabel "Has Work Center"@en ;
+      skos:definition "The Sites in Enterprises may contain Work Centers."@en ;
+      rdfs:domain iec62264:Area ;	  
+      rdfs:range iec62264:WorkCenter ;
+	.  
+
+iec62264:hasEnterpriseName a owl:DatatypeProperty;
+      a owl:FunctionalProperty ;
+      skos:prefLabel "has Enterprise Name"@en ;
+      skos:definition "Given name for the Enterprise (Company)."@en ;
+      rdfs:domain iec62264:Enterprise ;	  
+      rdfs:range xsd:string ;
+    .	  
+	
+# Storage Zone properties -----------------------------------
+	  
+iec62264:storageZoneId a owl:DatatypeProperty ;
+      skos:prefLabel "storage Zone Id"@en ;
+      skos:definition "Storage Zone Identification according to Schaeffler nomenclature"@en ;
+      rdfs:domain iec62264:StorageZone ;	  
+      rdfs:range xsd:string ;
+	.  
+	  
+iec62264:storageZoneName a owl:DatatypeProperty ;
+      skos:prefLabel "storage Zone Name"@en ;
+      skos:definition "Name of the Storage Zone"@en ;
+      rdfs:domain iec62264:StorageZone ;	  
+      rdfs:range xsd:string ;
+	.  
+
+iec62264:storageZoneUnit a owl:ObjectProperty ;
+      skos:prefLabel "storage Zone Unit"@en ;
+      skos:definition "A Storage Zone contains Storage Units. This property connects equipment used for storage or movement."@en ;
+      rdfs:domain iec62264:StorageZone ;	  
+      rdfs:range iec62264:StorageUnit ;
+	.  
+	
+iec62264:storageZoneStatus a owl:ObjectProperty ;
+      skos:prefLabel "storage Zone Status"@en ;
+      skos:definition "Points to the Status of a given Storage Zone related with a given Material."@en ;
+      rdfs:domain iec62264:StorageZoneMaterial ;	  
+      rdfs:range iec62264:StorageZoneStatus ;
+	.  
+	
+iec62264:storageZoneMaterial a owl:ObjectProperty ;
+      skos:prefLabel "storage Zone Material"@en ;
+      skos:definition "Relates the Storage Zone with the Storage Zone Material."@en ;
+      rdfs:domain iec62264:StorageZoneMaterial ;	  
+      rdfs:range iec62264:StorageZone ;
+	.  
+	
+#  Processing Capability properties -----------------------------------
+
+iec62264:processCellUnit a owl:ObjectProperty ;
+      skos:prefLabel "process Cell Unit"@en ;
+      skos:definition "A Process Cell contains Unit. This property connects the equipment used in batch production."@en ;
+      rdfs:domain iec62264:ProcessCell ;	  
+      rdfs:range iec62264:Unit ;
+	.  
+
+iec62264:hasEquipmentModule a owl:ObjectProperty;
+      skos:prefLabel "has Equipment Module"@en ;
+      skos:definition "The Unit, which is contained by the Process Cell, may Equipment Modules."@en ;
+      rdfs:domain iec62264:ProcessCell ;	  
+      rdfs:range iec62264:EquipmentModule ;
+	.  
+	
+iec62264:processCellCapability a owl:ObjectProperty ;
+      skos:prefLabel "Process Cell Capability"@en ;
+      skos:definition "Process Cell has specific Manufacturing Capabilities. "@en ;
+      rdfs:domain iec62264:ProcessCell ;	  
+      rdfs:range iec62264:ManufacturingCapability ;
+	.  
+
+# ProductionUnit properties -----------------------------------
+	  
+iec62264:containsUnit a owl:ObjectProperty ;
+      skos:prefLabel "contains Unit"@en ;
+      skos:definition "A Production Unit contains Unit. This property connects equipment used in continuous production."@en ;
+      rdfs:domain iec62264:ProductionUnit ;	  
+      rdfs:range iec62264:Unit ;
+	.  
+	
+iec62264:productionUnitCapabilities a owl:ObjectProperty ;
+      skos:prefLabel "Production Unit Capabilities"@en ;
+      skos:definition "Points to the Processing Capabilities for a given Production Unit."@en ;
+      rdfs:domain iec62264:ProductionUnit ;	  
+      rdfs:range iec62264:ProcessingCapability ;
+	. 
+
+
+# Unit properties -----------------------------------
+	
+iec62264:unitCapabilities a owl:ObjectProperty ;
+      skos:prefLabel "Unit Capabilities"@en ;
+      skos:definition "Points to the Processing Capabilities for a given Unit."@en ;
+      rdfs:domain iec62264:Unit ;	  
+      rdfs:range iec62264:ProcessingCapability ;
+	.  	
+	
+# Work Cell Properties -----------------------------------------
+
+iec62264:workCellCapability a owl:ObjectProperty ;
+      skos:prefLabel "Work Cell Capability"@en ;
+      skos:definition "Work Cell has specific Manufacturing Capabilities. "@en ;
+      rdfs:domain iec62264:WorkCell ;	  
+      rdfs:range iec62264:ManufacturingCapability ;
+	.  
+	
+# Equipment Module -----------------------------------
+	  
+iec62264:hasControlModule a owl:ObjectProperty;
+      skos:prefLabel "has Control Module"@en ;
+      skos:definition "The Equipment Module, which is contained by the Unit, may contain Control Modules."@en ;
+      rdfs:domain iec62264:EquipmentModule ;	  
+      rdfs:range iec62264:ControlModule ;
+    .	  
+	  
+iec62264:partOfEquipmentModule a owl:ObjectProperty;
+      a iec62264:TransitiveProperty;
+      skos:prefLabel "part Of Equipment Module"@en ;
+      skos:definition "The Equipment Module may contain other Equipment Modules as part of it."@en ;
+      rdfs:domain iec62264:EquipmentModule ;	  
+      rdfs:range iec62264:EquipmentModule ;
+	.  
+	  
+
+# Controle Module Properties -------------------------------------
+
+iec62264:partOfControlModule a owl:ObjectProperty;
+      a iec62264:TransitiveProperty;
+      skos:prefLabel "part Of Control Module"@en ;
+      skos:definition "The Control Module may contain other Control Modules as part of it."@en ;
+      rdfs:domain iec62264:ControlModule ;	  
+      rdfs:range iec62264:ControlModule ;
+	.  
+	  
+# Production Line -------------------------------------
+
+iec62264:locatedInArea a owl:ObjectProperty;
+      a owl:FunctionalProperty ;
+      skos:prefLabel "Located In Area"@en ;
+      skos:definition "A pointer to the ProductionArea in which the ProductionLine is located."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range iec62264:Area ;
+    .	  
+	  
+iec62264:hasManager a owl:ObjectProperty;
+      skos:prefLabel "has Manager"@en ;
+      skos:definition "A pointer to the Manager responsible for the ProductionLine."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range foaf:Person ;
+    .	  
+	  
+iec62264:equivalentLine a owl:ObjectProperty;
+      skos:prefLabel "Equivalent Line"@en ;
+      skos:definition "Points to other, equivalent Production Lines."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range iec62264:ProductionLine ;
+	.
+	  
+iec62264:similarLine a owl:ObjectProperty;
+      skos:prefLabel "Similar Line"@en ;
+      skos:definition "Points to similar but different Production Lines."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range iec62264:ProductionLine ;
+	.
+	  
+iec62264:upStreamLine a owl:ObjectProperty;
+      skos:prefLabel "Upstream Line"@en ;
+      skos:definition "Points to ProductionLines, which typically process the output of this ProductionLine."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range iec62264:ProductionLine ;
+	.
+	  
+iec62264:downStreamLine a owl:ObjectProperty;
+      skos:prefLabel "Downstream Line"@en ;
+      skos:definition "Points to ProductionLines, which typically output Products for this ProductionLine."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range iec62264:ProductionLine ;
+	.  
+
+iec62264:productionLineId a owl:DatatypeProperty;
+      a owl:FunctionalProperty ;
+      skos:prefLabel "has Storage Zone"@en ;
+      skos:definition "Unique identification of the production line according to the Schaeffler identification nomenclature."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range xsd:string ;
+	.  
+	  
+iec62264:hasStorageZone a owl:ObjectProperty;
+      a owl:FunctionalProperty ;
+      skos:prefLabel "has Storage Zone"@en ;
+      skos:definition "Points to StorageZones, which are adjacent to the ProductionLine."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range iec62264:StorageZone ;
+	.  
+	  
+iec62264:installationDate a owl:DatatypeProperty;
+      a owl:FunctionalProperty ;
+      skos:prefLabel "Installation Date"@en ;
+      skos:definition "Date when the ProductionLine installation was completed."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range xsd:date ;
+	.  
+	  
+iec62264:maintenanceScheduledDate a owl:DatatypeProperty;
+      a owl:FunctionalProperty ;
+      skos:prefLabel "Scheduled date of maintenance"@en ;
+      skos:definition "Date when the ProductionLine is supposed to take maintenance."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range xsd:date ;
+	.  
+	  
+iec62264:hasProductionLineStatus a owl:ObjectProperty;
+      a owl:FunctionalProperty ;
+      skos:prefLabel "Production Line Status"@en ;
+      skos:definition "Indicates the status of the ProductionLine."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range iec62264:ProductionLineStatus ;
+	.  
+	
+iec62264:productionLineCell a owl:ObjectProperty ;
+      skos:prefLabel "production Line Cell"@en ;
+      skos:definition "A Production Line contains Work Cell. This property connects equipment used in in repetitive or discrete production."@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range iec62264:WorkCell ;
+	.  
+	  
+iec62264:productionLineCapability a owl:ObjectProperty ;
+      skos:prefLabel "production Line Capability"@en ;
+      skos:definition "A Production Line has certain Manufacturing Capabilities. "@en ;
+      rdfs:domain iec62264:ProductionLine ;	  
+      rdfs:range iec62264:ManufacturingCapability ;
+	.  
+
+# Manufacturing Capability properties -----------------------------------	  
+iec62264:hasProcessingCapability
+	  a owl:ObjectProperty ;
+	  skos:prefLabel "has Processing Capability"@en ;
+	  skos:definition "Points to the Processing Capability of the component." ;
+	  rdfs:domain iec62264:ManufacturingCapability ;
+	  rdfs:range iec62264:ProcessingCapability ;
+	.  
+	
+iec62264:hasSizeLimitation
+	  a owl:ObjectProperty ;
+	  skos:prefLabel "has Size Limitation"@en ;
+	  skos:definition "The maximun size that the object can have in order to be processed by the component." ;
+	  rdfs:domain iec62264:ManufacturingCapability ;
+	  rdfs:range om:Unit_of_measure ;
+	.  
+	
+iec62264:hasWeigthLimitation
+	  a owl:ObjectProperty ;
+	  skos:prefLabel "has Size Limitation"@en ;
+	  skos:definition "The maximun Weigth that the object can have in order to be processed by the component." ;
+	  rdfs:domain iec62264:ManufacturingCapability ;
+	  rdfs:range om:Unit_of_measure ;
+	.  
+	
+iec62264:hasProductionCapability
+	  a owl:ObjectProperty ;
+	  skos:prefLabel "has Production Capability"@en ;
+	  skos:definition "The production quantity that can be produced in a given time period (e.g.,month or year)."@en ;
+	  rdfs:domain iec62264:ManufacturingCapability ;
+	  rdfs:range iec62264:ProductionCapability ;
+	.  	
+	
+# Area properties -----------------------------------
+
+iec62264:hasProcessCell a owl:ObjectProperty;
+      skos:prefLabel "has Process Cell"@en ;
+      skos:definition "The Area, which is contained by the Site, may contain Process Cells."@en ;
+      rdfs:domain iec62264:Area ;	  
+      rdfs:range iec62264:ProcessCell ;
+	.
+	  
+iec62264:hasUnit a owl:ObjectProperty;
+      skos:prefLabel "has Unit"@en ;
+      skos:definition "The Process Cell, which is contained by the Area, must contain Units."@en ;
+      rdfs:domain iec62264:Area ;	  
+      rdfs:range iec62264:ProcessCell ;
+    .	  
+
+iec62264:hasAreaName a owl:DatatypeProperty ,
+	  owl:FunctionalProperty ;
+      skos:prefLabel "has Area Name"@en ;
+      skos:definition "Name of the Area."@en ;
+      rdfs:domain iec62264:Area ;	  
+      rdfs:range xsd:string ;
+	.  
+
+iec62264:hasAreaId a 
+      owl:DatatypeProperty ,
+	  owl:FunctionalProperty ;
+      skos:prefLabel "has Area Id"@en ;
+      skos:definition "Unique Identification of the Area according to Schaeffler nomenclature."@en ;
+      rdfs:domain iec62264:Area ;	  
+      rdfs:range xsd:string ;
+	.  
+	  
+iec62264:similarArea a owl:ObjectProperty;
+      skos:prefLabel "Similar Area"@en ;
+      skos:definition "Points to a similar Area where the manufacturing process is related."@en ;
+      rdfs:domain iec62264:Area ;	  
+      rdfs:range iec62264:Area ;
+    . 
+	
+# StorageUnit properties -----------------------------------
+
+iec62264:storageUnitCapacity
+      a owl:DatatypeProperty ;
+	  skos:prefLabel "has Length"@en ;
+      skos:definition "The Capacity of the Storage Unit in terms of Objects."@en ;
+      rdfs:domain iec62264:StorageUnit ;
+      rdfs:range xsd:integer ;
+	.
+	
+iec62264:hasLength
+      a owl:DatatypeProperty ;
+	  rdfs:label "has Length"@en ;
+      rdfs:comment "The Length of the Storage Unit"@en ;
+      rdfs:domain iec62264:StorageUnit ;
+      rdfs:range om:metre ;
+	.
+	
+iec62264:hasHeight
+      a owl:DatatypeProperty ;
+	  rdfs:label "has Height"@en ;
+      rdfs:comment "The Height of the Storage Unit"@en ;
+      rdfs:domain iec62264:StorageUnit ;
+      rdfs:range om:metre ;
+	.
+	
+iec62264:storageUnitCapacity
+      a owl:DatatypeProperty ;
+	  rdfs:label "has Length"@en ;
+      rdfs:comment "The Capacity of the Storage Unit in terms of Objects."@en ;
+      rdfs:domain iec62264:StorageUnit ;
+      rdfs:range xsd:integer ;
+	.
+	
+# Production Capability properties -----------------------------------
+
+iec62264:productionCapabilityAmount a owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+      skos:prefLabel "production Capability Name"@en ;
+      skos:definition "Amount of the Production Capability for a given Component. It can be a Plant, a Production Line, a Work Cell or a Process Cell"@en ;
+      rdfs:domain iec62264:ProductionCapability ;	  
+      rdfs:range xsd:string ;
+	.  
+	  
+iec62264:productionCapabilityStart a owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+      skos:prefLabel "production Capability Start"@en ;
+      skos:definition "Start period of time for a given Production Capability"@en ;
+      rdfs:domain iec62264:ProductionCapability ;	  
+      rdfs:range xsd:dateTime ;
+	.  
+	  
+iec62264:productionCapabilityEnd a owl:DatatypeProperty ,
+                  owl:FunctionalProperty ;
+      skos:prefLabel "production Capability Ends"@en ;
+      skos:definition "End period of time for a given Production Capability"@en ;
+      rdfs:domain iec62264:ProductionCapability ;	  
+      rdfs:range xsd:dateTime ;
+	.  
+	
+# ProcessingCapability Capability properties -----------------------------------	  	  
+
+iec62264:performProcess
+	  a owl:DatatypeProperty ;
+	  skos:prefLabel "Perform Process"@en ;
+	  skos:definition "Points to the Process that the component can Perform."@en ;
+	  rdfs:domain iec62264:ProcessingCapability ;
+	  rdfs:range xsd:string ;
+	.  
+	
+iec62264:hasAllowedMaterial
+	  a owl:ObjectProperty ;
+	  skos:prefLabel "has Allowed Material"@en ;
+	  skos:definition "Points to the permitted material that the component can process."@en ;
+	  rdfs:domain iec62264:ProcessingCapability ;
+	  rdfs:range iec62264:Material ;
+	.  	
+
+# Processing Capability properties -----------------------------------	  	  
+	
+iec62264:workCenterId a owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+      skos:prefLabel "Work Center Id"@en ;
+      skos:definition "Unique identification of the Work Center according to the Schaeffler identification nomenclature."@en ;
+      rdfs:domain iec62264:WorkCenter ;	  
+      rdfs:range xsd:string ;
+	.  
+	
+iec62264:workCenterName a owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+      skos:prefLabel "Work Center Name"@en ;
+      skos:definition "Name of the Work Center according to the Schaeffler nomenclature."@en ;
+      rdfs:domain iec62264:WorkCenter ;	  
+      rdfs:range xsd:string ;
+	.  
+	
+# StorageZoneStatus properties -----------------------------------	
+iec62264:storageZoneStatusStart a owl:DatatypeProperty, 
+                             owl:FunctionalProperty ;
+      skos:prefLabel "Work Center Name"@en ;
+      skos:definition "Starts Date when the a given Storage Zone is occupied with a given Material and the Status is changed (e.g. Receipt, Storage, etc)."@en ;
+      rdfs:domain iec62264:StorageZoneStatus ;	  
+      rdfs:range xsd:dateTime ;
+	.  
+	
+iec62264:storageZoneStatusEnds a owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+      skos:prefLabel "Work Center Name"@en ;
+      skos:definition "End Date when the a given Storage Zone is occupied with a given Material and the current Status finish (e.g. Receipt, Storage, etc)."@en ;
+      rdfs:domain iec62264:StorageZoneStatus ;	  
+      rdfs:range xsd:dateTime ;
+	.  
+
+# MaintenanceHistory properties -----------------------------------	
+iec62264:lastProblemDescription a owl:DatatypeProperty;
+      skos:prefLabel "Problem Description"@en ;
+      skos:definition "Description of the last problem for the component"@en ;
+      rdfs:domain iec62264:MaintenanceHistory ;	  
+      rdfs:range xsd:string ;
+	.  
+	
+iec62264:lastProblemDate a owl:DatatypeProperty;
+      skos:prefLabel "Last Problem Date"@en ;
+      skos:definition "Date of the last problem for the component"@en ;
+      rdfs:domain iec62264:MaintenanceHistory ;	  
+      rdfs:range xsd:date ;
+	.  
+	
+iec62264:hasMaintenaceHistory a owl:ObjectProperty;
+      skos:prefLabel "has Maintenace History"@en ;
+      skos:definition "Points to maintenance history describing a history of past events or problems to aid in diagnosing problems, such as equipment performances in the Production Line."@en ;
+      rdfs:domain iec62264:WorkCenter ;	  
+      rdfs:range iec62264:MaintenanceHistory ;
+	.
+
+# Production Line Status properties -----------------------------------	
+
+iec62264:productionLineStatusStart a owl:DatatypeProperty, 
+                             owl:FunctionalProperty ;
+      skos:prefLabel "Production Line Status Start"@en ;
+      skos:definition "Starts Date when the a given Production Line Status is changed (e.g. InvestmentPlanning, Planned, Construction, etc)."@en ;
+      rdfs:domain iec62264:ProductionLineStatus ;	  
+      rdfs:range xsd:dateTime ;
+	.  
+	
+iec62264:productionLineStatusEnds a owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+      skos:prefLabel "Production Line Status Ends"@en ;
+      skos:definition "Date when the a given Production Line Status is finished (e.g. InvestmentPlanning, Planned, Construction, etc)."@en ;
+      rdfs:domain iec62264:ProductionLineStatus ;	  
+      rdfs:range xsd:dateTime ;
+	.  
+
+# WorkUnit properties -----------------------------------	
+	
+iec62264:workUnitMaintenanceHistory a owl:ObjectProperty;
+      skos:prefLabel "work Unit Maintenance History"@en ;
+      skos:definition "Points to maintenance history describing a history of past events or problems to aid in diagnosing problems."@en ;
+      rdfs:domain iec62264:WorkUnit ;	  
+      rdfs:range iec62264:MaintenanceHistory ;
+	.

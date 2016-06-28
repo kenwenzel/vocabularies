@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:foaf="http://xmlns.com/foaf/spec/"
+	xmlns:rami="http://iais.fraunhofer.de/vocabs/rami#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:schema="http://schema.org/"
+	xmlns:iec62264="https://w3id.org/eis/vocabs/iec62264#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+	xmlns:vann="http://purl.org/vocab/vann/"
+	xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+	xmlns:void="http://rdfs.org/ns/void#"
+	xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:om="http://www.wurvoc.org/vocabularies/om-1.8/"
+	xmlns:geo="http://geovocab.org/geometry#">
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+	<skos:definition xml:lang="en">A vocabulary which represents the IEC 62264-1:2013 standard.</skos:definition>
+	<rdfs:isDefinedBy rdf:resource="https://w3id.org/eis/vocabs/iec62264#"/>
+	<skos:prefLabel xml:lang="en">iec62264</skos:prefLabel>
+	<dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-04-01</dct:created>
+	<dct:creator>Irlan Grangel</dct:creator>
+	<dct:creator>Niklas Petersen</dct:creator>
+	<vann:preferredNamespacePrefix>iec62264</vann:preferredNamespacePrefix>
+	<vann:preferredNamespaceUri>https://w3id.org/eis/vocabs/iec62264#</vann:preferredNamespaceUri>
+	<void:vocabulary rdf:resource="http://www.w3.org/2000/01/rdf-schema#"/>
+	<void:vocabulary rdf:resource="http://purl.org/dc/elements/1.1/"/>
+	<void:vocabulary rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+	<void:vocabulary rdf:resource="http://www.w3.org/2001/XMLSchema#"/>
+	<void:vocabulary rdf:resource="http://xmlns.com/foaf/spec/"/>
+	<void:vocabulary rdf:resource="http://www.w3.org/2004/02/skos/core#"/>
+	<void:vocabulary rdf:resource="http://purl.org/dc/terms/"/>
+	<void:vocabulary rdf:resource="http://www.w3.org/XML/1998/namespace"/>
+	<void:vocabulary rdf:resource="https://w3id.org/eis/vocabs/iec62264#"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#Enterprise">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Enterprise</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Unternehmen</skos:prefLabel>
+	<skos:altLabel xml:lang="en">Company</skos:altLabel>
+	<skos:altLabel xml:lang="de">Betrieb</skos:altLabel>
+	<skos:definition xml:lang="en">An enterprise is an organizational element that is a collection of one or more sites. Most enterprises correspond to either entire companies or a division in a large corporation. The enterprise is responsible for determining what products will be manufactured, at which sites they will be manufactured, and in general how they will be manufactured</skos:definition>
+	<skos:definition xml:lang="de">Ein Unternehmen repräsentiert eine Sammlung von Standorten/Stätten und Bereichen. Ein Unternehmen kann auch eine Tochtergesellschaft einer Organisation darstellen. Die Verantwortung eines Unternehmens liegt in der Festlegung und Einrichtung von Werken, an denen die Produkte hergestellt werden</skos:definition>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.7</rdfs:isDefinedBy>
+	<rami:hasRAMIHierarchyLevel rdf:resource="http://iais.fraunhofer.de/vocabs/rami#Enterprise"/>
+	<rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Company"/>
+	<rdfs:seeAlso rdf:resource="http://dbpedia.org/ontology/company"/>
+	<dc:source xml:lang="en">This definition comprises material from RAMI4.0, Wikipedia, WikiData and DBpedia, IEC 62264-1:2013, 5.3.7 and Design Patterns for Flexible Manufacturing by Dennis Brandl, 2007.</dc:source>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#Site">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Site</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Standort</skos:prefLabel>
+	<skos:altLabel xml:lang="en">Enterprise Location</skos:altLabel>
+	<skos:altLabel xml:lang="de">Stätte</skos:altLabel>
+	<skos:definition xml:lang="en">A Plant (Site) is a physical, geographical, or logical grouping determined by the enterprise. A plant contains one or more areas. Its boundaries are often based on organizational or business criteria, as opposed to technical criteria. A geographical location and main production capability usually identifies a Plant. Plants generally have well-defined manufacturing capabilities. Production lines, process cells, and production units are part of a plant.</skos:definition>
+	<skos:definition xml:lang="de">Ein Werk (Standort) ist eine physische, geographische oder logische Gruppierung, die durch das Unternehmen definiert wird. Ein Werk kann aus einem oder mehreren Bereichen bestehen. Die Grenzen basieren auf Unternehmens- oder Geschäftskriterien. Eine graphische Zuordnung und wesentliche Produktioniecähigkeiten definieren ein Werk. Dieser kann Bereiche, Produktionsslinien, Produktionszellen und Produktionseinheiten beinhalten.</skos:definition>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.3</rdfs:isDefinedBy>
+	<rami:hasRAMIHierarchyLevel rdf:resource="http://iais.fraunhofer.de/vocabs/rami#WorkCenter"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#Area">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Area</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Bereich</skos:prefLabel>
+	<skos:altLabel xml:lang="en">Manufacturing departments</skos:altLabel>
+	<skos:altLabel xml:lang="en">Production Area</skos:altLabel>
+	<skos:definition xml:lang="en">An area is a physical, geographical, or logical entity determined by the Plant. Its boundaries are usually defined based on organizational or business criteria, as opposed to technical criteria. The main production capability and geographical location within a site usually identify areas, such as production area, storage area, or a finishing area. It should be used for production buildings and their subdivisions (structure/hall). It is also used as an element of a hierarchical organisation.</skos:definition>
+	<skos:definition xml:lang="de">Ein Bereich ist ein physisches, geographisches oder logisches Element, welches durch das Werk definiert wird. Die Grenzen basieren auf Unternehmens- oder Geschäftskriterien.  Eine geografische Zuordnung und wesentliche Produktionsfähigkeiten definieren den Bereich innerhalb eines Werks, z.B. Produktionsbereich, Lagerbereich oder Endfertigung.</skos:definition>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.4</rdfs:isDefinedBy>
+	<rami:hasRAMIHierarchyLevel rdf:resource="http://iais.fraunhofer.de/vocabs/rami#WorkCenter"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#WorkCenter">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Work Center</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Arbeitsplatz</skos:prefLabel>
+	<skos:definition xml:lang="en">The term Work Center is used to describe an element that can be a process cell, production line, production unit or storage zone. It describes a section of a production facility where all tasks associated with a particular process (e.g. assembling, painting, welding) are performed. Work centers are  elements of the equipment hierarchy under an area. For manufacturing operations management there are specific terms for work centers and work units that apply to batch production, continuous production, discrete or repetitive production, and for storage and movement of materials and equipment. The generic term work center may be used when the specific type of the equipment element is not significant for the purpose of the discussion.</skos:definition>
+	<skos:definition xml:lang="de">Ein Arbeitsplatz wird verwendet, um ein Element zu beschreiben, wie z.B. eine Verarbeitungszelle, Produktionslinie, Produktionseinheit oder einen Lagerbereich. Der Arbeitsplatz beschreibt einen Bereich in der Produktionshalle, an dem prozessnahe Aufgaben, wie z.B. Montage, Lackierung, Schweißen durchgeführt werden. Arbeitsplätze sind Elemente in der Hierarchie "Equipment" unterhalb der Bereiche. Innerhalb des Fertigungsindustrie gibt es spezifische Terminologien für Arbeitsplätze und Arbeitseinheiten, die für Batchproduktion, kontinuierlicher Produktion, repetitiver Produktion, Lagerung und Verkehr von Materialien und Equipment genutzt werden. Der generische Begriff "Arbeitsplatz" kann genutzt werden, sofern die Spezifikation des Equipments unbedeutsam ist.</skos:definition>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.5</rdfs:isDefinedBy>
+	<rami:hasRAMIHierarchyLevel rdf:resource="http://iais.fraunhofer.de/vocabs/rami#WorkCenter"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#StorageZone">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkCenter"/>
+	<skos:prefLabel xml:lang="en">Storage Zone</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Lagerbereich</skos:prefLabel>
+	<skos:definition xml:lang="en">The term Storage Zone is used to describe equipment whose primary purpose is to store material. Storage zones are at the lowest level of material movement equipment for discrete, batch and continuous manufacturing processes. An storage zone typically has the capability needed for the receipt, storage, retrieval, movement and shipment of materials. This may include the movement of materials from one work centre to another work centre within or between enterprises. Storage zones may feed production lines, process cells, and production units. They are also usually the ultimate recipient of the produced product, and they may lie in between process cells, production lines, and production units. Storage zones can be as simple as a space on the plant floor to hold barrels, or as complex as tank farms and automated storage and retrieval warehouses. Storage zones may be made up of storage units. Storage units provide a finer level of granularity for identifying storage locations than storage zones</skos:definition>
+	<skos:definition xml:lang="de">Der Begriff Lagerbereich beschreibt Equipment, deren Aufgabe darin besteht, Materialien zu speichern. Lagerbereiche sind auf der untersten Ebene der Materialbewegungsausrüstung für diskrete, diskontinuierliche und kontinuierliche Fertigungsprozesse. Ein Lagerbereich kann in der Regel für Empfang, Speicherung, Abruf, Bewegung und Versand der Materialien benötigt werden. Dies beinhaltet ebenfalls die Bewegung von Materialien von einem Arbeitsplatz zum anderen oder zwischen den Unternehmen. Lagerbereiche bedienen Produktionslinien, Verarbeitungszellen und Produktionseinheiten. Sie sind die Endnutzer des hergestellten Produktes und können zwischen den Verarbeitungszellen, Produktionslinien und Produktionseinheiten liegen. Lagerbereiche können Bereiche in der Maschinenhalle sein, die Fässer beinhalten oder Tanklager, automatisierte Lagerbereiche oder Lagerhallen für den Warenausgang. Lagerbereiche können aus Lagereinheiten bestehen. Im Gegensatz zu Lagerbereichen verfügen die Lagereinheiten über ein höheres Präzisionsniveau für die Identifizierung von Lagerorten.</skos:definition>
+	<skos:note xml:lang="en">Equipment used for Storage or movement along with Storage Units</skos:note>
+	<skos:example xml:lang="en">Warehouse, Trailer yard, Tank Farm, Silo Farm, Ship Terminal, Rail Yard, Holding Area</skos:example>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.9</rdfs:isDefinedBy>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#StorageZoneStatus">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Storage Zone</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Status Produktionslinie</skos:prefLabel>
+	<skos:definition xml:lang="en">A storage zone typically has the capability needed for the receipt, storage, retrieval, movement and shipment of materials.</skos:definition>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.9</rdfs:isDefinedBy>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx1">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#Receipt"/>
+	<rdf:rest rdf:nodeID="node1amb1nbbcx2"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx2">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#Storage"/>
+	<rdf:rest rdf:nodeID="node1amb1nbbcx3"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx3">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#Retrieval"/>
+	<rdf:rest rdf:nodeID="node1amb1nbbcx4"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx4">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#Movement"/>
+	<rdf:rest rdf:nodeID="node1amb1nbbcx5"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx5">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#Shipment"/>
+	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#StorageZoneStatus">
+	<owl:oneOf rdf:nodeID="node1amb1nbbcx1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#StorageZoneMaterial">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Storage Zone Material</skos:prefLabel>
+	<skos:definition xml:lang="en">An storage zone performs an action (change of status) over the materials in a given period of time.</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#ProductionLine">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkCenter"/>
+	<skos:prefLabel xml:lang="en">Production Line</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Produktionslinie</skos:prefLabel>
+	<skos:altLabel xml:lang="en">Processing line</skos:altLabel>
+	<skos:altLabel xml:lang="de">Fertigungslinie</skos:altLabel>
+	<skos:altLabel xml:lang="de">Fertigungsstraße</skos:altLabel>
+	<skos:altLabel xml:lang="de">Produktionsstraße</skos:altLabel>
+	<skos:definition xml:lang="en">A production line is a set of sequential operations established in a factory whereby materials are put through a refining process to produce an end-product that is suitable for onward consumption; or components are assembled to make a finished article. Typically, raw materials such as metal ores or agricultural products such as foodstuffs or textile source plants (cotton, flax) require a sequence of treatments to render them useful. For metal, the processes include crushing, smelting and further refining. For plants, the useful material has to be separated from husks or contaminants and then treated for onward sale.</skos:definition>
+	<skos:definition xml:lang="en">Eine Fertigungsstraße ist eine räumliche Abfolge von Fertigungseinrichtungen, auf denen in zeitlicher Abfolge Fertigungsschritte an einem Werkstück oder teilfertigen Produkt durchgeführt werden. Die Fertigungsstraße beschreibt die Fertigung aus der Perspektive der Umgebung der Fertigung, während die Fertigungslinie die Fertigung aus der Perspektive der zu fertigenden Teile beschreibt. So kann es für verschiedene Werkstücke verschiedene Fertigungslinien geben, die unterschiedliche Teile der Fertigungsstraße nutzen</skos:definition>
+	<skos:definition xml:lang="en">A production line is a set of sequential operations established in a factory whereby materials are put through a refining process to produce an end-product that is suitable for onward consumption; or components are assembled to make a finished article. Typically, raw materials such as metal ores or agricultural products such as foodstuffs or textile source plants (cotton, flax) require a sequence of treatments to render them useful. For metal, the processes include crushing, smelting and further refining. For plants, the useful material has to be separated from husks or contaminants and then treated for onward sale</skos:definition>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.7</rdfs:isDefinedBy>
+	<rdfs:seeAlso rdf:resource="https://de.wikipedia.org/wiki/Fertigungslinie"/>
+	<rdfs:seeAlso rdf:resource="https://de.wikipedia.org/wiki/Fertigungsstra%C3%9Fe"/>
+	<rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Production_line"/>
+	<rdfs:seeAlso rdf:resource="http://dbpedia.org/page/Production_line"/>
+	<rdfs:seeAlso rdf:resource="https://www.wikidata.org/wiki/Q10858068"/>
+	<skos:note xml:lang="en">Equipment used in repetitive or discrete Production along with Work Cells</skos:note>
+	<dc:source xml:lang="en">This definition comprises material from RAMI4.0, Wikipedia, WikiData and DBpedia.</dc:source>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#ProductionUnit">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkCenter"/>
+	<skos:prefLabel xml:lang="de">Produktionseinheit</skos:prefLabel>
+	<skos:prefLabel xml:lang="en">Production Unit</skos:prefLabel>
+	<skos:definition xml:lang="en">Production units are in the lowest level of equipment for continuous manufacturing processes. They are composed of units and units are composed lower level elements, such as equipment modules, sensors, and actuators. A production unit generally encompasses all of the equipment required for a segment of continuous production that operates in a relatively autonomous manner. It generally converts, separates, or reacts one or more feed stocks to produce intermediate or final products. The major processing activity or product generated often identifies the production unit. It generally converts, separates, or reacts one or more feed stocks to produce intermediate or final products.</skos:definition>
+	<skos:definition xml:lang="de">Produktionseinheiten befinden sich in der untersten Ebene im Equipment für kontinuierliche Fertigungsprozesse. Sie bestehen aus Einheiten, die wiederum aus Unterelementen, wie z.B. Gerätemodule, Sensoren und Aktoren bestehen. Eine Produktionseinheit umfasst in der Regel alle Equipments, die für ein Segment in der kontinuierlichen Produktion, die relativ autonom arbeitet nötig sind. Die Produktionseinheit wandelt, trennt oder lässt Einsatzmaterialien miteinander reagieren, um Zwischen- oder Endprodukte herzustellen. Die Hauptverarbeitungsaktivität oder das erzeugte Produkt identifiziert oft die Produktionseinheit.</skos:definition>
+	<skos:note xml:lang="en">Equipment used in Continuous Production along with Unit</skos:note>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.6</rdfs:isDefinedBy>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#WorkUnit">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">WorkUnit</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Geräteelement</skos:prefLabel>
+	<skos:definition xml:lang="en">Work Unit is an equipment element under a work center that performs production, storage and material movements. Work Unit refers to the unit in a batch process and similar structures in all types of manufacturing</skos:definition>
+	<skos:definition xml:lang="de">Ein Geräteelement innerhalb eines Arbeitsplatzes, dass Aktivitäten wie Produktion, Lagerung sowie Materialtransport durchführt. Eine Arbeitseinheit bezieht sich auf die Einheit in einem Batch-Verfahren und ähnlichen Varianten in der Herstellung.</skos:definition>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 3.1.45</rdfs:isDefinedBy>
+	<rdfs:subClassOf rdf:resource="http://iais.fraunhofer.de/vocabs/rami#Object"/>
+	<rami:hasRAMIHierarchyLevel rdf:resource="http://iais.fraunhofer.de/vocabs/rami#Station"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#StorageUnit">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkUnit"/>
+	<skos:prefLabel xml:lang="en">StorageUnit</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Lagereinheit</skos:prefLabel>
+	<skos:definition xml:lang="en">Storage units are at the lowest level of material movement equipment for discrete, batch and continuous manufacturing processes. An Storage Unit typically has the capability needed for the receipt, storage, retrieval, movement and shipment of materials. This may include the movement of materials from one work centre to another work centre within or between enterprises.</skos:definition>
+	<skos:definition xml:lang="de">Lagereinheiten befinden sich auf der untersten Ebene im Equipment für diskrete, batch und kontinuierliche Fertigungsprozesse. Eine Lagereinheit hat in der Regel die Möglichkeiten Materialien zu speichern, abzurufen und zu verschicken. Dies beinhaltet den Verkehr von Materialien zwischen Arbeitsplätzen sowie ganzen Unternehmen.</skos:definition>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.9</rdfs:isDefinedBy>
+	<skos:note xml:lang="en">Equipment used for Storage or movement along with Storage Zones</skos:note>
+	<skos:example xml:lang="en">Rack/bin/slot, Trailer, Container, Tank, Pipe Section, Ship, Railcar, Pallet, Barrel</skos:example>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#WorkCell">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkUnit"/>
+	<skos:prefLabel xml:lang="en">WorkCell</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Arbeitsbereich</skos:prefLabel>
+	<skos:definition xml:lang="en">A workcell is an arrangement of resources in a manufacturing environment to improve the quality, speed and cost of the process. Workcells are designed to improve these by improving process flow and eliminating waste.Work cells are in the lowest levels of equipment for discrete manufacturing processes. Work cells are usually only identified when there is flexibility in the routing of work within a production line. Work cells may be composed of lower-level elements.</skos:definition>
+	<skos:definition xml:lang="de">Ein Arbeitsbereich ist eine Einrichtung von Ressourcen innerhalb einer Fertigung, um die Qualität, Geschwindigkeit und Kosten des Prozesses zu verbessern. Arbeitsbereiche dienen dazu den Prozessablauf zu optimieren und Abfallprodukte zu eliminieren. Arbeitsbereiche befinden sich in der untersten Ebene im Equipment für diskrete Fertigungsprozesse. Arbeitsbereiche werden identifiziert, sofern die Arbeitsverteilung innerhalb einer Produktionslinie flexibel ist. Arbeitsbereiche können aus untergeordneten Elementen bestehen.</skos:definition>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.8</rdfs:isDefinedBy>
+	<skos:note xml:lang="en">Equipment used in repetitive or discrete production along with Production Lines</skos:note>
+	<rdfs:seeAlso rdf:resource="https://en.wikipedia.org/wiki/Workcell"/>
+	<rdfs:seeAlso rdf:resource="http://www.freebase.com/m/0b8l0f"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#Unit">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkUnit"/>
+	<skos:prefLabel xml:lang="en">Unit</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Gerät</skos:prefLabel>
+	<skos:definition xml:lang="en">A Unit is a physical and control equipment that can carry out one or more processing activities. Examples include activites such as reacting or mixing materials. Unit is in the lowest level of equipment for batch manufacturing processes. The major processing capability or family of products produced often identifies the process cell.</skos:definition>
+	<skos:definition>Ein Gerät ist ein physikalisches und Kontroll Equipment, das eine oder mehrere Prozessaktivitäten auiecührt. Beispiele für Prozessaktivitäten sind Reaktionen oder Materialmischung. Dieses Gerät befindet sich auf der untersten Ebene im Equipment für Batch Fertigungsprozesse. </skos:definition>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.8</rdfs:isDefinedBy>
+	<rami:hasRAMIHierarchyLevel rdf:resource="http://iais.fraunhofer.de/vocabs/rami#RAMIHierarchyLevel"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#ProcessCell">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:subClassOf rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkCenter"/>
+	<skos:prefLabel xml:lang="en">Process Cell</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Prozesszelle</skos:prefLabel>
+	<skos:definition xml:lang="en">Process cells are in the lowest level of batch manufacturing processes. The major processing capability or family of products produced often identifies the process cell</skos:definition>
+	<skos:definition xml:lang="de">Prozesszellen befinden sich auf der untersten Ebene im Batch-Fertigungsprozess. Eine Prozesszelle beinhaltet alle Geräte, die für die Produktion von einem oder mehrerer Batches nötig sind. Eine Prozesszelle erzeugt einen Batch and generiert Produktionsinformationen durch Rohstoffe und Energie, durch die Definition der Batch - Herstellung und des Zeitpunktes. Eine Prozesszelle befindet sich im Produktionsweg in der Mitte eines Bereichs. Prozesszellen befinden sich auf der untersten Ebene im Batch-Fertigungsprozess.</skos:definition>
+	<skos:note xml:lang="en">Equipment used in Batch Production along with Unit</skos:note>
+	<skos:note xml:lang="de">Ein Equipment, welches in der Batch-Fertigung mit einem Gerät genutzt wird.</skos:note>
+	<rdfs:isDefinedBy>IEC 62264-1:2013, 5.3.8</rdfs:isDefinedBy>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#ProductionCapability">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Production Capability</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Produktioniecähigkeit</skos:prefLabel>
+	<skos:altLabel xml:lang="en">Production Capacity</skos:altLabel>
+	<skos:altLabel xml:lang="de">Produktionskapazität</skos:altLabel>
+	<skos:definition xml:lang="en">The Production Capability Information includes the current capacity, the future expected capacity of the resource and a history of capacity of the resource.</skos:definition>
+	<skos:definition xml:lang="de">Informationen zu der Produktioniecähigkeit beinhalten die aktuelle Kapazität, die künftig zu erwartende Kapazität und die Historie der Kapazität einer Ressource.</skos:definition>
+	<rdfs:isDefinedBy>IEC 62264 8.3.2.2</rdfs:isDefinedBy>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#EquipmentModule">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Equipment Module</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Technische Einrichtung</skos:prefLabel>
+	<skos:definition xml:lang="en">An Equipment Module is a functional group of equipment that can carry out a finite number of specific minor processing activities</skos:definition>
+	<skos:definition xml:lang="de">Ein Gerätemodul repräsentiert eine funktionalle Gruppe von Geräten, die eine bestimmte Anzahl an spezifischen Fertigungsaktivitäten auiecühren können.</skos:definition>
+	<rdfs:isDefinedBy>ISA Draft 88.00.05</rdfs:isDefinedBy>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#ControlModule">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Control Module</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Steuereinrichtung</skos:prefLabel>
+	<skos:definition xml:lang="en">A Control Module comprises a collection of sensors, actuators, other control modules, and associated process equipment that, from the point of view of control, is operated as a single entity</skos:definition>
+	<skos:definition xml:lang="de">Eine Steuereinrichtung umfasst eine Sammlung von Sensoren, Antrieben, anderen Steuereinrichtungen und zugehörigem Prozessequipment, das  aus der Sicht der Steuerung als eine Einheit betrieben wird. </skos:definition>
+	<rdfs:isDefinedBy>S88 Standard</rdfs:isDefinedBy>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#ProductionLineStatus">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Production Line Status</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Status Produktionslinie</skos:prefLabel>
+	<skos:definition xml:lang="en">The different Status of the production Line (i.e. investment planning, planned, construction, commissioning/test, operational, maintenance, terminated).</skos:definition>
+	<skos:definition xml:lang="de">Verschiedene Stati einer Produktionslinie (i.e. Investitionsplanung, Konstruktion, Inbetriebnahme, Instandhaltung, Auflösung</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx6">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#InvestmentPlanning"/>
+	<rdf:rest rdf:nodeID="node1amb1nbbcx7"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx7">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#Planned"/>
+	<rdf:rest rdf:nodeID="node1amb1nbbcx8"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx8">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#Construction"/>
+	<rdf:rest rdf:nodeID="node1amb1nbbcx9"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx9">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#Commissioning"/>
+	<rdf:rest rdf:nodeID="node1amb1nbbcx10"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx10">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#Operational"/>
+	<rdf:rest rdf:nodeID="node1amb1nbbcx11"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx11">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#Maintenance"/>
+	<rdf:rest rdf:nodeID="node1amb1nbbcx12"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1amb1nbbcx12">
+	<rdf:first rdf:resource="https://w3id.org/eis/vocabs/iec62264#Terminated"/>
+	<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#ProductionLineStatus">
+	<owl:oneOf rdf:nodeID="node1amb1nbbcx6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#ManufacturingCapability">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Manufacturing Capability</skos:prefLabel>
+	<skos:definition xml:lang="en">Manufacturing capability refers to the technical and physical limitations of a manufacturing component. It comprises the technological processing capability, the physical size and weight of the object, and the production capacity</skos:definition>
+	<dc:source xml:lang="en">This definition comprises material from Fundamentals of modern manufacturing Groover, M. P. (2007). John Wiley &amp; Sons.</dc:source>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#ProcessingCapability">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Processing Capability</skos:prefLabel>
+	<skos:definition xml:lang="en">Technological processing capability is closely related to material type and a set of functions/processes that the component can perform. Certain manufacturing processes are suited to certain materials, whereas other processes are suited to other materials.</skos:definition>
+	<dc:source xml:lang="en">This definition comprises material from Fundamentals of modern manufacturing Groover, M. P. (2007). John Wiley &amp; Sons.</dc:source>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#Material">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Material</skos:prefLabel>
+	<skos:prefLabel xml:lang="de">Material</skos:prefLabel>
+	<skos:definition xml:lang="en">Material which is used in a machine to make a Product specified by a work order</skos:definition>
+	<skos:definition xml:lang="de">Material, welches für die Herstellung eines Produktes in einer Maschine genutzt wird und einem spezifischen Fertigungsauftrag zugeordnet ist.</skos:definition>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#MaintenanceHistory">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<skos:prefLabel xml:lang="en">Maintenance History</skos:prefLabel>
+	<skos:definition xml:lang="en">Maintains a history of past events or problems to aid in diagnosing problems, such as equipment performances, maintenance personnel performances, or instrumentation reliabilities.</skos:definition>
+	<rdfs:isDefinedBy>5.2.4.12</rdfs:isDefinedBy>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#materialId">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">Has Material</skos:prefLabel>
+	<skos:definition xml:lang="en">Unique identification of the Material according to the Schaeffler identification nomenclature.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Material"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasMaterialNumber">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<skos:prefLabel xml:lang="en">has Material number</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to a number of certain Material.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Material"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasMaterialDescription">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<skos:prefLabel xml:lang="en">has Material Description</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to a Material description text.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Material"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasSite">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Has Site</skos:prefLabel>
+	<skos:definition xml:lang="en">The Enterprise may contain Plants (Sites).</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Enterprise"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#Site"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasArea">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Has Area</skos:prefLabel>
+	<skos:definition xml:lang="en">The Site(s) in Enterprises may contain Areas.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Site"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#Area"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasWorkCenter">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Has Work Center</skos:prefLabel>
+	<skos:definition xml:lang="en">The Sites in Enterprises may contain Work Centers.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Area"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkCenter"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasEnterpriseName">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">has Enterprise Name</skos:prefLabel>
+	<skos:definition xml:lang="en">Given name for the Enterprise (Company).</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Enterprise"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#storageZoneId">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<skos:prefLabel xml:lang="en">storage Zone Id</skos:prefLabel>
+	<skos:definition xml:lang="en">Storage Zone Identification according to Schaeffler nomenclature</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageZone"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#storageZoneName">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<skos:prefLabel xml:lang="en">storage Zone Name</skos:prefLabel>
+	<skos:definition xml:lang="en">Name of the Storage Zone</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageZone"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#storageZoneUnit">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">storage Zone Unit</skos:prefLabel>
+	<skos:definition xml:lang="en">A Storage Zone contains Storage Units. This property connects equipment used for storage or movement.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageZone"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageUnit"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#storageZoneStatus">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">storage Zone Status</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to the Status of a given Storage Zone related with a given Material.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageZoneMaterial"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageZoneStatus"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#storageZoneMaterial">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">storage Zone Material</skos:prefLabel>
+	<skos:definition xml:lang="en">Relates the Storage Zone with the Storage Zone Material.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageZoneMaterial"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageZone"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#processCellUnit">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">process Cell Unit</skos:prefLabel>
+	<skos:definition xml:lang="en">A Process Cell contains Unit. This property connects the equipment used in batch production.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProcessCell"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#Unit"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasEquipmentModule">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">has Equipment Module</skos:prefLabel>
+	<skos:definition xml:lang="en">The Unit, which is contained by the Process Cell, may Equipment Modules.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProcessCell"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#EquipmentModule"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#processCellCapability">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Process Cell Capability</skos:prefLabel>
+	<skos:definition xml:lang="en">Process Cell has specific Manufacturing Capabilities. </skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProcessCell"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ManufacturingCapability"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#containsUnit">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">contains Unit</skos:prefLabel>
+	<skos:definition xml:lang="en">A Production Unit contains Unit. This property connects equipment used in continuous production.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionUnit"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#Unit"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#productionUnitCapabilities">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Production Unit Capabilities</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to the Processing Capabilities for a given Production Unit.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionUnit"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProcessingCapability"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#unitCapabilities">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Unit Capabilities</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to the Processing Capabilities for a given Unit.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Unit"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProcessingCapability"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#workCellCapability">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Work Cell Capability</skos:prefLabel>
+	<skos:definition xml:lang="en">Work Cell has specific Manufacturing Capabilities. </skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkCell"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ManufacturingCapability"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasControlModule">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">has Control Module</skos:prefLabel>
+	<skos:definition xml:lang="en">The Equipment Module, which is contained by the Unit, may contain Control Modules.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#EquipmentModule"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ControlModule"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#partOfEquipmentModule">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdf:type rdf:resource="https://w3id.org/eis/vocabs/iec62264#TransitiveProperty"/>
+	<skos:prefLabel xml:lang="en">part Of Equipment Module</skos:prefLabel>
+	<skos:definition xml:lang="en">The Equipment Module may contain other Equipment Modules as part of it.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#EquipmentModule"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#EquipmentModule"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#partOfControlModule">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdf:type rdf:resource="https://w3id.org/eis/vocabs/iec62264#TransitiveProperty"/>
+	<skos:prefLabel xml:lang="en">part Of Control Module</skos:prefLabel>
+	<skos:definition xml:lang="en">The Control Module may contain other Control Modules as part of it.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ControlModule"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ControlModule"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#locatedInArea">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">Located In Area</skos:prefLabel>
+	<skos:definition xml:lang="en">A pointer to the ProductionArea in which the ProductionLine is located.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#Area"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasManager">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">has Manager</skos:prefLabel>
+	<skos:definition xml:lang="en">A pointer to the Manager responsible for the ProductionLine.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="http://xmlns.com/foaf/spec/Person"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#equivalentLine">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Equivalent Line</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to other, equivalent Production Lines.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#similarLine">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Similar Line</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to similar but different Production Lines.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#upStreamLine">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Upstream Line</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to ProductionLines, which typically process the output of this ProductionLine.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#downStreamLine">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Downstream Line</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to ProductionLines, which typically output Products for this ProductionLine.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#productionLineId">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">has Storage Zone</skos:prefLabel>
+	<skos:definition xml:lang="en">Unique identification of the production line according to the Schaeffler identification nomenclature.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasStorageZone">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">has Storage Zone</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to StorageZones, which are adjacent to the ProductionLine.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageZone"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#installationDate">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">Installation Date</skos:prefLabel>
+	<skos:definition xml:lang="en">Date when the ProductionLine installation was completed.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#maintenanceScheduledDate">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">Scheduled date of maintenance</skos:prefLabel>
+	<skos:definition xml:lang="en">Date when the ProductionLine is supposed to take maintenance.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasProductionLineStatus">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">Production Line Status</skos:prefLabel>
+	<skos:definition xml:lang="en">Indicates the status of the ProductionLine.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLineStatus"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#productionLineCell">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">production Line Cell</skos:prefLabel>
+	<skos:definition xml:lang="en">A Production Line contains Work Cell. This property connects equipment used in in repetitive or discrete production.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkCell"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#productionLineCapability">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">production Line Capability</skos:prefLabel>
+	<skos:definition xml:lang="en">A Production Line has certain Manufacturing Capabilities. </skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLine"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ManufacturingCapability"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasProcessingCapability">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">has Processing Capability</skos:prefLabel>
+	<skos:definition>Points to the Processing Capability of the component.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ManufacturingCapability"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProcessingCapability"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasSizeLimitation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">has Size Limitation</skos:prefLabel>
+	<skos:definition>The maximun size that the object can have in order to be processed by the component.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ManufacturingCapability"/>
+	<rdfs:range rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasWeigthLimitation">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">has Size Limitation</skos:prefLabel>
+	<skos:definition>The maximun Weigth that the object can have in order to be processed by the component.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ManufacturingCapability"/>
+	<rdfs:range rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/Unit_of_measure"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasProductionCapability">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">has Production Capability</skos:prefLabel>
+	<skos:definition xml:lang="en">The production quantity that can be produced in a given time period (e.g.,month or year).</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ManufacturingCapability"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionCapability"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasProcessCell">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">has Process Cell</skos:prefLabel>
+	<skos:definition xml:lang="en">The Area, which is contained by the Site, may contain Process Cells.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Area"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProcessCell"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasUnit">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">has Unit</skos:prefLabel>
+	<skos:definition xml:lang="en">The Process Cell, which is contained by the Area, must contain Units.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Area"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProcessCell"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasAreaName">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">has Area Name</skos:prefLabel>
+	<skos:definition xml:lang="en">Name of the Area.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Area"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasAreaId">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">has Area Id</skos:prefLabel>
+	<skos:definition xml:lang="en">Unique Identification of the Area according to Schaeffler nomenclature.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Area"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#similarArea">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">Similar Area</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to a similar Area where the manufacturing process is related.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#Area"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#Area"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#storageUnitCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<skos:prefLabel xml:lang="en">has Length</skos:prefLabel>
+	<skos:definition xml:lang="en">The Capacity of the Storage Unit in terms of Objects.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageUnit"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasLength">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:label xml:lang="en">has Length</rdfs:label>
+	<rdfs:comment xml:lang="en">The Length of the Storage Unit</rdfs:comment>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageUnit"/>
+	<rdfs:range rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/metre"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasHeight">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:label xml:lang="en">has Height</rdfs:label>
+	<rdfs:comment xml:lang="en">The Height of the Storage Unit</rdfs:comment>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageUnit"/>
+	<rdfs:range rdf:resource="http://www.wurvoc.org/vocabularies/om-1.8/metre"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#storageUnitCapacity">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:label xml:lang="en">has Length</rdfs:label>
+	<rdfs:comment xml:lang="en">The Capacity of the Storage Unit in terms of Objects.</rdfs:comment>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageUnit"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#productionCapabilityAmount">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">production Capability Name</skos:prefLabel>
+	<skos:definition xml:lang="en">Amount of the Production Capability for a given Component. It can be a Plant, a Production Line, a Work Cell or a Process Cell</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionCapability"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#productionCapabilityStart">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">production Capability Start</skos:prefLabel>
+	<skos:definition xml:lang="en">Start period of time for a given Production Capability</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionCapability"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#productionCapabilityEnd">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">production Capability Ends</skos:prefLabel>
+	<skos:definition xml:lang="en">End period of time for a given Production Capability</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionCapability"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#performProcess">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<skos:prefLabel xml:lang="en">Perform Process</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to the Process that the component can Perform.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProcessingCapability"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasAllowedMaterial">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">has Allowed Material</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to the permitted material that the component can process.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProcessingCapability"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#Material"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#workCenterId">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">Work Center Id</skos:prefLabel>
+	<skos:definition xml:lang="en">Unique identification of the Work Center according to the Schaeffler identification nomenclature.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkCenter"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#workCenterName">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">Work Center Name</skos:prefLabel>
+	<skos:definition xml:lang="en">Name of the Work Center according to the Schaeffler nomenclature.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkCenter"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#storageZoneStatusStart">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">Work Center Name</skos:prefLabel>
+	<skos:definition xml:lang="en">Starts Date when the a given Storage Zone is occupied with a given Material and the Status is changed (e.g. Receipt, Storage, etc).</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageZoneStatus"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#storageZoneStatusEnds">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">Work Center Name</skos:prefLabel>
+	<skos:definition xml:lang="en">End Date when the a given Storage Zone is occupied with a given Material and the current Status finish (e.g. Receipt, Storage, etc).</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#StorageZoneStatus"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#lastProblemDescription">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<skos:prefLabel xml:lang="en">Problem Description</skos:prefLabel>
+	<skos:definition xml:lang="en">Description of the last problem for the component</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#MaintenanceHistory"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#lastProblemDate">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<skos:prefLabel xml:lang="en">Last Problem Date</skos:prefLabel>
+	<skos:definition xml:lang="en">Date of the last problem for the component</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#MaintenanceHistory"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#hasMaintenaceHistory">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">has Maintenace History</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to maintenance history describing a history of past events or problems to aid in diagnosing problems, such as equipment performances in the Production Line.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkCenter"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#MaintenanceHistory"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#productionLineStatusStart">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">Production Line Status Start</skos:prefLabel>
+	<skos:definition xml:lang="en">Starts Date when the a given Production Line Status is changed (e.g. InvestmentPlanning, Planned, Construction, etc).</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLineStatus"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#productionLineStatusEnds">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<skos:prefLabel xml:lang="en">Production Line Status Ends</skos:prefLabel>
+	<skos:definition xml:lang="en">Date when the a given Production Line Status is finished (e.g. InvestmentPlanning, Planned, Construction, etc).</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#ProductionLineStatus"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="https://w3id.org/eis/vocabs/iec62264#workUnitMaintenanceHistory">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<skos:prefLabel xml:lang="en">work Unit Maintenance History</skos:prefLabel>
+	<skos:definition xml:lang="en">Points to maintenance history describing a history of past events or problems to aid in diagnosing problems.</skos:definition>
+	<rdfs:domain rdf:resource="https://w3id.org/eis/vocabs/iec62264#WorkUnit"/>
+	<rdfs:range rdf:resource="https://w3id.org/eis/vocabs/iec62264#MaintenanceHistory"/>
+</rdf:Description>
+
+</rdf:RDF>
