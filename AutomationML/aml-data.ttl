@@ -8,112 +8,88 @@
 @prefix xml:     <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-aml:Attribute_1
-      rdf:type aml:Attribute ;
-      rdfs:label "Attribute 1"@en ;
-      schema:name "New Attribute"@en .
-	  
-aml:ExternalInterface1
-      rdf:type aml:ExternalInterface ;
-      rdfs:label "ExternalInterface1"@en ;
-      dc:identifier "{5f535d4c-dd46-4c1c-898c-4e58419048b6}" ;
-      schema:name "EnergySupply"@en ;
-      aml:refBaseClassPath
-              "MyInterfaces/Energy"@en .
+# Data of a minimal example
 
-aml:ExternalInterface2
-      rdf:type aml:ExternalInterface ;
-      rdfs:label "ExternalInterface1"@en ;
-      dc:identifier "{dd0e0dfe-10f8-4068-845b-9c29699ac79b}" ;
-      schema:name "EnergySupply"@en ;
-      aml:refBaseClassPath
-              "MyInterfaces/Energy"@en .
-
-aml:ExternalInterface3
-      rdf:type aml:ExternalInterface ;
-      rdfs:label "ExternalInterface3"@en .
-
-aml:InterfaceClassLib_1
-      rdf:type aml:InterfaceClassLib ;
-      rdfs:label "InterfaceClassLib 1"@en ;
-      schema:name "MyInterfaces"@en ;
-      aml:hasInterfaceClass
-              aml:InterfaceClass_1 .
-
-aml:InterfaceClass_1
-      rdf:type aml:InterfaceClass ;
-      rdfs:label "Energy"@en ;
-      aml:refBaseClassPath
-              "BaseInterfaceClassLib@AutomationMLInterfaceClassLib/AutomationMLBaseInterface" .
-
-aml:InternalElement_1
-      rdf:type aml:InternalElement ;
-      rdfs:label "firstScrewdriver"@en ;
-      dc:identifier "{788eb291-f103-4fdc-aba0-4893b599f556}" ;
-      schema:name "firstScrewdriver"@en ;
-      aml:RefBaseSystemUnitPath
-              "LibOfCommonTools/ElectricScrewdriver"@en ;
-      aml:hasAttribute aml:Attribute_1 ;
-      aml:hasExternalInterface
-              aml:ExternalInterface1 ;
-      aml:hasRoleRequeriment
-              aml:RoleRequirements_1 ;
-      aml:supportedRoleClass
-              aml:SupportedRoleClass1 .
-
-aml:InternalElement_2
-      rdf:type aml:InternalElement ;
-      rdfs:label "secondScrewdriver"@en ;
-      dc:identifier "{19dcf818-4716-4fc1-a85f-28e1938c4c3a}" ;
-      schema:name "secondScrewdriver"@en ;
-      aml:RefBaseSystemUnitPath
-              "LibOfCommonTools/ElectricScrewdriver"@en ;
-      aml:hasExternalInterface
-              aml:ExternalInterface1 ;
-      aml:hasRoleRequeriment
-              aml:RoleRequirements_1 ;
-      aml:supportedRoleClass
-              aml:SupportedRoleClass1 .
-
+aml:CAEXFile_1
+      rdf:type aml:CAEXFile ;
+      rdfs:label "CAEX File 1"@en ;
+      rdfs:comment "CAEX File 1 with a Role Class Library"@en ;
+	  aml:hasRoleClassLib aml:RoleClassLib_1;
+	.  
+	
+aml:CAEXFile_2
+      rdf:type aml:CAEXFile ;
+      rdfs:label "CAEX File 2"@en ;
+      rdfs:comment "CAEX File 2 with a Role Class Library"@en ;
+	  aml:hasRoleClassLib aml:RoleClassLib_2;
+	.  
+	
 aml:RoleClassLib_1
       rdf:type aml:RoleClassLib ;
-      rdfs:label "Role Class Lib 1"@en ;
-      schema:name "ManufacturingRoleClasses"@en ;
-      schema:version "1.0" .
-
+      rdfs:label "RoleClassLib 1"@en ;
+      rdfs:comment "RoleClassLib 1 with a Role Class with 1 attribute"@en ;
+	  aml:hasRoleClass aml:RoleClass_1;
+	.  	
+	
+aml:RoleClassLib_2
+      rdf:type aml:RoleClassLib ;
+      rdfs:label "RoleClassLib 2"@en ;
+      rdfs:comment "RoleClassLib 2 with a Role Class with 2 attribute"@en ;
+	  aml:hasRoleClass aml:RoleClass_2;
+	.  	
+	
 aml:RoleClass_1
       rdf:type aml:RoleClass ;
       rdfs:label "RoleClass 1"@en ;
-      schema:name "Tool"@en ;
-      aml:refBaseClassPath
-              "BaseRoleClassLib@AutomationMLBaseRoleClassLib/AutomationMLBaseRole" .
+      rdfs:comment "RoleClass 1 with a 1 attribute"@en ;
+	  aml:roleClassRefSem aml:eClassSpecification_1; 
+	  aml:hasAttribute aml:Attribute_1;
+	.  	
 
-aml:RoleRequirements_1
-      rdf:type aml:RoleRequirements ;
-      rdfs:label "RoleRequirements_1"@en ;
-      aml:refBaseRoleClassPath
-              "ManufacturingRoleClasses/Tool"@en .
-			  
-aml:SupportedRoleClass1
-      rdf:type aml:SupportedRoleClass ;
-      rdfs:label "SupportedRoleClass1"@en ;
-      aml:refRoleClassPath
-              "ManufacturingRoleClasses/Tool"@en .
-
-aml:SystemUnitClassLib_1
-      rdf:type aml:SystemUnitClassLib ;
-      rdfs:label "SystemUnitClassLib 1"@en ;
-      schema:name "LibOfCommonTools" ;
-      schema:version "1.0" ;
-      aml:hasSystemUnitClass
-              aml:SystemUnitClass_1 .
-
-aml:SystemUnitClass_1
-      rdf:type aml:SystemUnitClass ;
-      rdfs:label "SystemUnitClass 1"@en ;
-      schema:name "ElectricScrewdriver" ;
-      aml:hasExternalInterface
-              aml:ExternalInterface2 ;
-      aml:supportedRoleClass
-              aml:SupportedRoleClass1 .			  
-			  
+aml:RoleClass_2
+      rdf:type aml:RoleClass ;
+      rdfs:label "RoleClass 2"@en ;
+      rdfs:comment "RoleClass 2 with a 2 attribute"@en ;
+	  aml:roleClassRefSem aml:eClassSpecification_2; 
+	  aml:hasAttribute aml:Attribute_2;
+	  aml:hasAttribute aml:Attribute_3;
+	.  		
+	
+aml:eClassSpecification_1
+      rdf:type aml:eClassSpecification ;
+      rdfs:label "eClassSpecification 1"@en ;
+      rdfs:comment "eClassSpecification 1"@en ;
+	  aml:eClassIRDI "0173-1#BASIC_1_1#01-ABW077#009" ;
+      aml:eClassVersion "9.0" ;
+      aml:classificationClass "27022501" ;
+	.  		
+	
+aml:eClassSpecification_2
+      rdf:type aml:eClassSpecification ;
+      rdfs:label "eClassSpecification 2"@en ;
+      rdfs:comment "eClassSpecification 2"@en ;
+	  aml:eClassIRDI "0173-1#BASIC_1_1#01-ABW077#009" ;
+      aml:eClassVersion "9.0" ;
+      aml:classificationClass "27022501" ;
+	.  		
+	
+aml:Attribute_1
+      rdf:type aml:Attribute ;
+      rdfs:label "Attribute 1"@en ;
+      schema:name "Construction form of DC motor"@en ;
+	  aml:refSemantic "0173-1#02-BAE069#007";
+	.  
+	  
+aml:Attribute_2
+      rdf:type aml:Attribute ;
+      rdfs:label "Attribute 2"@en ;
+      schema:name "Cooling type"@en ;
+	  aml:refSemantic "0173-1#02-BAE122#006";
+	.
+	
+aml:Attribute_3
+      rdf:type aml:Attribute ;
+      rdfs:label "Attribute 3"@en ;
+      schema:name "Construction form of DC motor"@en ;
+	  aml:refSemantic "0173-1#02-BAE069#007";
+	.
