@@ -295,7 +295,6 @@ aml:refSemantic
 	  rdfs:range xsd:string ;
     .  
       
-
 aml:hasAutomationMLVersion
       a owl:DatatypeProperty ;
       rdfs:domain aml:AdditionalInformation ;
@@ -313,7 +312,16 @@ aml:hasDataType
       a owl:DatatypeProperty ;
       rdfs:domain aml:Attribute ;
       rdfs:label "hasDataType"@en ;
-      rdfs:range xsd:anyURI .
+      rdfs:range xsd:string ;
+	.
+	
+aml:hasDescription
+      a owl:DatatypeProperty ;
+      rdfs:domain aml:Attribute ;
+      rdfs:label "hasDescription"@en ;
+	  skos:definition "Points to an optional description of the Attribute"@en ;
+      rdfs:range xsd:string ;
+	.
 
 aml:hasExternalInterface
       a owl:ObjectProperty ;
@@ -429,13 +437,6 @@ aml:hasSystemUnitClassLib
       rdfs:domain aml:CAEXFile ;
       rdfs:label "hasSystemUnitClassLib"@en ;
       rdfs:range aml:SystemUnitClassLib .
-
-aml:hasUnit
-      a owl:ObjectProperty ;
-      rdfs:comment "An Attribute has an specific Unit of Measure (e.g. kg, m/s, etc)"@en ;
-      rdfs:domain aml:Attribute ;
-      rdfs:label "Unit"@en ;
-      rdfs:range om:Unit_of_measure .
 
 aml:hasValue
       a owl:DatatypeProperty ;
