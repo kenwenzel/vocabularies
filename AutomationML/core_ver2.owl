@@ -110,6 +110,33 @@
     
 
 
+    <!-- http://www.owl-ontologies.com/Ontology1422966685.owl#hasInternalLink -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1422966685.owl#hasInternalLink">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1422966685.owl#InternalElement"/>
+        <rdfs:range rdf:resource="http://www.owl-ontologies.com/Ontology1422966685.owl#InternalLink"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1422966685.owl#hasRefPartnerSideA -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1422966685.owl#hasRefPartnerSideA">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1422966685.owl#InternalLink"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.owl-ontologies.com/Ontology1422966685.owl#hasRefPartnerSideB -->
+
+    <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1422966685.owl#hasRefPartnerSideB">
+        <rdfs:domain rdf:resource="http://www.owl-ontologies.com/Ontology1422966685.owl#InternalLink"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.owl-ontologies.com/Ontology1422966685.owl#hasRoleClass -->
 
     <owl:ObjectProperty rdf:about="http://www.owl-ontologies.com/Ontology1422966685.owl#hasRoleClass">
@@ -253,6 +280,7 @@
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1422966685.owl#InstanceHierarchy"/>
+                    <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1422966685.owl#InternalLink"/>
                     <rdf:Description rdf:about="http://www.owl-ontologies.com/Ontology1422966685.owl#RoleClass"/>
                 </owl:unionOf>
             </owl:Class>
@@ -488,6 +516,12 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1422966685.owl#hasInternalLink"/>
+                <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1422966685.owl#InternalLink"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1422966685.owl#hasRoleRequirements"/>
                 <owl:someValuesFrom rdf:resource="http://www.owl-ontologies.com/Ontology1422966685.owl#RoleClass"/>
             </owl:Restriction>
@@ -525,7 +559,27 @@
 
     <!-- http://www.owl-ontologies.com/Ontology1422966685.owl#InternalLink -->
 
-    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1422966685.owl#InternalLink"/>
+    <owl:Class rdf:about="http://www.owl-ontologies.com/Ontology1422966685.owl#InternalLink">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1422966685.owl#hasRefPartnerSideA"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1422966685.owl#hasRefPartnerSideB"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.owl-ontologies.com/Ontology1422966685.owl#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
