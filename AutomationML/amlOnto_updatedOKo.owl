@@ -1,0 +1,1179 @@
+Prefix: : <http://www.semanticweb.org/owl/owlapi/turtle#>
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: om: <http://www.wurvoc.org/vocabularies/om-1.8/>
+Prefix: aml: <https://w3id.org/i40/aml#>
+Prefix: dct: <http://purl.org/dc/terms/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: foaf: <http://xmlns.com/foaf/spec/>
+Prefix: prov: <http://www.w3.org/ns/prov#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: skos: <http://www.w3.org/2004/02/skos/core#>
+Prefix: vann: <http://purl.org/vocab/vann/>
+Prefix: void: <http://rdfs.org/ns/void#>
+Prefix: terms: <http://purl.org/dc/terms/>
+Prefix: schema: <http://schema.org/>
+
+
+
+Ontology: <https://w3id.org/i40/aml#>
+
+
+Annotations: 
+    skos:prefLabel "aml"@en,
+    void:vocabulary <http://www.w3.org/2004/02/skos/core#>,
+    terms:created "2016-03-23"^^xsd:date,
+    void:vocabulary <http://www.w3.org/2001/XMLSchema#>,
+    void:vocabulary <http://purl.org/dc/terms/>,
+    terms:creator "Irlan Grangel",
+    void:vocabulary <http://www.w3.org/XML/1998/namespace>,
+    owl:versionInfo "0.1",
+    terms:creator "Olga Kovalenko",
+    void:vocabulary <https://w3id.org/i40/aml#>,
+    rdfs:isDefinedBy <https://w3id.org/i40/aml#>,
+    vann:preferredNamespaceUri "https://w3id.org/eis/vocabs/aml#",
+    void:vocabulary <http://xmlns.com/foaf/spec/>,
+    skos:definition "A vocabulary which represents the AutomationML Standard - IEC 62714."@en,
+    void:vocabulary <http://www.w3.org/1999/02/22-rdf-syntax-ns#>,
+    vann:preferredNamespacePrefix "aml",
+    void:vocabulary <http://www.w3.org/2000/01/rdf-schema#>,
+    void:vocabulary <http://purl.org/dc/elements/1.1/>,
+    terms:license <http://creativecommons.org/licenses/by-nc-sa/2.0/>
+
+AnnotationProperty: vann:preferredNamespacePrefix
+
+    
+AnnotationProperty: skos:definition
+
+    
+AnnotationProperty: rdfs:isDefinedBy
+
+    
+AnnotationProperty: skos:prefLabel
+
+    
+AnnotationProperty: terms:creator
+
+    
+AnnotationProperty: vann:preferredNamespaceUri
+
+    
+AnnotationProperty: void:vocabulary
+
+    
+AnnotationProperty: owl:versionInfo
+
+    
+AnnotationProperty: terms:created
+
+    
+AnnotationProperty: terms:license
+
+    
+Datatype: xsd:string
+
+    
+Datatype: xsd:dateTime
+
+    
+Datatype: rdf:PlainLiteral
+
+    
+ObjectProperty: aml:iePartOf
+
+    Annotations: 
+        skos:prefLabel "InternalElementPartOf"@en,
+        skos:definition "Connects the Internal Element with other Internal Elements that are part of the given Internal Element"@en
+    
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        aml:InternalElement
+    
+    Characteristics: 
+        Transitive
+    
+    
+ObjectProperty: aml:refBaseRoleClassPath
+
+    Annotations: 
+        skos:definition "RoleRequirements has Ref Base Role Class Path"@en,
+        skos:prefLabel "RefBaseRoleClassPath"@en
+    
+    Domain: 
+        aml:RoleRequirements
+    
+    
+ObjectProperty: hasAttribute
+
+    Annotations: 
+        skos:prefLabel "@TODO, rethink the domain of this property"@en
+    
+    Domain: 
+        aml:InterfaceClass or aml:InternalElement or aml:RoleClass or aml:SystemUnitClass
+    
+    Range: 
+        aml:Attribute
+    
+    
+ObjectProperty: aml:hasInterfaceClassLib
+
+    Annotations: 
+        skos:definition "Model the relation between CAEX File and Interface Class Lib"@en,
+        skos:prefLabel "has Interface Class Lib"@en
+    
+    Domain: 
+        aml:CAEXFile
+    
+    Range: 
+        aml:InterfaceClassLib
+    
+    
+ObjectProperty: aml:hasExternalInterface
+
+    Annotations: 
+        skos:definition "Connects an internal Element with an External Interface"@en,
+        skos:prefLabel "has External Interface"@en
+    
+    Domain: 
+        aml:InternalElement or aml:RoleClass or aml:SystemUnitClass
+    
+    Range: 
+        aml:ExternalInterface
+    
+    
+ObjectProperty: hasInterface
+
+    Annotations: 
+        skos:prefLabel "@TODO, OlGA, I had this with a different Range, check"@en
+    
+    Domain: 
+        aml:InternalElement or aml:RoleClass or aml:SystemUnitClass
+    
+    Range: 
+        aml:SystemUnitClass
+    
+    
+ObjectProperty: hasBaseSystemUnitClass
+
+    Annotations: 
+        skos:prefLabel "@TODO, OlGA"@en
+    
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        aml:SystemUnitClass
+    
+    
+ObjectProperty: aml:unitExternalInterface
+
+    Annotations: 
+        skos:prefLabel "unit External Interface"@en,
+        skos:definition "Connects a System Unit Class with an External Interface"@en
+    
+    Domain: 
+        aml:SystemUnitClass
+    
+    Range: 
+        aml:ExternalInterface
+    
+    
+ObjectProperty: aml:hasProject
+
+    Annotations: 
+        skos:prefLabel "hasProject"@en,
+        skos:definition "Related Project for the CAEX File"@en
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        aml:Project
+    
+    
+ObjectProperty: aml:hasInstanceHierarchy
+
+    Annotations: 
+        skos:prefLabel "has Instance Hierarchy"@en
+    
+    Domain: 
+        aml:CAEXFile
+    
+    Range: 
+        aml:InstanceHierarchy
+    
+    
+ObjectProperty: aml:roleClassRefSem
+
+    Annotations: 
+        skos:definition "A Role Class points to its ID according to eClass"@en,
+        skos:prefLabel "Role Class eClass Reference"@en
+    
+    Domain: 
+        aml:RoleClass
+    
+    Range: 
+        aml:eClassSpecification
+    
+    
+ObjectProperty: hasRoleRequirement
+
+    Annotations: 
+        skos:prefLabel "@TODO,OlGA"@en
+    
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        aml:RoleClass
+    
+    
+ObjectProperty: aml:hasExternalReference
+
+    Annotations: 
+        skos:prefLabel "has External Reference"@en,
+        skos:definition "A CAEX File contains external references"
+    
+    Domain: 
+        aml:CAEXFile
+    
+    Range: 
+        aml:ExternalReference
+    
+    
+ObjectProperty: aml:hasAdditionalInformation
+
+    Annotations: 
+        skos:prefLabel "has Additional Information"
+    
+    Domain: 
+        aml:CAEXFile
+    
+    Range: 
+        aml:AdditionalInformation
+    
+    
+ObjectProperty: aml:interfaceClassIsPartOf
+
+    Annotations: 
+        skos:definition "An Interface Class is Part of of other Interface Class"@en,
+        skos:prefLabel "interfaceClassIsPartOf"@en
+    
+    Domain: 
+        aml:InterfaceClass
+    
+    Range: 
+        aml:InterfaceClass
+    
+    
+ObjectProperty: hasRefPartnerSideB
+
+    Annotations: 
+        skos:prefLabel "hasRefPartnerSideB"@en,
+        skos:definition "OLGA @TODO"@en
+    
+    Domain: 
+        aml:InternalLink
+    
+    
+ObjectProperty: aml:supportedRoleClass
+
+    Annotations: 
+        skos:definition "Internal elements has Supported Role Class"@en,
+        skos:prefLabel "Supported Role Class"@en
+    
+    Domain: 
+        aml:InternalElement,
+        aml:SystemUnitClass
+    
+    Range: 
+        aml:SupportedRoleClass
+    
+    
+ObjectProperty: contains
+
+    Annotations: 
+        skos:prefLabel "@TODO, rethink this property, maybe creating subproperties"@en
+    
+    Domain: 
+        owl:Thing
+    
+    Range: 
+        owl:Thing
+    
+    
+ObjectProperty: hasRefPartnerSideA
+
+    Annotations: 
+        skos:prefLabel "hasRefPartnerSideB"@en,
+        skos:definition "OLGA @TODO"@en
+    
+    Domain: 
+        aml:InternalLink
+    
+    
+ObjectProperty: aml:interfaceClassAttribute
+
+    Annotations: 
+        skos:definition "Points to an Attribute for the Interface Class"@en,
+        skos:prefLabel "InterfaceClassAttribute"@en
+    
+    Domain: 
+        aml:InterfaceClass
+    
+    Range: 
+        aml:Attribute
+    
+    
+ObjectProperty: aml:hasRoleRequeriment
+
+    Annotations: 
+        skos:prefLabel "has Role Requeriment"@en
+    
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        aml:RoleRequirements
+    
+    
+ObjectProperty: hasInternalLink
+
+    Annotations: 
+        skos:prefLabel "@TODO,OlGA"@en
+    
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        aml:InternalLink
+    
+    
+ObjectProperty: aml:hasRoleClass
+
+    Annotations: 
+        skos:definition "A Role Class lib contains a Role Class"@en,
+        skos:prefLabel "has Role Class"@en
+    
+    Domain: 
+        aml:RoleClassLib
+    
+    Range: 
+        aml:RoleClass
+    
+    
+ObjectProperty: aml:hasInterfaceClass
+
+    Annotations: 
+        skos:definition "Model the relation between Interface Class Lib and Interface Class"@en,
+        skos:prefLabel "has Interface Class"@en
+    
+    Domain: 
+        aml:InterfaceClassLib
+    
+    Range: 
+        aml:InterfaceClass
+    
+    
+ObjectProperty: aml:hasSystemUnitClass
+
+    Annotations: 
+        skos:prefLabel "hasSystemUnitClass @TODO OLGA, why the domain and range of this property?"
+    
+    Domain: 
+        aml:SystemUnitClassLib or aml:SystemUnitFamily
+    
+    Range: 
+        aml:SystemUnitClass or aml:SystemUnitFamily
+    
+    
+ObjectProperty: aml:systemUnitClassPartOf
+
+    Annotations: 
+        skos:definition "Connects the System Unit Class with another System Unit Class Elements"@en,
+        skos:prefLabel "SystemUnitClassName"@en
+    
+    Domain: 
+        aml:SystemUnitClass
+    
+    
+ObjectProperty: aml:hasRoleClassLib
+
+    Annotations: 
+        skos:definition "A CAEX file contains a RoleClassLib"@en,
+        skos:prefLabel "has Role Class Lib"@en
+    
+    Domain: 
+        aml:CAEXFile
+    
+    Range: 
+        aml:RoleClassLib
+    
+    
+ObjectProperty: aml:hasChangeMode
+
+    Annotations: 
+        skos:prefLabel "has Change Mode"@en,
+        skos:definition "Points to the different Elements with the Change Mode Concept"@en
+    
+    Domain: 
+        aml:CAEXBasicObject
+    
+    Range: 
+        aml:ChangeMode
+    
+    
+ObjectProperty: hasSupportedRoleClass
+
+    Annotations: 
+        skos:prefLabel "@TODO,OlGA, why this property does not have domain and range"@en
+    
+    
+ObjectProperty: aml:hasSystemUnitClassLib
+
+    Annotations: 
+        skos:definition "A CAEX File contains a SystemUnitClassLib"@en,
+        skos:prefLabel "hasSystemUnitClassLib"@en
+    
+    Domain: 
+        aml:CAEXFile
+    
+    Range: 
+        aml:SystemUnitClassLib
+    
+    
+ObjectProperty: aml:hasInternalElement
+
+    Annotations: 
+        skos:definition "Hierarchy has many internal elements"@en,
+        skos:prefLabel "has Internal Element"@en
+    
+    Domain: 
+        aml:InstanceHierarchy
+    
+    Range: 
+        aml:InternalElement
+    
+    
+ObjectProperty: aml:eClassIsConnectedTo
+
+    Annotations: 
+        skos:definition "Points to the eCl@ass connection for a given element"@en,
+        skos:prefLabel "eClassIsConnectedTo"@en
+    
+    
+ObjectProperty: aml:hasAttribute
+
+    Annotations: 
+        skos:prefLabel "has Attribute"@en
+    
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        aml:Attribute
+    
+    
+DataProperty: aml:hasWriterVendor
+
+    Annotations: 
+        skos:prefLabel "has Writer Vendor"
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:refBaseClassPath
+
+    Annotations: 
+        skos:prefLabel "refBaseClassPath"@en,
+        skos:definition "Stores the name of the parent class"@en
+    
+    Domain: 
+        aml:RoleClassLib,
+        aml:InterfaceClass,
+        aml:ExternalInterface
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:hasAttributeName
+
+    Annotations: 
+        skos:prefLabel "hasAttributeName"@en
+    
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:hasValue
+
+    Annotations: 
+        skos:prefLabel "has Value"@en
+    
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:interfaceClassIsPartOf
+
+    Annotations: 
+        skos:definition "An Interface Class is Part of of other Interface Class"@en,
+        skos:prefLabel "interfaceClassIsPartOf"@en
+    
+    
+DataProperty: aml:hasDescription
+
+    Annotations: 
+        skos:definition "Points to an optional description of the Attribute"@en,
+        skos:prefLabel "hasDescription"@en
+    
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:hasAutomationMLVersion
+
+    Annotations: 
+        skos:prefLabel "has Automation ML Version"
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:hasProjectTitle
+
+    Annotations: 
+        skos:prefLabel "hasProjectTitle"@en,
+        skos:prefLabel "has Project Release"
+    
+    Domain: 
+        aml:Project
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        dc:title
+    
+    
+DataProperty: aml:refBaseSystemUnitPath
+
+    Annotations: 
+        skos:prefLabel "Ref Base System Unit Path"@en
+    
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:hasSchemaVersion
+
+    Annotations: 
+        skos:prefLabel "has Schema Version"
+    
+    Domain: 
+        aml:CAEXFile
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:refSemantic
+
+    Annotations: 
+        skos:definition "Reference to the eClass IRDI identification"@en,
+        skos:prefLabel "ref Semantic"@en
+    
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        xsd:string
+    
+    Characteristics: 
+        Functional
+    
+    
+DataProperty: aml:systemUnitClassName
+
+    Annotations: 
+        skos:prefLabel "SystemUnitClassName"@en,
+        skos:definition "Given Name of the System Unit Class"@en
+    
+    Domain: 
+        aml:SystemUnitClass
+    
+    Range: 
+        xsd:string
+    
+    Characteristics: 
+        Functional
+    
+    
+DataProperty: aml:hasDataType
+
+    Annotations: 
+        skos:prefLabel "hasDataType"@en
+    
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:interfaceClassName
+
+    Annotations: 
+        skos:prefLabel "InterfaceClassName"@en,
+        skos:definition "Name of the Interface Class"@en
+    
+    Domain: 
+        aml:InterfaceClass
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:refRoleClassPath
+
+    Annotations: 
+        skos:prefLabel "Ref Role Class Path"@en
+    
+    Domain: 
+        aml:SupportedRoleClass
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:externalInterfaceName
+
+    Annotations: 
+        skos:prefLabel "external Interface Name"@en
+    
+    Domain: 
+        aml:ExternalInterface
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:hasVersion
+
+    Annotations: 
+        skos:prefLabel "has Version"@en
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:hasWriterVendorURL
+
+    Annotations: 
+        skos:prefLabel "has Writer Vendor URL"
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:interfaceClassAttribute
+
+    Annotations: 
+        skos:definition "Points to an Attribute for the Interface Class"@en,
+        skos:prefLabel "InterfaceClassAttribute"@en
+    
+    
+DataProperty: schema:name
+
+    Characteristics: 
+        Functional
+    
+    
+DataProperty: aml:hasWriterName
+
+    Annotations: 
+        skos:prefLabel "has Writer Name"
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:roleClassName
+
+    Annotations: 
+        skos:prefLabel "roleClassName"@en,
+        skos:definition "Name for a RoleClass"@en
+    
+    Domain: 
+        aml:RoleClass
+    
+    Range: 
+        xsd:string
+    
+    Characteristics: 
+        Functional
+    
+    
+DataProperty: aml:eClassIRDI
+
+    Annotations: 
+        skos:definition "Points to the eClass unique identification(IRDI) a given Element"@en,
+        skos:prefLabel "eClass IRDI"@en
+    
+    Domain: 
+        aml:eClassSpecification
+    
+    Range: 
+        xsd:string
+    
+    Characteristics: 
+        Functional
+    
+    
+DataProperty: dc:title
+
+    
+DataProperty: aml:hasProjectId
+
+    Annotations: 
+        skos:prefLabel "hasProjectId"@en
+    
+    Domain: 
+        aml:Project
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        dc:title,
+        dc:identifier
+    
+    
+DataProperty: aml:eClassVersion
+
+    Annotations: 
+        skos:prefLabel "eClass Version"@en,
+        skos:definition "Points to the eClass version for a given Element"@en
+    
+    Domain: 
+        aml:eClassSpecification
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:internalElementName
+
+    Annotations: 
+        skos:prefLabel "internal Element Name"@en,
+        skos:definition "Name of an Internal Element"@en
+    
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        xsd:string
+    
+    Characteristics: 
+        Functional
+    
+    
+DataProperty: aml:classificationClass
+
+    Annotations: 
+        skos:prefLabel "eClass classification Class"@en,
+        skos:definition "Points to the eClass classification Class a given Element"@en
+    
+    Domain: 
+        aml:eClassSpecification
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:externalReferencePath
+
+    Annotations: 
+        skos:prefLabel "external Reference Path"@en,
+        skos:definition "A external Reference of a CAEX File contains path to the file"
+    
+    Domain: 
+        aml:ExternalReference
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:hasWriterId
+
+    Annotations: 
+        skos:prefLabel "has Writer Id"
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:string
+    
+    Characteristics: 
+        Functional
+    
+    
+DataProperty: aml:externalReferenceAlias
+
+    Annotations: 
+        skos:prefLabel "external Reference Alias"@en,
+        skos:definition "A external Reference of a CAEX File has Alias"
+    
+    Domain: 
+        aml:ExternalReference
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:hasWriterRelease
+
+    Annotations: 
+        skos:prefLabel "has Writer Release"
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dc:identifier
+
+    
+DataProperty: aml:hasWriterVersion
+
+    Annotations: 
+        skos:prefLabel "has Writer Version"
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:externalInterfaceId
+
+    Annotations: 
+        skos:prefLabel "External Interface Id"@en,
+        skos:definition "Unique Id of an External Interface"@en
+    
+    Domain: 
+        aml:ExternalInterface
+    
+    Range: 
+        xsd:string
+    
+    Characteristics: 
+        Functional
+    
+    
+DataProperty: aml:internalElementId
+
+    Annotations: 
+        skos:prefLabel "internal Element Id"@en,
+        skos:definition "Unique Id of an Internal Element"@en
+    
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        xsd:string
+    
+    Characteristics: 
+        Functional
+    
+    
+DataProperty: aml:hasFileName
+
+    Annotations: 
+        skos:prefLabel "has File Name"
+    
+    Domain: 
+        aml:CAEXFile
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:lastWritingDate
+
+    Annotations: 
+        skos:prefLabel "has Writer Release"
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:dateTime
+    
+    
+DataProperty: aml:direction
+
+    Annotations: 
+        skos:definition "Specifies the Direction of an Order. The permitted values are In, Out."@en,
+        skos:prefLabel "Direction"@en
+    
+    Domain: 
+        aml:Order
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:refBaseRoleClassPath
+
+    Annotations: 
+        skos:definition "RoleRequirements has Ref Base Role Class Path"@en,
+        skos:prefLabel "RefBaseRoleClassPath"@en
+    
+    Range: 
+        xsd:string
+    
+    
+Class: owl:Thing
+
+
+# skos:altLabel
+# skos:prefLabel
+# skos:definition
+# rdfs:isDefinedBy "1417686950-AutomationML Whitepaper Part 1 - AutomationML Architecture v2_April2016, page 12"
+
+# Done    
+Class: aml:InterfaceClassLib
+
+    Annotations: 
+        skos:prefLabel "Interface Class Lib"@en,
+		skos:altLabel "IC Lib"@en,
+		skos:definition "Library containing AML Interface Classes"
+    
+# Done    
+Class: aml:CAEXBasicObject
+
+    Annotations: 
+        skos:prefLabel "CAEX Basic Object"@en,
+        skos:definition "CAEX basis object that comprises a basic set of attributes and header information which exist for all CAEX elements."@en
+		rdfs:isDefinedBy 
+    
+    
+Class: aml:CAEXFile
+
+    Annotations: 
+        skos:definition "Root-element of the CAEX schema"@en,
+        skos:prefLabel "CAEX File"@en
+    
+    
+Class: aml:SystemUnitFamily
+
+    Annotations: 
+        skos:prefLabel "System Unit Family"@en,
+        skos:definition "@TODO Olga"@en
+		    
+    
+Class: aml:InternalLink
+
+    Annotations: 
+        skos:definition "@TODO Olga"@en,
+        skos:prefLabel "InternalLink"@en,
+		skos:altLabel "IL"@en
+    
+    
+Class: aml:Order
+
+    Annotations: 
+        skos:definition "Abstract class that shall be used for the descriptions description of orders, e.g. a successor or a predecessor."@en,
+        skos:prefLabel "Order"@en
+    
+    SubClassOf: 
+        aml:InterfaceClass
+    
+    
+Class: aml:RoleClass
+
+    Annotations: 
+        skos:definition "RoleClasses are vendor independent and generic entities. They are used to assign a generic semantics to an object instance and to describe requirements of this object instance. Also, they can help in mapping data models of different engineering tools."@en,
+        skos:prefLabel "Role Class"@en,
+		skos:altLabel "RC"@en
+    
+    
+Class: aml:BaseInterface
+
+    Annotations: 
+        skos:definition "Basic abstract interface; shall be used as parent for the description of all AML interface classes"@en,
+        skos:prefLabel "BaseInterface"@en
+    
+    SubClassOf: 
+        aml:InterfaceClass
+    
+    
+Class: aml:InterfaceClass
+
+    Annotations: 
+        skos:definition "Defines the relations between AML Objects. Should be identified with its tag name"@en,
+        skos:prefLabel "Interface Class"@en
+		
+Class: aml:InterfaceFamily
+
+    Annotations: 
+        skos:definition "TBD"@en,
+        skos:prefLabel "Interface Family"@en    
+
+# Done		
+Class: aml:Attribute
+
+    Annotations: 
+        skos:prefLabel "Attribute"@en,
+        rdfs:isDefinedBy "1417686950-AutomationML Whitepaper Part 1 - AutomationML Architecture v2_April2016, page 12",
+        skos:definition "Property which belongs to an AML object"@en
+    
+    
+Class: aml:PortConnector
+
+    Annotations: 
+        skos:definition "Provide a high level relation between ports"@en,
+        skos:prefLabel "Order"@en
+    
+    SubClassOf: 
+        aml:InterfaceClass
+    
+    
+Class: aml:InstanceHierarchy
+
+    Annotations: 
+        skos:prefLabel "Instance Hierarchy"@en,
+		skos:altLabel "IH"@en
+    
+#Should be an Object Property   
+#Class: aml:RoleRequirements
+
+    #Annotations: 
+        #skos:prefLabel "Role Requirements"@en
+    
+    
+Class: aml:Project
+
+    Annotations: 
+        skos:definition "A Project related to the header information with the CAEX File"@en,
+        skos:prefLabel "Project"@en
+    
+    
+Class: aml:AdditionalInformation
+
+    Annotations: 
+        skos:definition "Additional Information for CAEX File"@en,
+        skos:prefLabel "Additional Information"@en
+    
+    
+Class: aml:eClassSpecification
+
+    Annotations: 
+        skos:definition "Describe the necessary links to eCl@ass Standard(e.g., version, classification and IRDI)"@en,
+        skos:prefLabel "eClassInterlink"@en
+    
+    
+Class: aml:InternalElement
+
+    Annotations: 
+        skos:definition "Shall be used in order to define nested objects inside of a SystemUnitClass or another InternalElement. Allows description of the internal structure of an CAEX object"@en,
+        skos:prefLabel "Internal Element"@en,
+		skos:altLabel "IE"@en
+    
+    
+Class: aml:PPRConnector
+
+    Annotations: 
+        skos:definition "Provide a high level relation between ports Relates resources, products and processes"@en,
+        skos:prefLabel "PPRConnector"@en
+    
+    SubClassOf: 
+        aml:InterfaceClass
+    
+    
+Class: aml:RoleClassLib
+
+    Annotations: 
+        skos:definition "Definitions of abstract characteristics of CAEX objects and thus serve the automatic semantic interpretation of user-defined AML objects"@en,
+        skos:prefLabel "RoleClassLib"@en,
+		skos:altLabel "RC Lib"@en
+    
+    
+Class: aml:ChangeMode
+
+    Annotations: 
+        skos:prefLabel "unit External Interface"@en,
+        skos:definition "Optionally describes the change state of an CAEX object. If used, the ChangeMode shall have the following value range: state, create, delete and change. This information should be used for further change management applications"@en
+    
+#Should be modelled as Object Property    
+#Class: aml:SupportedRoleClass
+
+    #Annotations: 
+        #skos:prefLabel "Supported Role Class"@en
+    
+    
+Class: aml:ExternalInterface
+
+    Annotations: 
+        skos:prefLabel "External Interface"@en,
+		skos:altLabel "EI"@en
+    
+    
+Class: aml:SystemUnitClassLib
+
+    Annotations: 
+        skos:prefLabel "System Unit ClassLib"@en,
+        skos:definition "Store vendor specific AML classes"@en,
+		skos:altLabel "SUC Lib"@en
+    
+    
+Class: aml:SystemUnitClass
+
+    Annotations: 
+        skos:definition "Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed."@en,
+        skos:prefLabel "System Unit Class"@en
+		skos:altLabel "SUC"@en
+    
+    
+Class: aml:ExternalReference
+
+    Annotations: 
+        skos:definition "External Reference for a CAEX File"@en,
+        skos:prefLabel "External Reference"@en
+    
+    
