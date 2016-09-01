@@ -40,7 +40,8 @@ Annotations:
     rdfs:isDefinedBy <https://w3id.org/i40/aml#>,
     owl:versionInfo "0.1",
     skos:definition "A vocabulary to represents the AutomationML Standard - IEC 62714."@en,
-    skos:prefLabel "aml"@en
+    skos:prefLabel "aml"@en,
+	skos:altLabel "Alternative label for an AML object"@en
 
 AnnotationProperty: owl:versionInfo
 
@@ -52,6 +53,9 @@ AnnotationProperty: skos:definition
 
     
 AnnotationProperty: skos:prefLabel
+
+
+AnnotationProperty: skos:altLabel
 
     
 AnnotationProperty: terms:created
@@ -1092,7 +1096,8 @@ Class: aml:ChangeMode
 Class: aml:ExternalInterface
 
     Annotations: 
-        skos:prefLabel "External Interface"@en
+        skos:prefLabel "External Interface"@en,
+		skos:altLabel "EI"@en
     
     SubClassOf: 
         aml:InterfaceClass
@@ -1108,20 +1113,24 @@ Class: aml:ExternalReference
 Class: aml:InstanceHierarchy
 
     Annotations: 
-        skos:prefLabel "Instance Hierarchy"@en
+        skos:prefLabel "Instance Hierarchy"@en,
+		skos:altLabel "IH"@en
     
     
 Class: aml:InterfaceClass
 
     Annotations: 
         skos:definition "Defines the relations between AML Objects. Should be identified with its tag name"@en,
-        skos:prefLabel "Interface Class"@en
+        skos:prefLabel "Interface Class"@en,
+		skos:altLabel "IC"@en
     
     
 Class: aml:InterfaceClassLib
 
     Annotations: 
-        skos:prefLabel "Interface Class Lib"@en
+        skos:prefLabel "Interface Class Lib"@en,
+		skos:altLabel "IC Lib"@en,
+		skos:definition "Library containing AML Interface Classes"@en
     
     
 Class: aml:InterfaceFamily
@@ -1131,14 +1140,16 @@ Class: aml:InternalElement
 
     Annotations: 
         skos:definition "Shall be used in order to define nested objects inside of a SystemUnitClass or another InternalElement. Allows description of the internal structure of an CAEX object"@en,
-        skos:prefLabel "Internal Element"@en
+        skos:prefLabel "Internal Element"@en,
+		skos:altLabel "IE"@en
     
     
 Class: aml:InternalLink
 
     Annotations: 
         skos:definition "@TODO Olga"@en,
-        skos:prefLabel "InternalLink"@en
+        skos:prefLabel "InternalLink"@en,
+		skos:altLabel "IL"@en
     
     
 Class: aml:Order
@@ -1182,28 +1193,32 @@ Class: aml:RoleClass
 
     Annotations: 
         skos:definition "RoleClasses are vendor independent and generic entities. They are used to assign a generic semantics to an object instance and to describe requirements of this object instance. Also, they can help in mapping data models of different engineering tools."@en,
-        skos:prefLabel "RoleClass"@en
+        skos:prefLabel "RoleClass"@en,
+		skos:altLabel "RC"@en
     
     
 Class: aml:RoleClassLib
 
     Annotations: 
         skos:definition "Definitions of abstract characteristics of CAEX objects and thus serve the automatic semantic interpretation of user-defined AML objects"@en,
-        skos:prefLabel "RoleClassLib"@en
+        skos:prefLabel "RoleClassLib"@en,
+		skos:altLabel "RC Lib"@en
     
     
 Class: aml:SystemUnitClass
 
     Annotations: 
         skos:prefLabel "System Unit Class"@en,
-        skos:definition "Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed."@en
+        skos:definition "Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed."@en,
+		skos:altLabel "SUC"@en
     
     
 Class: aml:SystemUnitClassLib
 
     Annotations: 
         skos:prefLabel "System Unit ClassLib"@en,
-        skos:definition "Store vendor specific AML classes"@en
+        skos:definition "Store vendor specific AML classes"@en,
+		skos:altLabel "SUC Lib"@en
     
     
 Class: aml:SystemUnitFamily
