@@ -489,7 +489,7 @@ ObjectProperty: aml:hasSystemUnitClassLib
         aml:SystemUnitClassLib
     
     
-ObjectProperty: aml:isConnectedTo_eClass
+ObjectProperty: aml:isConnectedToEClass
 
     Annotations: 
         skos:definition "Points to the eCl@ass connection for a given element"@en,
@@ -550,6 +550,17 @@ DataProperty: aml:hasAttributeDataType
 
     Annotations: 
         skos:prefLabel "hasDataType"@en
+    
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        xsd:string
+		
+DataProperty: aml:hasAttributeUnit
+
+    Annotations: 
+        skos:prefLabel "hasAttributeUnit"@en
     
     Domain: 
         aml:Attribute
@@ -947,7 +958,7 @@ DataProperty: aml:hasVersion
         xsd:string
     
     
-DataProperty: aml:hasVersion_eClass
+DataProperty: aml:hasVersionEClass
 
     Annotations: 
         skos:prefLabel "eClass Version"@en,
