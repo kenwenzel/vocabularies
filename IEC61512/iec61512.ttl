@@ -11,29 +11,27 @@
 @base <http://eatld.et.tu-dresden.de/iec61512> .
 
 iec61512: rdf:type owl:Ontology ;
-    skos:definition "A vocabulary which represents IEC 61512-1 standard"@en;
+    skos:definition "A vocabulary which represents IEC 61512-1 standard"@en, "Vokabular gemäß Datenmodell der IEC 61512-1"@de ;
 
-                                         owl:versionInfo "1.00"^^xsd:string ;
+    owl:versionInfo "1.00"^^xsd:string ;
 
-                                         dc:date "2016-04-08"^^xsd:date ;
+    dc:date "2016-04-08"^^xsd:date ;
 
-                                         rdfs:seeAlso "DIN EN 61512-1"@de ;
+    rdfs:seeAlso "DIN EN 61512-1"@de ;
 
-                                         dc:identifier "http://eatld.et.tu-dresden.de/iec61512" ;
+    dc:identifier "http://eatld.et.tu-dresden.de/iec61512" ;
 
-                                         dc:title "IEC 61512-1 model" ;
+    dc:title "IEC 61512-1 model" ;
 
-                                         dc:description "Ontologie gemäß Datenmodell der IEC 61512-1"@de ;
+    vann:preferredNamespaceUri "http://eatld.et.tu-dresden.de/iec61512/" ;
 
-                                         vann:preferredNamespaceUri "http://eatld.et.tu-dresden.de/iec61512/" ;
+    dc:creator "Markus Graube" ;
 
-                                         dc:creator "Markus Graube" ;
+    rdfs:seeAlso "IEC 61512-1"@en ;
 
-                                         rdfs:seeAlso "IEC 61512-1"@en ;
+    dc:description "Ontology according to IEC 61512-1"@en ;
 
-                                         dc:description "Ontology according to IEC 61512-1"@en ;
-
-                                         vann:preferredNamespacePrefix "iec61512" .
+    vann:preferredNamespacePrefix "iec61512" .
 
 
 #################################################################
