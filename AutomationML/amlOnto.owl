@@ -1,5 +1,6 @@
 Prefix: : <https://w3id.org/i40/aml#>
 Prefix: aml: <https://w3id.org/i40/aml#>
+Prefix: cp: <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#>
 Prefix: dc: <http://purl.org/dc/elements/1.1/>
 Prefix: dct: <http://purl.org/dc/terms/>
 Prefix: foaf: <http://xmlns.com/foaf/spec/>
@@ -39,9 +40,9 @@ Annotations:
     void:vocabulary <https://w3id.org/i40/aml#>,
     rdfs:isDefinedBy <https://w3id.org/i40/aml#>,
     owl:versionInfo "0.1",
+    skos:altLabel "Alternative label for an AML object"@en,
     skos:definition "A vocabulary to represents the AutomationML Standard - IEC 62714."@en,
-    skos:prefLabel "aml"@en,
-	skos:altLabel "Alternative label for an AML object"@en
+    skos:prefLabel "aml"@en
 
 AnnotationProperty: owl:versionInfo
 
@@ -49,13 +50,13 @@ AnnotationProperty: owl:versionInfo
 AnnotationProperty: rdfs:isDefinedBy
 
     
+AnnotationProperty: skos:altLabel
+
+    
 AnnotationProperty: skos:definition
 
     
 AnnotationProperty: skos:prefLabel
-
-
-AnnotationProperty: skos:altLabel
 
     
 AnnotationProperty: terms:created
@@ -352,8 +353,8 @@ ObjectProperty: aml:hasRefSemAttribute
 ObjectProperty: aml:hasRefSemRC
 
     Annotations: 
-        skos:definition "A Role Class points to its ID according to eClass"@en,
-        skos:prefLabel "Role Class eClass Reference"@en
+        skos:prefLabel "Role Class eClass Reference"@en,
+        skos:definition "A Role Class points to its ID according to eClass"@en
     
     SubPropertyOf: 
         aml:hasRefSem
@@ -496,13 +497,18 @@ ObjectProperty: aml:isConnectedToEClass
         skos:prefLabel "eClassIsConnectedTo"@en
     
     
-ObjectProperty: aml:isPartOf
-
-    
 ObjectProperty: aml:isPartOfIC
 
+    Annotations: 
+        skos:altLabel "isPartOfInterfaceClass"@en,
+        skos:prefLabel "isPartOfIC"@en,
+        skos:definition "Connects the InterfaceClasses with other InterfaceClasses that are part of the given Interface Class"@en
+    
     SubPropertyOf: 
-        aml:isPartOf
+        cp:isPartOf
+    
+    Characteristics: 
+        Transitive
     
     Domain: 
         aml:InterfaceClass
@@ -514,11 +520,12 @@ ObjectProperty: aml:isPartOfIC
 ObjectProperty: aml:isPartOfIE
 
     Annotations: 
-        skos:definition "Connects the Internal Element with other Internal Elements that are part of the given Internal Element"@en,
-        skos:prefLabel "InternalElementPartOf"@en
+        skos:prefLabel "isPartOfIE"@en,
+        skos:altLabel "InternalElementPartOf"@en,
+        skos:definition "Connects the Internal Element with other Internal Elements that are part of the given Internal Element"@en
     
     SubPropertyOf: 
-        aml:isPartOf
+        cp:isPartOf
     
     Characteristics: 
         Transitive
@@ -533,34 +540,33 @@ ObjectProperty: aml:isPartOfIE
 ObjectProperty: aml:isPartOfSUC
 
     Annotations: 
-        skos:prefLabel "SystemUnitClassName"@en,
+        skos:prefLabel "isPartOfSUC"@en,
+        skos:altLabel "SystemUnitClassPartOf"@en,
         skos:definition "Connects the System Unit Class with another System Unit Class Elements"@en
     
     SubPropertyOf: 
-        aml:isPartOf
+        cp:isPartOf
+    
+    Characteristics: 
+        Transitive
     
     Domain: 
         aml:SystemUnitClass
     
     Range: 
         aml:SystemUnitClass
+    
+    
+ObjectProperty: cp:isPartOf
+
+    Annotations: 
+        rdfs:isDefinedBy "http://www.ontologydesignpatterns.org/cp/owl/partof.owl"
     
     
 DataProperty: aml:hasAttributeDataType
 
     Annotations: 
         skos:prefLabel "hasDataType"@en
-    
-    Domain: 
-        aml:Attribute
-    
-    Range: 
-        xsd:string
-		
-DataProperty: aml:hasAttributeUnit
-
-    Annotations: 
-        skos:prefLabel "hasAttributeUnit"@en
     
     Domain: 
         aml:Attribute
@@ -586,6 +592,18 @@ DataProperty: aml:hasAttributeName
 
     Annotations: 
         skos:prefLabel "hasAttributeName"@en
+    
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:hasAttributeUnit
+
+    Annotations: 
+        skos:prefLabel "hasAttributeUnit"@en
     
     Domain: 
         aml:Attribute
@@ -757,8 +775,8 @@ DataProperty: aml:hasNameIC
 DataProperty: aml:hasNameIE
 
     Annotations: 
-        skos:definition "Name of an Internal Element"@en,
-        skos:prefLabel "internal Element Name"@en
+        skos:prefLabel "internal Element Name"@en,
+        skos:definition "Name of an Internal Element"@en
     
     Characteristics: 
         Functional
@@ -776,8 +794,8 @@ DataProperty: aml:hasNameIE
 DataProperty: aml:hasNameRC
 
     Annotations: 
-        skos:definition "Name for a RoleClass"@en,
-        skos:prefLabel "roleClassName"@en
+        skos:prefLabel "roleClassName"@en,
+        skos:definition "Name for a RoleClass"@en
     
     Characteristics: 
         Functional
@@ -961,8 +979,8 @@ DataProperty: aml:hasVersion
 DataProperty: aml:hasVersionEClass
 
     Annotations: 
-        skos:prefLabel "eClass Version"@en,
-        skos:definition "Points to the eClass version for a given Element"@en
+        skos:definition "Points to the eClass version for a given Element"@en,
+        skos:prefLabel "eClass Version"@en
     
     Domain: 
         aml:eClassSpecification
@@ -1107,8 +1125,8 @@ Class: aml:ChangeMode
 Class: aml:ExternalInterface
 
     Annotations: 
-        skos:prefLabel "External Interface"@en,
-		skos:altLabel "EI"@en
+        skos:altLabel "EI"@en,
+        skos:prefLabel "External Interface"@en
     
     SubClassOf: 
         aml:InterfaceClass
@@ -1124,24 +1142,25 @@ Class: aml:ExternalReference
 Class: aml:InstanceHierarchy
 
     Annotations: 
-        skos:prefLabel "Instance Hierarchy"@en,
-		skos:altLabel "IH"@en
+        skos:altLabel "IH"@en,
+        skos:definition "CAEX InstanceHierarchies serve for the storage of individual and project related engineering information. They form the centre of the AML top-level format and contain all individual data objects including properties, interfaces, relations and references."@en,
+        skos:prefLabel "Instance Hierarchy"@en
     
     
 Class: aml:InterfaceClass
 
     Annotations: 
         skos:definition "Defines the relations between AML Objects. Should be identified with its tag name"@en,
-        skos:prefLabel "Interface Class"@en,
-		skos:altLabel "IC"@en
+        skos:altLabel "IC"@en,
+        skos:prefLabel "Interface Class"@en
     
     
 Class: aml:InterfaceClassLib
 
     Annotations: 
+        skos:altLabel "IC Lib"@en,
         skos:prefLabel "Interface Class Lib"@en,
-		skos:altLabel "IC Lib"@en,
-		skos:definition "Library containing AML Interface Classes"@en
+        skos:definition "Library containing AML Interface Classes"@en
     
     
 Class: aml:InterfaceFamily
@@ -1150,17 +1169,17 @@ Class: aml:InterfaceFamily
 Class: aml:InternalElement
 
     Annotations: 
-        skos:definition "Shall be used in order to define nested objects inside of a SystemUnitClass or another InternalElement. Allows description of the internal structure of an CAEX object"@en,
+        skos:altLabel "IE"@en,
         skos:prefLabel "Internal Element"@en,
-		skos:altLabel "IE"@en
+        skos:definition "Shall be used in order to define nested objects inside of a SystemUnitClass or another InternalElement. Allows description of the internal structure of an CAEX object"@en
     
     
 Class: aml:InternalLink
 
     Annotations: 
+        skos:altLabel "IL"@en,
         skos:definition "@TODO Olga"@en,
-        skos:prefLabel "InternalLink"@en,
-		skos:altLabel "IL"@en
+        skos:prefLabel "InternalLink"@en
     
     
 Class: aml:Order
@@ -1183,16 +1202,6 @@ Class: aml:PPRConnector
         aml:InterfaceClass
     
     
-Class: aml:PortConnector
-
-    Annotations: 
-        skos:prefLabel "Order"@en,
-        skos:definition "Provide a high level relation between ports"@en
-    
-    SubClassOf: 
-        aml:InterfaceClass
-    
-    
 Class: aml:Project
 
     Annotations: 
@@ -1204,32 +1213,32 @@ Class: aml:RoleClass
 
     Annotations: 
         skos:definition "RoleClasses are vendor independent and generic entities. They are used to assign a generic semantics to an object instance and to describe requirements of this object instance. Also, they can help in mapping data models of different engineering tools."@en,
-        skos:prefLabel "RoleClass"@en,
-		skos:altLabel "RC"@en
+        skos:altLabel "RC"@en,
+        skos:prefLabel "RoleClass"@en
     
     
 Class: aml:RoleClassLib
 
     Annotations: 
+        skos:altLabel "RC Lib"@en,
         skos:definition "Definitions of abstract characteristics of CAEX objects and thus serve the automatic semantic interpretation of user-defined AML objects"@en,
-        skos:prefLabel "RoleClassLib"@en,
-		skos:altLabel "RC Lib"@en
+        skos:prefLabel "RoleClassLib"@en
     
     
 Class: aml:SystemUnitClass
 
     Annotations: 
         skos:prefLabel "System Unit Class"@en,
-        skos:definition "Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed."@en,
-		skos:altLabel "SUC"@en
+        skos:altLabel "SUC"@en,
+        skos:definition "Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed."@en
     
     
 Class: aml:SystemUnitClassLib
 
     Annotations: 
         skos:prefLabel "System Unit ClassLib"@en,
-        skos:definition "Store vendor specific AML classes"@en,
-		skos:altLabel "SUC Lib"@en
+        skos:altLabel "SUC Lib"@en,
+        skos:definition "Store vendor specific AML classes"@en
     
     
 Class: aml:SystemUnitFamily
