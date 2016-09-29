@@ -80,6 +80,9 @@ AnnotationProperty: void:vocabulary
 Datatype: rdf:PlainLiteral
 
     
+Datatype: xsd:anyURI
+
+    
 Datatype: xsd:dateTime
 
     
@@ -691,9 +694,6 @@ DataProperty: aml:hasExternalReferencePath
         xsd:string
     
     
-DataProperty: aml:hasID
-
-    
 DataProperty: aml:hasIDIE
 
     Annotations: 
@@ -710,7 +710,7 @@ DataProperty: aml:hasIDIE
         xsd:string
     
     SubPropertyOf: 
-        aml:hasID
+        dc:identifier
     
     
 DataProperty: aml:hasIRDIeClass
@@ -727,18 +727,6 @@ DataProperty: aml:hasIRDIeClass
     
     Range: 
         xsd:string
-    
-    
-DataProperty: aml:hasLastWritingDate
-
-    Annotations: 
-        skos:prefLabel "has Writer Release"
-    
-    Domain: 
-        aml:AdditionalInformation
-    
-    Range: 
-        xsd:dateTime
     
     
 DataProperty: aml:hasName
@@ -1006,6 +994,9 @@ DataProperty: aml:hasWriterId
     Range: 
         xsd:string
     
+    SubPropertyOf: 
+        dc:identifier
+    
     
 DataProperty: aml:hasWriterName
 
@@ -1055,7 +1046,7 @@ DataProperty: aml:hasWriterVendorURL
         aml:AdditionalInformation
     
     Range: 
-        xsd:string
+        xsd:anyURI
     
     
 DataProperty: aml:hasWriterVersion
@@ -1068,6 +1059,15 @@ DataProperty: aml:hasWriterVersion
     
     Range: 
         xsd:string
+    
+    
+DataProperty: aml:lastWritingDateTime
+
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:dateTime
     
     
 DataProperty: dc:identifier
@@ -1268,6 +1268,16 @@ Individual: aml:AdditionalInformation1
 
     Types: 
         aml:AdditionalInformation
+    
+    Facts:  
+     aml:hasVersion  2.0,
+     aml:hasVersion  "4.1.5",
+     aml:hasWriterId  "916578CA-FE0D-474E-A4FC-9E1719892369",
+     aml:hasWriterName  "AutomationML Editor"@en,
+     aml:hasWriterRelease  "4.1.5.0",
+     aml:hasWriterVendor  "AutomationML e.V."@en,
+     aml:hasWriterVendorURL  "www.AutomationML.org"^^xsd:anyURI,
+     aml:lastWritingDateTime  "2016-07-04T16:30:33.0812253+02:00"^^xsd:dateTime
     
     
 Individual: aml:GMA6.16BeispielPIDVersion2.97
