@@ -10,29 +10,28 @@
 @prefix iec61512: <http://eatld.et.tu-dresden.de/iec61512/> .
 @base <http://eatld.et.tu-dresden.de/iec61512> .
 
-<http://eatld.et.tu-dresden.de/iec61512> rdf:type owl:Ontology ;
-                                         
-                                         owl:versionInfo "1.00"^^xsd:string ;
-                                         
-                                         dc:date "2016-04-08"^^xsd:date ;
-                                         
-                                         rdfs:seeAlso "DIN EN 61512-1"@de ;
-                                         
-                                         dc:identifier "http://eatld.et.tu-dresden.de/iec61512" ;
-                                         
-                                         dc:title "IEC 61512-1 model" ;
-                                         
-                                         dc:description "Ontologie gemäß Datenmodell der IEC 61512-1"@de ;
-                                         
-                                         vann:preferredNamespaceUri "http://eatld.et.tu-dresden.de/iec61512/" ;
-                                         
-                                         dc:creator "Markus Graube" ;
-                                         
-                                         rdfs:seeAlso "IEC 61512-1"@en ;
-                                         
-                                         dc:description "Ontology according to IEC 61512-1"@en ;
-                                         
-                                         vann:preferredNamespacePrefix "iec61512" .
+iec61512: rdf:type owl:Ontology ;
+    skos:definition "A vocabulary which represents IEC 61512-1 standard"@en, "Vokabular gemäß Datenmodell der IEC 61512-1"@de ;
+
+    owl:versionInfo "1.00"^^xsd:string ;
+
+    dc:date "2016-04-08"^^xsd:date ;
+
+    rdfs:seeAlso "DIN EN 61512-1"@de ;
+
+    dc:identifier "http://eatld.et.tu-dresden.de/iec61512" ;
+
+    dc:title "IEC 61512-1 model" ;
+
+    vann:preferredNamespaceUri "http://eatld.et.tu-dresden.de/iec61512/" ;
+
+    dc:creator "Markus Graube" ;
+
+    rdfs:seeAlso "IEC 61512-1"@en ;
+
+    dc:description "Ontology according to IEC 61512-1"@en ;
+
+    vann:preferredNamespacePrefix "iec61512" .
 
 
 #################################################################
@@ -45,10 +44,10 @@
 ###  http://eatld.et.tu-dresden.de/iec61512/contains
 
 iec61512:contains rdf:type owl:AnnotationProperty ;
-                  
-                  rdfs:label "enthält"@de ,
+
+                  skos:prefLabel "enthält"@de ,
                              "has"@en ;
-                  
+
                   rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -56,10 +55,10 @@ iec61512:contains rdf:type owl:AnnotationProperty ;
 ###  http://eatld.et.tu-dresden.de/iec61512/isPartOf
 
 iec61512:isPartOf rdf:type owl:AnnotationProperty ;
-                  
-                  rdfs:label "ist Teil von"@de ,
+
+                  skos:prefLabel "ist Teil von"@de ,
                              "is part of"@en ;
-                  
+
                   rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -83,16 +82,16 @@ dc:title rdf:type owl:AnnotationProperty .
 
 iec61512:contains rdf:type owl:ObjectProperty ,
                            owl:TransitiveProperty ;
-                  
-                  rdfs:label "enthält"@de ,
+
+                  skos:prefLabel "enthält"@de ,
                              "has"@en ;
-                  
+
                   rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> ;
-                  
+
                   rdfs:range iec61512:PhysicalResource ;
-                  
+
                   rdfs:domain iec61512:PhysicalResource ;
-                  
+
                   owl:inverseOf iec61512:isPartOf .
 
 
@@ -101,14 +100,14 @@ iec61512:contains rdf:type owl:ObjectProperty ,
 
 iec61512:isPartOf rdf:type owl:ObjectProperty ,
                            owl:TransitiveProperty ;
-                  
-                  rdfs:label "ist Teil von"@de ,
+
+                  skos:prefLabel "ist Teil von"@de ,
                              "is part of"@en ;
-                  
+
                   rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> ;
-                  
+
                   rdfs:range iec61512:PhysicalResource ;
-                  
+
                   rdfs:domain iec61512:PhysicalResource .
 
 
@@ -125,19 +124,19 @@ iec61512:isPartOf rdf:type owl:ObjectProperty ,
 ###  http://eatld.et.tu-dresden.de/iec61512/Area
 
 iec61512:Area rdf:type owl:Class ;
-              
-              rdfs:label "Anlagenkomplex"@de ,
+
+              skos:prefLabel "Anlagenkomplex"@de ,
                          "area"@en ;
-              
+
               rdfs:subClassOf iec61512:PhysicalResource ;
-              
+
               rdfs:seeAlso "DIN EN 61512-1"@de ;
-              
-              rdfs:comment "Ein Anlagenkomplex ist eine bauliche, geographische oder logische Anordnung, die durch das Werk bestimmt wird. Er kann Anlagen, Teilanlagen, Technische Einrichtungen und Einzelsteuereinheiten enthalten."@de ,
+
+              skos:definition "Ein Anlagenkomplex ist eine bauliche, geographische oder logische Anordnung, die durch das Werk bestimmt wird. Er kann Anlagen, Teilanlagen, Technische Einrichtungen und Einzelsteuereinheiten enthalten."@de ,
                            "An area  is a structural, geographical or logical arrangement, which is determined by the site. It can include plants, subplants, technical facilities and control modules."@en ;
-              
+
               rdfs:seeAlso "IEC 61512-1"@en ;
-              
+
               rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -145,18 +144,18 @@ iec61512:Area rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/ControlModule
 
 iec61512:ControlModule rdf:type owl:Class ;
-                       
-                       rdfs:label "Einzelsteuereinheit"@de ,
+
+                       skos:prefLabel "Einzelsteuereinheit"@de ,
                                   "control module"@en ;
-                       
+
                        rdfs:subClassOf iec61512:PhysicalResource ;
-                       
+
                        rdfs:seeAlso "DIN EN 61512-1"@de ;
-                       
-                       rdfs:comment "Eine Einzelsteuereinheit ist typischerweise eine Zusammenfassung von Meßeinrichtungen, Stellgliedern, anderen Einzelsteuereinheiten sowie der zugehörigen Verarbeitungseinrichtung, die vom Standpunkt der Leittechnik aus als eine einzelne Einheit betrieben wird. Eine Einzelsteuereinheit kann auch aus anderen Einzelsteuereinheiten zusammengesetzt sein."@de ;
-                       
+
+                       skos:definition "Eine Einzelsteuereinheit ist typischerweise eine Zusammenfassung von Meßeinrichtungen, Stellgliedern, anderen Einzelsteuereinheiten sowie der zugehörigen Verarbeitungseinrichtung, die vom Standpunkt der Leittechnik aus als eine einzelne Einheit betrieben wird. Eine Einzelsteuereinheit kann auch aus anderen Einzelsteuereinheiten zusammengesetzt sein."@de ;
+
                        rdfs:seeAlso "IEC 61512-1"@en ;
-                       
+
                        rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -164,18 +163,18 @@ iec61512:ControlModule rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/Enterprise
 
 iec61512:Enterprise rdf:type owl:Class ;
-                    
-                    rdfs:label "Unternehmen"@de ,
+
+                    skos:prefLabel "Unternehmen"@de ,
                                "enterprise"@en ;
-                    
+
                     rdfs:subClassOf iec61512:PhysicalResource ;
-                    
+
                     rdfs:seeAlso "DIN EN 61512-1"@de ;
-                    
-                    rdfs:comment "Ein Unternehmen ist eine Zusammenfassung eines oder mehrerer Werke. Es kann Werke, Anlagenkomplexe, Anlagen, Teilanlagen, Technische Einrichtungen und Einzelsteuereinheiten enthalten."@de ;
-                    
+
+                    skos:definition "Ein Unternehmen ist eine Zusammenfassung eines oder mehrerer Werke. Es kann Werke, Anlagenkomplexe, Anlagen, Teilanlagen, Technische Einrichtungen und Einzelsteuereinheiten enthalten."@de ;
+
                     rdfs:seeAlso "IEC 61512-1"@en ;
-                    
+
                     rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -183,18 +182,18 @@ iec61512:Enterprise rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/EquipmentModule
 
 iec61512:EquipmentModule rdf:type owl:Class ;
-                         
-                         rdfs:label "Technische Einrichtung"@de ,
+
+                         skos:prefLabel "Technische Einrichtung"@de ,
                                     "equipment module"@en ;
-                         
+
                          rdfs:subClassOf iec61512:PhysicalResource ;
-                         
+
                          rdfs:seeAlso "DIN EN 61512-1"@de ;
-                         
-                         rdfs:comment "Physisch kann die Technische Einrichtung aus Einzelsteuereinheiten und untergeordneten Technischen Einrichtungen bestehen. Eine Technische Einrichtung kann Teil einer Teilanlage oder eine eigenständige Einrichtungsgruppe innerhalb einer Anlage sein. Wenn sie als eigenständige Einrichtung ausgelegt wurde, kann sie ein exklusiv nutzbares Betriebsmittel oder ein parallel nutzbares Betriebsmittel sein."@de ;
-                         
+
+                         skos:definition "Physisch kann die Technische Einrichtung aus Einzelsteuereinheiten und untergeordneten Technischen Einrichtungen bestehen. Eine Technische Einrichtung kann Teil einer Teilanlage oder eine eigenständige Einrichtungsgruppe innerhalb einer Anlage sein. Wenn sie als eigenständige Einrichtung ausgelegt wurde, kann sie ein exklusiv nutzbares Betriebsmittel oder ein parallel nutzbares Betriebsmittel sein."@de ;
+
                          rdfs:seeAlso "IEC 61512-1"@en ;
-                         
+
                          rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -202,12 +201,12 @@ iec61512:EquipmentModule rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/Operation
 
 iec61512:Operation rdf:type owl:Class ;
-                   
-                   rdfs:label "Operation"@de ,
+
+                   skos:prefLabel "Operation"@de ,
                               "operation"@en ;
-                   
+
                    rdfs:subClassOf iec61512:ProceduralElement ;
-                   
+
                    rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -215,12 +214,12 @@ iec61512:Operation rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/Phase
 
 iec61512:Phase rdf:type owl:Class ;
-               
-               rdfs:label "Funktion"@de ,
+
+               skos:prefLabel "Funktion"@de ,
                           "phase"@en ;
-               
+
                rdfs:subClassOf iec61512:ProceduralElement ;
-               
+
                rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -228,13 +227,13 @@ iec61512:Phase rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/PhysicalResource
 
 iec61512:PhysicalResource rdf:type owl:Class ;
-                          
-                          rdfs:label "Physikalische Ressource"@de ,
+
+                          skos:prefLabel "Physikalische Ressource"@de ,
                                      "physical resource"@en ;
-                          
-                          rdfs:comment "Ressource, die zum dem physikalischen Modell gehört"@de ,
+
+                          skos:definition "Ressource, die zum dem physikalischen Modell gehört"@de ,
                                        "resource belonging to physical model"@en ;
-                          
+
                           rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -242,7 +241,7 @@ iec61512:PhysicalResource rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/ProceduralElement
 
 iec61512:ProceduralElement rdf:type owl:Class ;
-                           
+
                            rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -250,12 +249,12 @@ iec61512:ProceduralElement rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/Process
 
 iec61512:Process rdf:type owl:Class ;
-                 
-                 rdfs:label "Prozess"@de ,
+
+                 skos:prefLabel "Prozess"@de ,
                             "process"@en ;
-                 
+
                  rdfs:subClassOf iec61512:ProcessResource ;
-                 
+
                  rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -263,12 +262,12 @@ iec61512:Process rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/ProcessAction
 
 iec61512:ProcessAction rdf:type owl:Class ;
-                       
-                       rdfs:label "Prozessschritt"@de ,
+
+                       skos:prefLabel "Prozessschritt"@de ,
                                   "process action"@en ;
-                       
+
                        rdfs:subClassOf iec61512:ProcessResource ;
-                       
+
                        rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -276,19 +275,19 @@ iec61512:ProcessAction rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/ProcessCell
 
 iec61512:ProcessCell rdf:type owl:Class ;
-                     
-                     rdfs:label "Anlage"@de ,
+
+                     skos:prefLabel "Anlage"@de ,
                                 "process cell"@en ;
-                     
+
                      rdfs:subClassOf iec61512:PhysicalResource ;
-                     
+
                      rdfs:seeAlso "DIN EN 61512-1"@de ;
-                     
-                     rdfs:comment "Eine Anlage enthält alle Teilanlagen, Technische Einrichtungen und Einzelsteuereinheiten, die zur Herstellung einer oder mehrerer Chargen benötigt werden."@de ,
+
+                     skos:definition "Eine Anlage enthält alle Teilanlagen, Technische Einrichtungen und Einzelsteuereinheiten, die zur Herstellung einer oder mehrerer Chargen benötigt werden."@de ,
                                   "A plant includes all subplants, technical equipments and control modules, which are needed to produce one or more batches."@en ;
-                     
+
                      rdfs:seeAlso "IEC 61512-1"@en ;
-                     
+
                      rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -296,12 +295,12 @@ iec61512:ProcessCell rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/ProcessOperation
 
 iec61512:ProcessOperation rdf:type owl:Class ;
-                          
-                          rdfs:label "Prozessoperation"@de ,
+
+                          skos:prefLabel "Prozessoperation"@de ,
                                      "process operation"@en ;
-                          
+
                           rdfs:subClassOf iec61512:ProcessResource ;
-                          
+
                           rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -309,7 +308,7 @@ iec61512:ProcessOperation rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/ProcessResource
 
 iec61512:ProcessResource rdf:type owl:Class ;
-                         
+
                          rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -317,12 +316,12 @@ iec61512:ProcessResource rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/ProcessStage
 
 iec61512:ProcessStage rdf:type owl:Class ;
-                      
-                      rdfs:label "Prozessabschnitt"@de ,
+
+                      skos:prefLabel "Prozessabschnitt"@de ,
                                  "process stage"@en ;
-                      
+
                       rdfs:subClassOf iec61512:ProcessResource ;
-                      
+
                       rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -330,12 +329,12 @@ iec61512:ProcessStage rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/RecipeProcedure
 
 iec61512:RecipeProcedure rdf:type owl:Class ;
-                         
-                         rdfs:label "Rezeptprozedur"@de ,
+
+                         skos:prefLabel "Rezeptprozedur"@de ,
                                     "recipe procedure"@en ;
-                         
+
                          rdfs:subClassOf iec61512:ProceduralElement ;
-                         
+
                          rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -343,19 +342,19 @@ iec61512:RecipeProcedure rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/Site
 
 iec61512:Site rdf:type owl:Class ;
-              
-              rdfs:label "Werk"@de ,
+
+              skos:prefLabel "Werk"@de ,
                          "site"@en ;
-              
+
               rdfs:subClassOf iec61512:PhysicalResource ;
-              
+
               rdfs:seeAlso "DIN EN 61512-1"@de ;
-              
-              rdfs:comment "Ein Werk ist eine bauliche, geographische oder logische Anordnung, die durch das Unternehmen bestimmt wird. Es kann Anlagenkomplexe, Anlagen, Teilanlagen, Technische Einrichtungen und Einzelsteuereinheiten enthalten."@de ,
+
+              skos:definition "Ein Werk ist eine bauliche, geographische oder logische Anordnung, die durch das Unternehmen bestimmt wird. Es kann Anlagenkomplexe, Anlagen, Teilanlagen, Technische Einrichtungen und Einzelsteuereinheiten enthalten."@de ,
                            "A site is a structural, geographical or logical arrangement, which is determined by the company. It can contain plant complexes, plants, sub plants, technical equipment and control modules."@en ;
-              
+
               rdfs:seeAlso "IEC 61512-1"@en ;
-              
+
               rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -363,19 +362,19 @@ iec61512:Site rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/Unit
 
 iec61512:Unit rdf:type owl:Class ;
-              
-              rdfs:label "Teilanlage"@de ,
+
+              skos:prefLabel "Teilanlage"@de ,
                          "unit"@en ;
-              
+
               rdfs:subClassOf iec61512:PhysicalResource ;
-              
+
               rdfs:seeAlso "DIN EN 61512-1"@de ;
-              
-              rdfs:comment "Eine Teilanlage setzt sich aus Technischen Einrichtungen und Einzelsteuereinheiten zusammen. Die Teile, aus denen die Teilanlage zusammengesetzt ist, können Bestandteil der Teilanlage sein oder können zeitweise herangezogen werden, um bestimmte Aufgaben auszuführen."@de ,
+
+              skos:definition "Eine Teilanlage setzt sich aus Technischen Einrichtungen und Einzelsteuereinheiten zusammen. Die Teile, aus denen die Teilanlage zusammengesetzt ist, können Bestandteil der Teilanlage sein oder können zeitweise herangezogen werden, um bestimmte Aufgaben auszuführen."@de ,
                            "A sub plant consists of equipment modules and control modules. The parts, which build the sub plant, may be part of the sub plant or can be temporary used to perform certain tasks."@en ;
-              
+
               rdfs:seeAlso "IEC 61512-1"@en ;
-              
+
               rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -383,12 +382,12 @@ iec61512:Unit rdf:type owl:Class ;
 ###  http://eatld.et.tu-dresden.de/iec61512/UnitProcedure
 
 iec61512:UnitProcedure rdf:type owl:Class ;
-                       
-                       rdfs:label "Teilprozedur"@de ,
+
+                       skos:prefLabel "Teilprozedur"@de ,
                                   "unit procedure"@en ;
-                       
+
                        rdfs:subClassOf iec61512:ProceduralElement ;
-                       
+
                        rdfs:isDefinedBy <http://eatld.et.tu-dresden.de/iec61512> .
 
 
@@ -433,9 +432,3 @@ voaf:Vocabulary rdf:type owl:Class .
                 iec61512:Unit
               )
 ] .
-
-
-
-
-###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
-
