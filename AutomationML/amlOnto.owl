@@ -83,6 +83,9 @@ Datatype: rdf:PlainLiteral
 Datatype: xsd:dateTime
 
     
+Datatype: xsd:decimal
+
+    
 Datatype: xsd:string
 
     
@@ -964,7 +967,7 @@ DataProperty: aml:hasSchemaVersion
         aml:CAEXFile
     
     Range: 
-        xsd:string
+        xsd:decimal
     
     
 DataProperty: aml:hasVersion
@@ -1014,6 +1017,9 @@ DataProperty: aml:hasWriterName
     
     Range: 
         xsd:string
+    
+    SubPropertyOf: 
+        aml:hasName
     
     
 DataProperty: aml:hasWriterRelease
@@ -1257,4 +1263,20 @@ Class: aml:eClassSpecification
     
 Class: owl:Thing
 
+    
+Individual: aml:AdditionalInformation1
+
+    Types: 
+        aml:AdditionalInformation
+    
+    
+Individual: aml:GMA6.16BeispielPIDVersion2.97
+
+    Types: 
+        aml:CAEXFile
+    
+    Facts:  
+     aml:hasNameFile  "GMA 6.16Beispiel PID Version 2.97 - AutomationML Datei.aml"@de,
+     aml:hasSchemaVersion  2.15
+    
     
