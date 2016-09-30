@@ -735,7 +735,8 @@ DataProperty: aml:hasName
 DataProperty: aml:hasNameFile
 
     Annotations: 
-        skos:prefLabel "has File Name"
+        skos:prefLabel "hasNameFile",
+		skos:definition "The name of the main AutomationML File"@en
     
     Domain: 
         aml:CAEXFile
@@ -750,8 +751,10 @@ DataProperty: aml:hasNameFile
 DataProperty: aml:hasNameIC
 
     Annotations: 
-        skos:definition "Name of the Interface Class"@en,
-        skos:prefLabel "InterfaceClassName"@en
+	    skos:prefLabel "hasNameIC"@en,
+	    skos:altLabel "hasInterfaceClassName"@en,
+        skos:definition "Name of the Interface Class"@en
+        
     
     Domain: 
         aml:InterfaceClass
@@ -766,7 +769,8 @@ DataProperty: aml:hasNameIC
 DataProperty: aml:hasNameIE
 
     Annotations: 
-        skos:prefLabel "internal Element Name"@en,
+        skos:prefLabel "hasNameIE"@en,
+        skos:altLabel "hasInternalElementName"@en,
         skos:definition "Name of an Internal Element"@en
     
     Characteristics: 
@@ -785,7 +789,8 @@ DataProperty: aml:hasNameIE
 DataProperty: aml:hasNameRC
 
     Annotations: 
-        skos:prefLabel "roleClassName"@en,
+        skos:prefLabel "hasNameRC"@en,
+        skos:altLabel "hasRoleClassName"@en,
         skos:definition "Name for a RoleClass"@en
     
     Characteristics: 
@@ -805,7 +810,8 @@ DataProperty: aml:hasNameSUC
 
     Annotations: 
         skos:definition "Given Name of the System Unit Class"@en,
-        skos:prefLabel "SystemUnitClassName"@en
+        skos:prefLabel "hasNameSUC"@en,
+        skos:altLabel "hasSystemUnitClassName"@en
     
     Characteristics: 
         Functional
@@ -1001,7 +1007,8 @@ DataProperty: aml:hasWriterId
 DataProperty: aml:hasWriterName
 
     Annotations: 
-        skos:prefLabel "has Writer Name"
+        skos:prefLabel "hasWriterName",
+		skos:definition "The name of the Writer, i.e., the tool that produced the file"@en
     
     Domain: 
         aml:AdditionalInformation
@@ -1270,6 +1277,7 @@ Individual: aml:AdditionalInformation1
         aml:AdditionalInformation
     
     Facts:  
+     aml:hasAutomationMLVersion  2.0,
      aml:hasVersion  2.0,
      aml:hasVersion  "4.1.5",
      aml:hasWriterId  "916578CA-FE0D-474E-A4FC-9E1719892369",
