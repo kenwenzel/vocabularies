@@ -24,8 +24,8 @@ Ontology: <https://w3id.org/i40/aml#>
 
 Annotations: 
     terms:created "2016-03-23"^^xsd:date,
-    terms:creator "Irlan Grangel",
-    terms:creator "Olga Kovalenko",
+    terms:creator <http://eis.iai.uni-bonn.de/Irlan>,
+    terms:creator <https://at.linkedin.com/in/olga-kovalenko-979552108/>,
     terms:license <http://creativecommons.org/licenses/by-nc-sa/2.0/>,
     vann:preferredNamespacePrefix "aml",
     vann:preferredNamespaceUri "https://w3id.org/i40/aml/",
@@ -38,16 +38,26 @@ Annotations:
     void:vocabulary <http://www.w3.org/XML/1998/namespace>,
     void:vocabulary <http://xmlns.com/foaf/spec/>,
     void:vocabulary <https://w3id.org/i40/aml#>,
+    <http://usefulinc.com/ns/doap#repository> <https://github.com/i40-Tools/vocabularies/>,
     rdfs:isDefinedBy <https://w3id.org/i40/aml#>,
     owl:versionInfo "0.1",
     skos:altLabel "Alternative label for an AML object"@en,
     skos:definition "A vocabulary to represents the AutomationML Standard - IEC 62714."@en,
     skos:prefLabel "aml"@en
 
+AnnotationProperty: <http://usefulinc.com/ns/doap#repository>
+
+    
 AnnotationProperty: owl:versionInfo
 
     
 AnnotationProperty: rdfs:isDefinedBy
+
+    
+AnnotationProperty: rdfs:label
+
+    
+AnnotationProperty: schema:affiliation
 
     
 AnnotationProperty: skos:altLabel
@@ -190,6 +200,15 @@ ObjectProperty: aml:hasChangeMode
     
     Range: 
         aml:ChangeMode
+    
+    
+ObjectProperty: aml:hasDataType
+
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        om:Unit_of_measure
     
     
 ObjectProperty: aml:hasExternalReference
@@ -359,8 +378,9 @@ ObjectProperty: aml:hasRefSemAttribute
 ObjectProperty: aml:hasRefSemRC
 
     Annotations: 
-        skos:prefLabel "Role Class eClass Reference"@en,
-        skos:definition "A Role Class points to its ID according to eClass"@en
+        skos:definition "A Role Class points to its ID according to eClass"@en,
+        skos:altLabel "RoleClasseClassReference"@en,
+        skos:prefLabel "eClassRCReference"
     
     SubPropertyOf: 
         aml:hasRefSem
@@ -1280,8 +1300,32 @@ Class: aml:eClassSpecification
         skos:definition "Describe the necessary links to eCl@ass Standard(e.g., version, classification and IRDI)"@en
     
     
+Class: om:Unit_of_measure
+
+    
 Class: owl:Thing
 
+    
+Class: schema:Person
+
+    
+Individual: <http://eis.iai.uni-bonn.de/Irlan>
+
+    Annotations: 
+        schema:affiliation <http://dbpedia.org/resource/University_of_Bonn>,
+        rdfs:label "Irlan Grangel-Gonzalez"
+    
+    Types: 
+        schema:Person
+		
+Individual: <https://at.linkedin.com/in/olga-kovalenko-979552108/>
+
+    Annotations: 
+        rdfs:label "Olga Kovalenko"
+    
+    Types: 
+        schema:Person
+    
     
 Individual: aml:AdditionalInformation1
 
