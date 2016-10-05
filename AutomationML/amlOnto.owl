@@ -378,8 +378,8 @@ ObjectProperty: aml:hasRefSemAttribute
 ObjectProperty: aml:hasRefSemRC
 
     Annotations: 
-        skos:definition "A Role Class points to its ID according to eClass"@en,
         skos:altLabel "RoleClasseClassReference"@en,
+        skos:definition "A Role Class points to its ID according to eClass"@en,
         skos:prefLabel "eClassRCReference"
     
     SubPropertyOf: 
@@ -641,7 +641,7 @@ DataProperty: aml:hasAttributeUnit
 DataProperty: aml:hasAttributeValue
 
     Annotations: 
-        skos:prefLabel "has Value"@en
+        skos:prefLabel "hasValue"@en
     
     Domain: 
         aml:Attribute
@@ -751,6 +751,18 @@ DataProperty: aml:hasIRDIeClass
     
 DataProperty: aml:hasName
 
+    
+DataProperty: aml:hasNameAttribute
+
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        aml:hasName
+    
     
 DataProperty: aml:hasNameFile
 
@@ -1008,8 +1020,8 @@ DataProperty: aml:hasVersion
 DataProperty: aml:hasVersionEClass
 
     Annotations: 
-        skos:definition "Points to the eClass version for a given Element"@en,
-        skos:prefLabel "eClassVersion"@en
+        skos:prefLabel "eClassVersion"@en,
+        skos:definition "Points to the eClass version for a given Element"@en
     
     Domain: 
         aml:eClassSpecification
@@ -1107,6 +1119,15 @@ DataProperty: aml:lastWritingDateTime
     
     Range: 
         xsd:dateTime
+    
+    
+DataProperty: aml:refBaseSystemUnitPath
+
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        xsd:string
     
     
 DataProperty: dc:identifier
@@ -1317,7 +1338,8 @@ Individual: <http://eis.iai.uni-bonn.de/Irlan>
     
     Types: 
         schema:Person
-		
+    
+    
 Individual: <https://at.linkedin.com/in/olga-kovalenko-979552108/>
 
     Annotations: 
@@ -1344,6 +1366,38 @@ Individual: aml:AdditionalInformation1
      aml:lastWritingDateTime  "2016-07-04T16:30:33.0812253+02:00"^^xsd:dateTime
     
     
+Individual: aml:DemoArea
+
+    Types: 
+        aml:InternalElement
+    
+    Facts:  
+     aml:isPartOfIE  aml:DemoSite,
+     aml:hasIDIE  "33a47300-eb7e-4831-9448-b358d4246dcd",
+     aml:hasNameIE  "DemoArea"@en
+    
+    
+Individual: aml:DemoEnterprise
+
+    Types: 
+        aml:InternalElement
+    
+    Facts:  
+     aml:hasIDIE  "d812ea1e-eaa2-45f4-8c82-72ecc50236c5",
+     aml:hasNameIE  "DemoEnterprise"@en
+    
+    
+Individual: aml:DemoSite
+
+    Types: 
+        aml:InternalElement
+    
+    Facts:  
+     aml:isPartOfIE  aml:DemoEnterprise,
+     aml:hasIDIE  "38d6171f-0cb1-48e0-925f-f03902af8ee2",
+     aml:hasNameIE  "DemoSite"@en
+    
+    
 Individual: aml:GMA6.16BeispielPIDVersion2.97
 
     Types: 
@@ -1354,9 +1408,37 @@ Individual: aml:GMA6.16BeispielPIDVersion2.97
      aml:hasSchemaVersion  2.15
     
     
+Individual: aml:L1001
+
+    Types: 
+        aml:InternalElement
+    
+    Facts:  
+     aml:hasAttribute  aml:PCEDescription,
+     aml:isPartOfIE  aml:DemoArea,
+     aml:hasIDIE  "044a8a9d-458e-4632-a19d-f240a0e64e95",
+     aml:hasNameIE  "L 1001"@en,
+     aml:refBaseSystemUnitPath  "NE150SUCLibrary/PCELoop"
+    
+    
 Individual: aml:NE150DemoProject
 
     Types: 
         aml:InstanceHierarchy
+    
+    Facts:  
+     aml:hasInternalElement  aml:DemoEnterprise,
+     aml:hasNameIH  "NE150DemoProject"@en
+    
+    
+Individual: aml:PCEDescription
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasAttributeDescription  "Complete PCE description"@en,
+     aml:hasAttributeValue  "Level Control B1000"@en,
+     aml:hasNameAttribute  "PCEDescription"@en
     
     
