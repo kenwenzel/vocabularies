@@ -102,6 +102,9 @@ Datatype: xsd:dateTime
 Datatype: xsd:decimal
 
     
+Datatype: xsd:integer
+
+    
 Datatype: xsd:string
 
     
@@ -243,7 +246,7 @@ ObjectProperty: aml:hasExternalReference
 ObjectProperty: aml:hasInstanceHierarchy
 
     Annotations: 
-        skos:prefLabel "has Instance Hierarchy"@en
+        skos:prefLabel "hasInstanceHierarchy"@en
     
     SubPropertyOf: 
         aml:contains
@@ -277,7 +280,7 @@ ObjectProperty: aml:hasInterfaceClass
 ObjectProperty: aml:hasInterfaceClassLib
 
     Annotations: 
-        skos:prefLabel "has Interface Class Lib"@en,
+        skos:prefLabel "hasInterfaceClassLib"@en,
         skos:definition "Model the relation between CAEX File and Interface Class Lib"@en
     
     SubPropertyOf: 
@@ -425,7 +428,7 @@ ObjectProperty: aml:hasRoleClassLib
 
     Annotations: 
         skos:definition "A CAEX file contains a RoleClassLib"@en,
-        skos:prefLabel "has Role Class Lib"@en
+        skos:prefLabel "hasRoleClassLib"@en
     
     SubPropertyOf: 
         aml:contains
@@ -532,6 +535,24 @@ ObjectProperty: aml:hasSystemUnitClassLib
         aml:SystemUnitClassLib
     
     
+ObjectProperty: aml:hasUnitAttribute
+
+    Domain: 
+        aml:Attribute
+    
+    
+ObjectProperty: aml:hasUnitValue
+
+    Annotations: 
+        skos:prefLabel "hasAttributeValue"@en
+    
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        aml:AttributeValue
+    
+    
 ObjectProperty: aml:isConnectedToEClass
 
     Annotations: 
@@ -605,6 +626,9 @@ ObjectProperty: cp:isPartOf
         rdfs:isDefinedBy "http://www.ontologydesignpatterns.org/cp/owl/partof.owl"
     
     
+ObjectProperty: om:unit_of_measure
+
+    
 DataProperty: aml:hasAttributeDataType
 
     Annotations: 
@@ -642,23 +666,8 @@ DataProperty: aml:hasAttributeName
         xsd:string
     
     
-DataProperty: aml:hasAttributeUnit
-
-    Annotations: 
-        skos:prefLabel "hasAttributeUnit"@en
-    
-    Domain: 
-        aml:Attribute
-    
-    Range: 
-        xsd:string
-    
-    
 DataProperty: aml:hasAttributeValue
 
-    Annotations: 
-        skos:prefLabel "hasValue"@en
-    
     Domain: 
         aml:Attribute
     
@@ -1170,6 +1179,9 @@ DataProperty: dc:identifier
 DataProperty: dc:title
 
     
+DataProperty: om:numerical_value
+
+    
 DataProperty: schema:name
 
     Characteristics: 
@@ -1190,6 +1202,9 @@ Class: aml:Attribute
         skos:definition "Property which belongs to an AML object"@en,
         skos:prefLabel "Attribute"@en
     
+    
+Class: aml:AttributeValue
+
     
 Class: aml:BaseInterface
 
@@ -1355,6 +1370,9 @@ Class: aml:eClassSpecification
         skos:definition "Describe the necessary links to eCl@ass Standard(e.g., version, classification and IRDI)"@en
     
     
+Class: om:Measure
+
+    
 Class: om:Unit_of_measure
 
     
@@ -1409,6 +1427,17 @@ Individual: aml:AdditionalInformation1
      aml:hasWriterVendor  "AutomationML e.V."@en,
      aml:hasWriterVendorURL  "www.AutomationML.org"^^xsd:anyURI,
      aml:lastWritingDateTime  "2016-07-04T16:30:33.0812253+02:00"^^xsd:dateTime
+    
+    
+Individual: aml:AttValueMeasurementStart
+
+    Types: 
+        om:Measure,
+        aml:AttributeValue
+    
+    Facts:  
+     om:unit_of_measure  om:milliampere,
+     om:numerical_value  0
     
     
 Individual: aml:DemoArea
@@ -1496,6 +1525,29 @@ Individual: aml:LIRCS1
      aml:refBaseSystemUnitPath  "NE150SUCLibrary/PCERequest"
     
     
+Individual: aml:MeasurementRangeEnd
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasAttributeDataType  "xs:double",
+     aml:hasAttributeDescription  "Actual measurement range end of sensor in field"@en,
+     aml:refSemanticAttribute  "NE 150 v1.0 Annex 3.3.5"
+    
+    
+Individual: aml:MeasurementRangeStart
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasUnitAttribute  aml:AttValueMeasurementStart,
+     aml:hasAttributeDataType  "xs:double",
+     aml:hasAttributeDescription  "Actual measurement range start of sensor in field"@en,
+     aml:hasNameAttribute  "MeasurementRangeStart"@en
+    
+    
 Individual: aml:NE150DemoProject
 
     Types: 
@@ -1556,5 +1608,25 @@ Individual: aml:PCEInitial
      aml:hasAttributeValue  "L"@en,
      aml:hasNameAttribute  "PCEInitial"@en,
      aml:refSemanticAttribute  "NE 150 v1.0 Annex 2.1.2"
+    
+    
+Individual: aml:SoftwareSignalName
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasAttributeIC  aml:SoftwareSignalName,
+     aml:hasAttributeDataType  "xs:string",
+     aml:hasAttributeDescription  "Unequivocal PCS input or output name"@en,
+     aml:hasAttributeValue  "L1001_PV",
+     aml:hasNameAttribute  "SoftwareSignalName"@en,
+     aml:refSemanticAttribute  "NE 150 v1.0 Annex"
+    
+    
+Individual: om:milliampere
+
+    Types: 
+        om:Unit_of_measure
     
     
