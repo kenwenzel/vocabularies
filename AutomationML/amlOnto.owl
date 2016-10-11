@@ -214,7 +214,7 @@ ObjectProperty: aml:hasDataType
         aml:Attribute
     
     Range: 
-        om:Unit_of_measure
+        aml:Unit_of_measure
     
     
 ObjectProperty: aml:hasExternalInterface
@@ -620,14 +620,26 @@ ObjectProperty: aml:isPartOfSUC
         aml:SystemUnitClass
     
     
+ObjectProperty: aml:unit_of_measure
+
+    
 ObjectProperty: cp:isPartOf
 
     Annotations: 
         rdfs:isDefinedBy "http://www.ontologydesignpatterns.org/cp/owl/partof.owl"
     
     
-ObjectProperty: om:unit_of_measure
+DataProperty: aml:hasAMLVersion
 
+    Annotations: 
+        skos:prefLabel "hasAMLVersion"@en
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:decimal
+    
     
 DataProperty: aml:hasAttributeDataType
 
@@ -651,7 +663,7 @@ DataProperty: aml:hasAttributeDescription
         aml:Attribute
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     
 DataProperty: aml:hasAttributeName
@@ -670,18 +682,6 @@ DataProperty: aml:hasAttributeValue
 
     Domain: 
         aml:Attribute
-    
-    Range: 
-        xsd:string
-    
-    
-DataProperty: aml:hasAutomationMLVersion
-
-    Annotations: 
-        skos:prefLabel "hasAMLVersion"@en
-    
-    Domain: 
-        aml:AdditionalInformation
     
     Range: 
         xsd:string
@@ -801,7 +801,7 @@ DataProperty: aml:hasNameAttribute
         aml:Attribute
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -817,7 +817,7 @@ DataProperty: aml:hasNameFile
         aml:CAEXFile
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -834,7 +834,7 @@ DataProperty: aml:hasNameIC
         aml:InterfaceClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -854,7 +854,7 @@ DataProperty: aml:hasNameIE
         aml:InternalElement
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -866,6 +866,12 @@ DataProperty: aml:hasNameIH
         skos:altLabel "hasInstanceHierarchyName"@en,
         skos:definition "Given Name of the Instance Hierarchy"@en,
         skos:prefLabel "hasNameIH"@en
+    
+    Domain: 
+        aml:InstanceHierarchy
+    
+    Range: 
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -885,7 +891,7 @@ DataProperty: aml:hasNameRC
         aml:RoleClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -905,7 +911,7 @@ DataProperty: aml:hasNameSUC
         aml:SystemUnitClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -1041,7 +1047,7 @@ DataProperty: aml:hasVersion
         skos:prefLabel "hasVersion"@en
     
     Range: 
-        xsd:string
+        xsd:decimal
     
     
 DataProperty: aml:hasVersionEClass
@@ -1085,7 +1091,7 @@ DataProperty: aml:hasWriterName
         aml:AdditionalInformation
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -1112,7 +1118,7 @@ DataProperty: aml:hasWriterVendor
         aml:AdditionalInformation
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     
 DataProperty: aml:hasWriterVendorURL
@@ -1148,6 +1154,9 @@ DataProperty: aml:lastWritingDateTime
         xsd:dateTime
     
     
+DataProperty: aml:numerical_value
+
+    
 DataProperty: aml:refBaseSystemUnitPath
 
     Domain: 
@@ -1177,9 +1186,6 @@ DataProperty: dc:identifier
 
     
 DataProperty: dc:title
-
-    
-DataProperty: om:numerical_value
 
     
 DataProperty: schema:name
@@ -1363,18 +1369,15 @@ Class: aml:SystemUnitFamily
         skos:prefLabel "SystemUnitFamily"@en
     
     
+Class: aml:Unit_of_measure
+
+    
 Class: aml:eClassSpecification
 
     Annotations: 
         skos:prefLabel "eClassInterlink"@en,
         skos:definition "Describe the necessary links to eCl@ass Standard(e.g., version, classification and IRDI)"@en
     
-    
-Class: om:Measure
-
-    
-Class: om:Unit_of_measure
-
     
 Class: owl:Thing
 
@@ -1418,26 +1421,23 @@ Individual: aml:AdditionalInformation1
         aml:AdditionalInformation
     
     Facts:  
-     aml:hasAutomationMLVersion  2.0,
-     aml:hasVersion  2.0,
-     aml:hasVersion  "4.1.5",
+     aml:hasAMLVersion  2.0,
      aml:hasWriterId  "916578CA-FE0D-474E-A4FC-9E1719892369",
      aml:hasWriterName  "AutomationML Editor"@en,
      aml:hasWriterRelease  "4.1.5.0",
      aml:hasWriterVendor  "AutomationML e.V."@en,
      aml:hasWriterVendorURL  "www.AutomationML.org"^^xsd:anyURI,
-     aml:lastWritingDateTime  "2016-07-04T16:30:33.0812253+02:00"^^xsd:dateTime
+     aml:hasWriterVersion  "4.1.5",
+     aml:lastWritingDateTime  "2001-10-26T21:32:52"^^xsd:dateTime
     
     
-Individual: aml:AttValueMeasurementStart
+Individual: aml:AttValue1
 
     Types: 
-        om:Measure,
         aml:AttributeValue
     
     Facts:  
-     om:unit_of_measure  om:milliampere,
-     om:numerical_value  0
+     aml:numerical_value  0
     
     
 Individual: aml:DemoArea
@@ -1472,6 +1472,12 @@ Individual: aml:DemoSite
      aml:hasNameIE  "DemoSite"@en
     
     
+Individual: aml:ExampleInstanceHierarchy
+
+    Types: 
+        aml:CAEXFile
+    
+    
 Individual: aml:FlowchartNumber
 
     Types: 
@@ -1480,7 +1486,7 @@ Individual: aml:FlowchartNumber
     Facts:  
      aml:hasAttributeDataType  "xs:string",
      aml:hasAttributeDescription  "Drawing number of P&amp;I flowchart (pipework and instrumentation flowchart)"@en,
-     aml:hasAttributeValue  "1000_4"@en,
+     aml:hasAttributeValue  "1000_4",
      aml:hasNameAttribute  "FlowchartNumber"@en,
      aml:refSemanticAttribute  "NE 150 v1.0 Annex 1.1.5"
     
@@ -1491,6 +1497,7 @@ Individual: aml:GMA6.16BeispielPIDVersion2.97
         aml:CAEXFile
     
     Facts:  
+     aml:hasAdditionalInformation  aml:AdditionalInformation1,
      aml:hasNameFile  "GMA 6.16Beispiel PID Version 2.97 - AutomationML Datei.aml"@de,
      aml:hasSchemaVersion  2.15
     
@@ -1542,7 +1549,7 @@ Individual: aml:MeasurementRangeStart
         aml:Attribute
     
     Facts:  
-     aml:hasUnitAttribute  aml:AttValueMeasurementStart,
+     aml:hasUnitAttribute  aml:AttValue1,
      aml:hasAttributeDataType  "xs:double",
      aml:hasAttributeDescription  "Actual measurement range start of sensor in field"@en,
      aml:hasNameAttribute  "MeasurementRangeStart"@en
@@ -1566,8 +1573,8 @@ Individual: aml:OldPCE
     Facts:  
      aml:hasAttributeDataType  "xs:string",
      aml:hasAttributeDescription  "Old PCE designation for migration or renaming"@en,
-     aml:hasAttributeValue  "L 1101"@en,
-     aml:hasNameAttribute  "OldPCE"@en,
+     aml:hasAttributeValue  "L 1101",
+     aml:hasNameAttribute  "OldPCE"^^xsd:string,
      aml:refSemanticAttribute  "NE 150 v1.0 Annex 2.1.4"
     
     
@@ -1579,7 +1586,7 @@ Individual: aml:PCEDescription
     Facts:  
      aml:hasAttributeDataType  "xs:string",
      aml:hasAttributeDescription  "Complete PCE description"@en,
-     aml:hasAttributeValue  "Level Control B1000"@en,
+     aml:hasAttributeValue  "Level Control B1000",
      aml:hasNameAttribute  "PCEDescription"@en,
      aml:refSemanticAttribute  "NE 150 v1.0 Annex 2.1.3"
     
@@ -1592,7 +1599,7 @@ Individual: aml:PCEFunction
     Facts:  
      aml:hasAttributeDataType  "xs:string",
      aml:hasAttributeDescription  "The PCE function describes the device-independent PCE task solution"@en,
-     aml:hasAttributeValue  "LIRCS+-A+-"@en,
+     aml:hasAttributeValue  "LIRCS+-A+-",
      aml:hasNameAttribute  "PCEFunction"@en,
      aml:refSemanticAttribute  "NE 150 v1.0 Annex 2.1.1"
     
@@ -1605,7 +1612,7 @@ Individual: aml:PCEInitial
     Facts:  
      aml:hasAttributeDataType  "xs:string",
      aml:hasAttributeDescription  "PCE category, e.g.: L"@en,
-     aml:hasAttributeValue  "L"@en,
+     aml:hasAttributeValue  "L",
      aml:hasNameAttribute  "PCEInitial"@en,
      aml:refSemanticAttribute  "NE 150 v1.0 Annex 2.1.2"
     
@@ -1624,9 +1631,9 @@ Individual: aml:SoftwareSignalName
      aml:refSemanticAttribute  "NE 150 v1.0 Annex"
     
     
-Individual: om:milliampere
+Individual: aml:milliampere
 
     Types: 
-        om:Unit_of_measure
+        aml:Unit_of_measure
     
     
