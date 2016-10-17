@@ -970,7 +970,7 @@ DataProperty: aml:hasRefBaseClassPathIC
         aml:InterfaceClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasRefBaseClassPath
@@ -982,7 +982,7 @@ DataProperty: aml:hasRefBaseClassPathRC
         aml:RoleClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasRefBaseClassPath
@@ -994,7 +994,7 @@ DataProperty: aml:hasRefBaseClassPathSUC
         aml:SystemUnitClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasRefBaseClassPath
@@ -1410,9 +1410,9 @@ Individual: aml:AILevelSW
         aml:ExternalInterface
     
     Facts:  
-     aml:hasICID  "91a89c81-b794-421c-8f24-458f51307f72"@en,
+     aml:hasICID  "91a89c81-b794-421c-8f24-458f51307f72",
      aml:hasNameIC  "AI Level SW"@en,
-     aml:hasRefBaseClassPathIC  "NE150InterfaceLibrary/SWSignal"@en
+     aml:hasRefBaseClassPathIC  "NE150InterfaceLibrary/SWSignal"
     
     
 Individual: aml:AdditionalInformation1
