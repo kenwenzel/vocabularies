@@ -2,7 +2,6 @@ Prefix: : <https://w3id.org/i40/aml#>
 Prefix: aml: <https://w3id.org/i40/aml#>
 Prefix: cp: <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#>
 Prefix: dc: <http://purl.org/dc/elements/1.1/>
-Prefix: dct: <http://purl.org/dc/terms/>
 Prefix: foaf: <http://xmlns.com/foaf/spec/>
 Prefix: om: <http://www.wurvoc.org/vocabularies/om-1.8/>
 Prefix: owl: <http://www.w3.org/2002/07/owl#>
@@ -16,6 +15,9 @@ Prefix: vann: <http://purl.org/vocab/vann/>
 Prefix: void: <http://rdfs.org/ns/void#>
 Prefix: xml: <http://www.w3.org/XML/1998/namespace>
 Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: voaf: <http://purl.org/vocommons/voaf#>
+Prefix: cc: <http://creativecommons.org/ns#>
+
 
 
 
@@ -29,6 +31,12 @@ Annotations:
     terms:license <http://creativecommons.org/licenses/by-nc-sa/2.0/>,
     vann:preferredNamespacePrefix "aml",
     vann:preferredNamespaceUri "https://w3id.org/i40/aml/",
+	voaf:Vocabulary <https://w3id.org/i40/aml#>,
+	dc:title "The AutomationML Vocabulary"@en,
+	dc:description "A vocabulary to represents the AutomationML Standard - IEC 62714"@en,
+	dc:contributor <http://eis.iai.uni-bonn.de/Irlan>,
+	dc:contributor <https://at.linkedin.com/in/olga-kovalenko-979552108/>,
+	cc:licence <http://creativecommongs.org/licences/by/3.0/>,
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
     void:vocabulary <http://purl.org/dc/terms/>,
     void:vocabulary <http://www.w3.org/1999/02/22-rdf-syntax-ns#>,
@@ -42,7 +50,7 @@ Annotations:
     rdfs:isDefinedBy <https://w3id.org/i40/aml#>,
     owl:versionInfo "0.1",
     skos:altLabel "Alternative label for an AML object"@en,
-    skos:definition "A vocabulary to represents the AutomationML Standard - IEC 62714."@en,
+    skos:definition "A vocabulary to represents the AutomationML Standard - IEC 62714"@en,
     skos:prefLabel "aml"@en
 
 AnnotationProperty: <http://usefulinc.com/ns/doap#repository>
@@ -214,7 +222,7 @@ ObjectProperty: aml:hasDataType
         aml:Attribute
     
     Range: 
-        aml:Unit_of_measure
+        om:Unit_of_measure
     
     
 ObjectProperty: aml:hasExternalInterface
@@ -365,13 +373,19 @@ ObjectProperty: aml:hasProject
     
     
 ObjectProperty: aml:hasRefPartnerSideA
-
+    
+	Annotations: 
+        skos:definition "Reference an Internal Link with an element A"@en,
+        skos:prefLabel "hasRefPartnerSideA"@en
     Domain: 
         aml:InternalLink
     
     
 ObjectProperty: aml:hasRefPartnerSideB
-
+    
+	Annotations: 
+    skos:definition "Reference an Internal Link with an element B"@en,
+    skos:prefLabel "hasRefPartnerSideB"@en
     Domain: 
         aml:InternalLink
     
@@ -550,7 +564,7 @@ ObjectProperty: aml:hasUnitValue
         aml:Attribute
     
     Range: 
-        aml:AttributeValue
+        om:Measure
     
     
 ObjectProperty: aml:isConnectedToEClass
@@ -628,6 +642,13 @@ ObjectProperty: cp:isPartOf
     Annotations: 
         rdfs:isDefinedBy "http://www.ontologydesignpatterns.org/cp/owl/partof.owl"
     
+    
+ObjectProperty: om:unit_of_measure
+
+
+ObjectProperty: om:phenomenon
+
+
     
 DataProperty: aml:hasAMLVersion
 
@@ -1188,6 +1209,9 @@ DataProperty: dc:identifier
 DataProperty: dc:title
 
     
+DataProperty: om:numerical_value
+
+    
 DataProperty: schema:name
 
     Characteristics: 
@@ -1208,9 +1232,6 @@ Class: aml:Attribute
         skos:definition "Property which belongs to an AML object"@en,
         skos:prefLabel "Attribute"@en
     
-    
-Class: aml:AttributeValue
-
     
 Class: aml:BaseInterface
 
@@ -1299,7 +1320,7 @@ Class: aml:InternalLink
 
     Annotations: 
         skos:altLabel "IL"@en,
-        skos:definition "@TODO Olga"@en,
+        skos:definition "Connects two CAEX elements like InternalElements"@en,
         skos:prefLabel "InternalLink"@en
     
     
@@ -1369,9 +1390,6 @@ Class: aml:SystemUnitFamily
         skos:prefLabel "SystemUnitFamily"@en
     
     
-Class: aml:Unit_of_measure
-
-    
 Class: aml:eClassSpecification
 
     Annotations: 
@@ -1379,10 +1397,19 @@ Class: aml:eClassSpecification
         skos:definition "Describe the necessary links to eCl@ass Standard(e.g., version, classification and IRDI)"@en
     
     
+Class: om:Measure
+
+    
+Class: om:Unit_of_measure
+
+    
 Class: owl:Thing
 
     
 Class: schema:Person
+
+
+Class: om:Speed
 
     
 Individual: <http://eis.iai.uni-bonn.de/Irlan>
@@ -1433,9 +1460,6 @@ Individual: aml:AdditionalInformation1
     
 Individual: aml:AttValue1
 
-    Types: 
-        aml:AttributeValue
-    
     Facts:  
      aml:numerical_value  0
     
@@ -1532,6 +1556,16 @@ Individual: aml:LIRCS1
      aml:refBaseSystemUnitPath  "NE150SUCLibrary/PCERequest"
     
     
+Individual: aml:MaxConveyingSpeed
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasUnitAttribute  aml:speedMeasurement,
+     aml:hasNameAttribute  "maxConveyingSpeed"@en
+    
+    
 Individual: aml:MeasurementRangeEnd
 
     Types: 
@@ -1549,7 +1583,6 @@ Individual: aml:MeasurementRangeStart
         aml:Attribute
     
     Facts:  
-     aml:hasUnitAttribute  aml:AttValue1,
      aml:hasAttributeDataType  "xs:double",
      aml:hasAttributeDescription  "Actual measurement range start of sensor in field"@en,
      aml:hasNameAttribute  "MeasurementRangeStart"@en
@@ -1634,6 +1667,22 @@ Individual: aml:SoftwareSignalName
 Individual: aml:milliampere
 
     Types: 
-        aml:Unit_of_measure
+        om:Unit_of_measure
+    
+    
+Individual: aml:speedMeasurement
+
+    Types: 
+        om:Measure
+    
+    Facts:  
+     aml:unit_of_measure  om:metre_per_second-time,
+     aml:numerical_value  1.5
+    
+    
+Individual: om:metre_per_second-time
+
+    Types: 
+        om:Unit_of_measure
     
     
