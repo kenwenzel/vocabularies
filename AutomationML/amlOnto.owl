@@ -1,4 +1,3 @@
-Prefix: : <https://w3id.org/i40/aml#>
 Prefix: aml: <https://w3id.org/i40/aml#>
 Prefix: cp: <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#>
 Prefix: dc: <http://purl.org/dc/elements/1.1/>
@@ -31,7 +30,6 @@ Annotations:
     terms:license <http://creativecommons.org/licenses/by-nc-sa/2.0/>,
     vann:preferredNamespacePrefix "aml",
     vann:preferredNamespaceUri "https://w3id.org/i40/aml/",
-	voaf:Vocabulary <https://w3id.org/i40/aml#>,
 	dc:title "The AutomationML Vocabulary"@en,
 	dc:description "A vocabulary to represents the AutomationML Standard - IEC 62714"@en,
 	dc:contributor <http://eis.iai.uni-bonn.de/Irlan>,
@@ -1285,7 +1283,7 @@ Class: aml:InstanceHierarchy
 
     Annotations: 
         skos:altLabel "IH"@en,
-        skos:definition "CAEX InstanceHierarchies serve for the storage of individual and project related engineering information. They form the centre of the AML top-level format and contain all individual data objects including properties, interfaces, relations and references."@en,
+        skos:definition "Describes the are to model the data to be exchanged. CAEX InstanceHierarchies serve for the storage of individual and project related engineering information. They form the centre of the AML top-level format and contain all individual data objects including properties, interfaces, relations and references."@en,
         skos:prefLabel "InstanceHierarchy"@en
     
     
@@ -1371,7 +1369,7 @@ Class: aml:SystemUnitClass
 
     Annotations: 
         skos:altLabel "SUC"@en,
-        skos:definition "Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed."@en,
+        skos:definition "Describe concrete types of objects reused within engineering. Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed."@en,
         skos:prefLabel "SystemUnitClass"@en
     
     
