@@ -585,7 +585,7 @@ ObjectProperty: prov:wasGeneratedBy
         aml:CAEXFile
     
     Range: 
-        prov:Entity
+        prov:Activity
     
     
 DataProperty: aml:hasAMLVersion
@@ -1347,10 +1347,10 @@ Class: om:Unit_of_measure
 Class: owl:Thing
 
     
-Class: prov:Entity
+Class: prov:Activity
 
     Annotations: 
-        rdfs:isDefinedBy "https://www.w3.org/TR/prov-o/#Entity"
+        rdfs:isDefinedBy "https://www.w3.org/TR/prov-o/#Activity"
     
     
 Class: schema:Person
