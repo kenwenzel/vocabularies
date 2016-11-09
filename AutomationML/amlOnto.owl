@@ -1,4 +1,6 @@
+Prefix: : <https://w3id.org/i40/aml#>
 Prefix: aml: <https://w3id.org/i40/aml#>
+Prefix: cc: <http://creativecommons.org/ns#>
 Prefix: cp: <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#>
 Prefix: dc: <http://purl.org/dc/elements/1.1/>
 Prefix: foaf: <http://xmlns.com/foaf/spec/>
@@ -11,12 +13,10 @@ Prefix: schema: <http://schema.org/>
 Prefix: skos: <http://www.w3.org/2004/02/skos/core#>
 Prefix: terms: <http://purl.org/dc/terms/>
 Prefix: vann: <http://purl.org/vocab/vann/>
+Prefix: voaf: <http://purl.org/vocommons/voaf#>
 Prefix: void: <http://rdfs.org/ns/void#>
 Prefix: xml: <http://www.w3.org/XML/1998/namespace>
 Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
-Prefix: voaf: <http://purl.org/vocommons/voaf#>
-Prefix: cc: <http://creativecommons.org/ns#>
-
 
 
 
@@ -30,11 +30,6 @@ Annotations:
     terms:license <http://creativecommons.org/licenses/by-nc-sa/2.0/>,
     vann:preferredNamespacePrefix "aml",
     vann:preferredNamespaceUri "https://w3id.org/i40/aml/",
-	dc:title "The AutomationML Vocabulary"@en,
-	dc:description "A vocabulary to represents the AutomationML Standard - IEC 62714"@en,
-	dc:contributor <http://eis.iai.uni-bonn.de/Irlan>,
-	dc:contributor <https://at.linkedin.com/in/olga-kovalenko-979552108/>,
-	cc:licence <http://creativecommongs.org/licences/by/3.0/>,
     void:vocabulary <http://purl.org/dc/elements/1.1/>,
     void:vocabulary <http://purl.org/dc/terms/>,
     void:vocabulary <http://www.w3.org/1999/02/22-rdf-syntax-ns#>,
@@ -45,6 +40,7 @@ Annotations:
     void:vocabulary <http://xmlns.com/foaf/spec/>,
     void:vocabulary <https://w3id.org/i40/aml#>,
     <http://usefulinc.com/ns/doap#repository> <https://github.com/i40-Tools/vocabularies/>,
+    rdfs:comment "A vocabulary to represents the AutomationML Standard - IEC 62714"@en,
     rdfs:isDefinedBy <https://w3id.org/i40/aml#>,
     owl:versionInfo "0.1",
     skos:altLabel "Alternative label for an AML object"@en,
@@ -113,12 +109,6 @@ Datatype: xsd:integer
     
 Datatype: xsd:string
 
-    
-ObjectProperty: aml:contains
-
-    Domain: 
-        aml:CAEXFile
-    
     
 ObjectProperty: aml:hasAdditionalInformation
 
@@ -249,21 +239,6 @@ ObjectProperty: aml:hasExternalReference
         aml:ExternalReference
     
     
-ObjectProperty: aml:hasInstanceHierarchy
-
-    Annotations: 
-        skos:prefLabel "hasInstanceHierarchy"@en
-    
-    SubPropertyOf: 
-        aml:contains
-    
-    Domain: 
-        aml:CAEXFile
-    
-    Range: 
-        aml:InstanceHierarchy
-    
-    
 ObjectProperty: aml:hasInterface
 
     Range: 
@@ -281,22 +256,6 @@ ObjectProperty: aml:hasInterfaceClass
     
     Range: 
         aml:InterfaceClass
-    
-    
-ObjectProperty: aml:hasInterfaceClassLib
-
-    Annotations: 
-        skos:prefLabel "hasInterfaceClassLib"@en,
-        skos:definition "Model the relation between CAEX File and Interface Class Lib"@en
-    
-    SubPropertyOf: 
-        aml:contains
-    
-    Domain: 
-        aml:CAEXFile
-    
-    Range: 
-        aml:InterfaceClassLib
     
     
 ObjectProperty: aml:hasInterfaceIE
@@ -371,19 +330,21 @@ ObjectProperty: aml:hasProject
     
     
 ObjectProperty: aml:hasRefPartnerSideA
-    
-	Annotations: 
+
+    Annotations: 
         skos:definition "Reference an Internal Link with an element A"@en,
         skos:prefLabel "hasRefPartnerSideA"@en
+    
     Domain: 
         aml:InternalLink
     
     
 ObjectProperty: aml:hasRefPartnerSideB
+
+    Annotations: 
+        skos:prefLabel "hasRefPartnerSideB"@en,
+        skos:definition "Reference an Internal Link with an element B"@en
     
-	Annotations: 
-    skos:definition "Reference an Internal Link with an element B"@en,
-    skos:prefLabel "hasRefPartnerSideB"@en
     Domain: 
         aml:InternalLink
     
@@ -434,22 +395,6 @@ ObjectProperty: aml:hasRoleClass
     
     Range: 
         aml:RoleClass
-    
-    
-ObjectProperty: aml:hasRoleClassLib
-
-    Annotations: 
-        skos:definition "A CAEX file contains a RoleClassLib"@en,
-        skos:prefLabel "hasRoleClassLib"@en
-    
-    SubPropertyOf: 
-        aml:contains
-    
-    Domain: 
-        aml:CAEXFile
-    
-    Range: 
-        aml:RoleClassLib
     
     
 ObjectProperty: aml:hasRoleRequeriment
@@ -531,22 +476,6 @@ ObjectProperty: aml:hasSystemUnitClass
         aml:SystemUnitClass or aml:SystemUnitFamily
     
     
-ObjectProperty: aml:hasSystemUnitClassLib
-
-    Annotations: 
-        skos:definition "A CAEX File contains a SystemUnitClassLib"@en,
-        skos:prefLabel "hasSystemUnitClassLib"@en
-    
-    SubPropertyOf: 
-        aml:contains
-    
-    Domain: 
-        aml:CAEXFile
-    
-    Range: 
-        aml:SystemUnitClassLib
-    
-    
 ObjectProperty: aml:hasUnitAttribute
 
     Domain: 
@@ -615,8 +544,8 @@ ObjectProperty: aml:isPartOfIE
 ObjectProperty: aml:isPartOfSUC
 
     Annotations: 
-        skos:altLabel "SystemUnitClassPartOf"@en,
         skos:prefLabel "isPartOfSUC"@en,
+        skos:altLabel "SystemUnitClassPartOf"@en,
         skos:definition "Connects the System Unit Class with another System Unit Class Elements"@en
     
     SubPropertyOf: 
@@ -641,11 +570,10 @@ ObjectProperty: cp:isPartOf
         rdfs:isDefinedBy "http://www.ontologydesignpatterns.org/cp/owl/partof.owl"
     
     
-ObjectProperty: om:unit_of_measure
-
-
 ObjectProperty: om:phenomenon
 
+    
+ObjectProperty: om:unit_of_measure
 
     
 DataProperty: aml:hasAMLVersion
@@ -1369,8 +1297,8 @@ Class: aml:SystemUnitClass
 
     Annotations: 
         skos:altLabel "SUC"@en,
-        skos:definition "Describe concrete types of objects reused within engineering. Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed."@en,
-        skos:prefLabel "SystemUnitClass"@en
+        skos:prefLabel "SystemUnitClass"@en,
+        skos:definition "Describe concrete types of objects reused within engineering. Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed."@en
     
     
 Class: aml:SystemUnitClassLib
@@ -1398,6 +1326,9 @@ Class: aml:eClassSpecification
 Class: om:Measure
 
     
+Class: om:Speed
+
+    
 Class: om:Unit_of_measure
 
     
@@ -1405,9 +1336,6 @@ Class: owl:Thing
 
     
 Class: schema:Person
-
-
-Class: om:Speed
 
     
 Individual: <http://eis.iai.uni-bonn.de/Irlan>
