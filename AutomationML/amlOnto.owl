@@ -544,8 +544,8 @@ ObjectProperty: aml:isPartOfIE
 ObjectProperty: aml:isPartOfSUC
 
     Annotations: 
-        skos:prefLabel "isPartOfSUC"@en,
         skos:altLabel "SystemUnitClassPartOf"@en,
+        skos:prefLabel "isPartOfSUC"@en,
         skos:definition "Connects the System Unit Class with another System Unit Class Elements"@en
     
     SubPropertyOf: 
@@ -575,6 +575,18 @@ ObjectProperty: om:phenomenon
     
 ObjectProperty: om:unit_of_measure
 
+    
+ObjectProperty: prov:wasGeneratedBy
+
+    Annotations: 
+        rdfs:isDefinedBy "http://www.w3.org/ns/prov#wasGeneratedBy"
+    
+    Domain: 
+        aml:CAEXFile
+    
+    Range: 
+        prov:Entity
+    
     
 DataProperty: aml:hasAMLVersion
 
@@ -1334,6 +1346,12 @@ Class: om:Unit_of_measure
     
 Class: owl:Thing
 
+    
+Class: prov:Entity
+
+    Annotations: 
+        rdfs:isDefinedBy "https://www.w3.org/TR/prov-o/#Entity"
+    
     
 Class: schema:Person
 
