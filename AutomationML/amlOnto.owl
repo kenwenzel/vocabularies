@@ -1294,9 +1294,11 @@ Class: aml:SystemUnitClassLib
         skos:prefLabel "SystemUnitClassLib"@en
     
 Class: aml:eClassSpecification
-
+    
+	SubClassOf: 
+        aml:ExternalStandard
     Annotations: 
-        skos:prefLabel "eClassInterlink"@en,
+        skos:prefLabel "eClassSpecification"@en,
         skos:definition "Describe the necessary links to eCl@ass Standard(e.g., version, classification and IRDI)"@en
 		
 Class: aml:ExternalStandard
