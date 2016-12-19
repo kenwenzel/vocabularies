@@ -339,7 +339,7 @@ ObjectProperty: aml:hasRefPartnerSideB
 ObjectProperty: aml:hasRefSem
 
     Range: 
-        aml:eClassSpecification
+        aml:ExternalStandard
     
     
 ObjectProperty: aml:hasRefSemAttribute
@@ -454,7 +454,7 @@ ObjectProperty: aml:hasSupportedRoleClassSUC
 ObjectProperty: aml:hasSystemUnitClass
 
     Annotations: 
-        skos:prefLabel "hasSystemUnitClass @TODO OLGA, why the domain and range of this property?"
+        skos:prefLabel "hasSystemUnitClass"
     
     Domain: 
         aml:SystemUnitClassLib
@@ -1298,6 +1298,12 @@ Class: aml:eClassSpecification
     Annotations: 
         skos:prefLabel "eClassInterlink"@en,
         skos:definition "Describe the necessary links to eCl@ass Standard(e.g., version, classification and IRDI)"@en
+		
+Class: aml:ExternalStandard
+
+    Annotations: 
+        skos:prefLabel "ExternalSemanticStd"@en,
+        skos:definition "Represent an External Standard which is used to provide unique Semantic reference for AML elements, e.g., eClass"@en
     
     
 Class: om:Measure
