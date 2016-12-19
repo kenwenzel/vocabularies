@@ -457,10 +457,10 @@ ObjectProperty: aml:hasSystemUnitClass
         skos:prefLabel "hasSystemUnitClass @TODO OLGA, why the domain and range of this property?"
     
     Domain: 
-        aml:SystemUnitClassLib or aml:SystemUnitFamily
+        aml:SystemUnitClassLib
     
     Range: 
-        aml:SystemUnitClass or aml:SystemUnitFamily
+        aml:SystemUnitClass
     
     
 ObjectProperty: aml:hasUnitAttribute
@@ -1292,14 +1292,6 @@ Class: aml:SystemUnitClassLib
         skos:altLabel "SUC Lib"@en,
         skos:definition "Store vendor specific AML classes"@en,
         skos:prefLabel "SystemUnitClassLib"@en
-    
-    
-Class: aml:SystemUnitFamily
-
-    Annotations: 
-        skos:definition "@TODO Olga"@en,
-        skos:prefLabel "SystemUnitFamily"@en
-    
     
 Class: aml:eClassSpecification
 
