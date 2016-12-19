@@ -1168,13 +1168,6 @@ Class: aml:BaseInterface
         aml:InterfaceClass
     
     
-Class: aml:CAEXBasicObject
-
-    Annotations: 
-        skos:prefLabel "CAEXBasicObject"@en,
-        skos:definition "CAEX basis object that comprises a basic set of attributes and header information which exist for all CAEX elements."@en
-    
-    
 Class: aml:CAEXFile
 
     Annotations: 
