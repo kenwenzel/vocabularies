@@ -190,20 +190,7 @@ ObjectProperty: aml:hasBaseSystemUnitClass
     Range: 
         aml:SystemUnitClass
     
-    
-ObjectProperty: aml:hasChangeMode
-
-    Annotations: 
-        skos:definition "Points to the different Elements with the Change Mode Concept"@en,
-        skos:prefLabel "hasChangeMode"@en
-    
-    Domain: 
-        aml:CAEXBasicObject
-    
-    Range: 
-        aml:ChangeMode
-    
-    
+   
 ObjectProperty: aml:hasDataType
 
     Domain: 
@@ -1194,14 +1181,7 @@ Class: aml:CAEXFile
         skos:prefLabel "CAEXFile"@en,
         skos:definition "Root-element of the CAEX schema"@en
     
-    
-Class: aml:ChangeMode
-
-    Annotations: 
-        skos:prefLabel "unitExternalInterface"@en,
-        skos:definition "Optionally describes the change state of an CAEX object. If used, the ChangeMode shall have the following value range: state, create, delete and change. This information should be used for further change management applications"@en
-    
-    
+   
 Class: aml:ExternalInterface
 
     Annotations: 
