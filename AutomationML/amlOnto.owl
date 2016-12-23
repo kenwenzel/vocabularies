@@ -1,7 +1,8 @@
 Prefix: : <https://w3id.org/i40/aml#>
 Prefix: aml: <https://w3id.org/i40/aml#>
+Prefix: cc: <http://creativecommons.org/ns#>
+Prefix: cp: <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#>
 Prefix: dc: <http://purl.org/dc/elements/1.1/>
-Prefix: dct: <http://purl.org/dc/terms/>
 Prefix: foaf: <http://xmlns.com/foaf/spec/>
 Prefix: om: <http://www.wurvoc.org/vocabularies/om-1.8/>
 Prefix: owl: <http://www.w3.org/2002/07/owl#>
@@ -12,6 +13,7 @@ Prefix: schema: <http://schema.org/>
 Prefix: skos: <http://www.w3.org/2004/02/skos/core#>
 Prefix: terms: <http://purl.org/dc/terms/>
 Prefix: vann: <http://purl.org/vocab/vann/>
+Prefix: voaf: <http://purl.org/vocommons/voaf#>
 Prefix: void: <http://rdfs.org/ns/void#>
 Prefix: xml: <http://www.w3.org/XML/1998/namespace>
 Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -23,8 +25,8 @@ Ontology: <https://w3id.org/i40/aml#>
 
 Annotations: 
     terms:created "2016-03-23"^^xsd:date,
-    terms:creator "Irlan Grangel",
-    terms:creator "Olga Kovalenko",
+    terms:creator <http://eis.iai.uni-bonn.de/Irlan>,
+    terms:creator <https://at.linkedin.com/in/olga-kovalenko-979552108/>,
     terms:license <http://creativecommons.org/licenses/by-nc-sa/2.0/>,
     vann:preferredNamespacePrefix "aml",
     vann:preferredNamespaceUri "https://w3id.org/i40/aml/",
@@ -37,25 +39,39 @@ Annotations:
     void:vocabulary <http://www.w3.org/XML/1998/namespace>,
     void:vocabulary <http://xmlns.com/foaf/spec/>,
     void:vocabulary <https://w3id.org/i40/aml#>,
+    <http://usefulinc.com/ns/doap#repository> <https://github.com/i40-Tools/vocabularies/>,
+    rdfs:comment "A vocabulary to represents the AutomationML Standard - IEC 62714"@en,
     rdfs:isDefinedBy <https://w3id.org/i40/aml#>,
     owl:versionInfo "0.1",
-    skos:definition "A vocabulary to represents the AutomationML Standard - IEC 62714."@en,
-    skos:prefLabel "aml"@en,
-	skos:altLabel "Alternative label for an AML object"@en
+    skos:altLabel "Alternative label for an AML object"@en,
+    skos:definition "A vocabulary to represents the AutomationML Standard - IEC 62714"@en,
+    skos:prefLabel "aml"@en
 
+AnnotationProperty: <http://usefulinc.com/ns/doap#repository>
+
+    
 AnnotationProperty: owl:versionInfo
 
     
+AnnotationProperty: rdfs:comment
+
+    
 AnnotationProperty: rdfs:isDefinedBy
+
+    
+AnnotationProperty: rdfs:label
+
+    
+AnnotationProperty: schema:affiliation
+
+    
+AnnotationProperty: skos:altLabel
 
     
 AnnotationProperty: skos:definition
 
     
 AnnotationProperty: skos:prefLabel
-
-
-AnnotationProperty: skos:altLabel
 
     
 AnnotationProperty: terms:created
@@ -79,22 +95,25 @@ AnnotationProperty: void:vocabulary
 Datatype: rdf:PlainLiteral
 
     
+Datatype: xsd:anyURI
+
+    
 Datatype: xsd:dateTime
+
+    
+Datatype: xsd:decimal
+
+    
+Datatype: xsd:integer
 
     
 Datatype: xsd:string
 
     
-ObjectProperty: aml:contains
-
-    Domain: 
-        aml:CAEXFile
-    
-    
 ObjectProperty: aml:hasAdditionalInformation
 
     Annotations: 
-        skos:prefLabel "has Additional Information"
+        skos:prefLabel "hasAdditionalInformation"@en
     
     Domain: 
         aml:CAEXFile
@@ -106,7 +125,7 @@ ObjectProperty: aml:hasAdditionalInformation
 ObjectProperty: aml:hasAttribute
 
     Annotations: 
-        skos:prefLabel "has Attribute"@en
+        skos:prefLabel "hasAttribute"@en
     
     Domain: 
         owl:Thing
@@ -171,24 +190,33 @@ ObjectProperty: aml:hasBaseSystemUnitClass
     Range: 
         aml:SystemUnitClass
     
-    
-ObjectProperty: aml:hasChangeMode
+   
+ObjectProperty: aml:hasDataType
 
-    Annotations: 
-        skos:definition "Points to the different Elements with the Change Mode Concept"@en,
-        skos:prefLabel "has Change Mode"@en
-    
     Domain: 
-        aml:CAEXBasicObject
+        aml:Attribute
     
     Range: 
-        aml:ChangeMode
+        om:Unit_of_measure
+    
+    
+ObjectProperty: aml:hasExternalInterface
+
+    Annotations: 
+        rdfs:label "hasExternalInterface"@en,
+        rdfs:comment "Connects the Internal Element with an External Interface"@en
+    
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        aml:ExternalInterface
     
     
 ObjectProperty: aml:hasExternalReference
 
     Annotations: 
-        skos:prefLabel "has External Reference"@en,
+        skos:prefLabel "hasExternalReference"@en,
         skos:definition "A CAEX File contains external references"
     
     Domain: 
@@ -196,21 +224,6 @@ ObjectProperty: aml:hasExternalReference
     
     Range: 
         aml:ExternalReference
-    
-    
-ObjectProperty: aml:hasInstanceHierarchy
-
-    Annotations: 
-        skos:prefLabel "has Instance Hierarchy"@en
-    
-    SubPropertyOf: 
-        aml:contains
-    
-    Domain: 
-        aml:CAEXFile
-    
-    Range: 
-        aml:InstanceHierarchy
     
     
 ObjectProperty: aml:hasInterface
@@ -223,29 +236,13 @@ ObjectProperty: aml:hasInterfaceClass
 
     Annotations: 
         skos:definition "Model the relation between Interface Class Lib and Interface Class"@en,
-        skos:prefLabel "has Interface Class"@en
+        skos:prefLabel "hasInterfaceClass"@en
     
     Domain: 
         aml:InterfaceClassLib
     
     Range: 
         aml:InterfaceClass
-    
-    
-ObjectProperty: aml:hasInterfaceClassLib
-
-    Annotations: 
-        skos:prefLabel "has Interface Class Lib"@en,
-        skos:definition "Model the relation between CAEX File and Interface Class Lib"@en
-    
-    SubPropertyOf: 
-        aml:contains
-    
-    Domain: 
-        aml:CAEXFile
-    
-    Range: 
-        aml:InterfaceClassLib
     
     
 ObjectProperty: aml:hasInterfaceIE
@@ -287,7 +284,7 @@ ObjectProperty: aml:hasInterfaceSUC
 ObjectProperty: aml:hasInternalElement
 
     Annotations: 
-        skos:prefLabel "has Internal Element"@en,
+        skos:prefLabel "hasInternalElement"@en,
         skos:definition "Hierarchy has many internal elements"@en
     
     Domain: 
@@ -321,12 +318,20 @@ ObjectProperty: aml:hasProject
     
 ObjectProperty: aml:hasRefPartnerSideA
 
+    Annotations: 
+        skos:definition "Reference an Internal Link with an element A"@en,
+        skos:prefLabel "hasRefPartnerSideA"@en
+    
     Domain: 
         aml:InternalLink
     
     
 ObjectProperty: aml:hasRefPartnerSideB
 
+    Annotations: 
+        skos:prefLabel "hasRefPartnerSideB"@en,
+        skos:definition "Reference an Internal Link with an element B"@en
+    
     Domain: 
         aml:InternalLink
     
@@ -334,7 +339,7 @@ ObjectProperty: aml:hasRefPartnerSideB
 ObjectProperty: aml:hasRefSem
 
     Range: 
-        aml:eClassSpecification
+        aml:ExternalStandard
     
     
 ObjectProperty: aml:hasRefSemAttribute
@@ -352,8 +357,9 @@ ObjectProperty: aml:hasRefSemAttribute
 ObjectProperty: aml:hasRefSemRC
 
     Annotations: 
+        skos:altLabel "RoleClasseClassReference"@en,
         skos:definition "A Role Class points to its ID according to eClass"@en,
-        skos:prefLabel "Role Class eClass Reference"@en
+        skos:prefLabel "eClassRCReference"
     
     SubPropertyOf: 
         aml:hasRefSem
@@ -368,8 +374,8 @@ ObjectProperty: aml:hasRefSemRC
 ObjectProperty: aml:hasRoleClass
 
     Annotations: 
-        skos:prefLabel "has Role Class"@en,
-        skos:definition "A Role Class lib contains a Role Class"@en
+        skos:definition "A Role Class lib contains a Role Class"@en,
+        skos:prefLabel "hasRoleClass"@en
     
     Domain: 
         aml:RoleClassLib
@@ -378,26 +384,10 @@ ObjectProperty: aml:hasRoleClass
         aml:RoleClass
     
     
-ObjectProperty: aml:hasRoleClassLib
-
-    Annotations: 
-        skos:definition "A CAEX file contains a RoleClassLib"@en,
-        skos:prefLabel "has Role Class Lib"@en
-    
-    SubPropertyOf: 
-        aml:contains
-    
-    Domain: 
-        aml:CAEXFile
-    
-    Range: 
-        aml:RoleClassLib
-    
-    
 ObjectProperty: aml:hasRoleRequeriment
 
     Annotations: 
-        skos:prefLabel "has Role Requeriment"@en
+        skos:prefLabel "hasRoleRequeriment"@en
     
     Range: 
         aml:RoleClass
@@ -430,7 +420,7 @@ ObjectProperty: aml:hasRoleRequirementSUC
 ObjectProperty: aml:hasSupportedRoleClass
 
     Annotations: 
-        skos:prefLabel "Supported Role Class"@en,
+        skos:prefLabel "supportedRoleClass"@en,
         skos:definition "Internal elements has Supported Role Class"@en
     
     Range: 
@@ -464,45 +454,52 @@ ObjectProperty: aml:hasSupportedRoleClassSUC
 ObjectProperty: aml:hasSystemUnitClass
 
     Annotations: 
-        skos:prefLabel "hasSystemUnitClass @TODO OLGA, why the domain and range of this property?"
+        skos:prefLabel "hasSystemUnitClass"
     
     Domain: 
-        aml:SystemUnitClassLib or aml:SystemUnitFamily
-    
-    Range: 
-        aml:SystemUnitClass or aml:SystemUnitFamily
-    
-    
-ObjectProperty: aml:hasSystemUnitClassLib
-
-    Annotations: 
-        skos:definition "A CAEX File contains a SystemUnitClassLib"@en,
-        skos:prefLabel "hasSystemUnitClassLib"@en
-    
-    SubPropertyOf: 
-        aml:contains
-    
-    Domain: 
-        aml:CAEXFile
-    
-    Range: 
         aml:SystemUnitClassLib
     
+    Range: 
+        aml:SystemUnitClass
     
-ObjectProperty: aml:isConnectedTo_eClass
+    
+ObjectProperty: aml:hasUnitAttribute
+
+    Domain: 
+        aml:Attribute
+    
+    
+ObjectProperty: aml:hasUnitValue
+
+    Annotations: 
+        skos:prefLabel "hasAttributeValue"@en
+    
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        om:Measure
+    
+    
+ObjectProperty: aml:isConnectedToEClass
 
     Annotations: 
         skos:definition "Points to the eCl@ass connection for a given element"@en,
         skos:prefLabel "eClassIsConnectedTo"@en
     
     
-ObjectProperty: aml:isPartOf
-
-    
 ObjectProperty: aml:isPartOfIC
 
+    Annotations: 
+        skos:altLabel "isPartOfInterfaceClass"@en,
+        skos:prefLabel "isPartOfIC"@en,
+        skos:definition "Connects the InterfaceClasses with other InterfaceClasses that are part of the given Interface Class"@en
+    
     SubPropertyOf: 
-        aml:isPartOf
+        cp:isPartOf
+    
+    Characteristics: 
+        Transitive
     
     Domain: 
         aml:InterfaceClass
@@ -514,11 +511,12 @@ ObjectProperty: aml:isPartOfIC
 ObjectProperty: aml:isPartOfIE
 
     Annotations: 
-        skos:definition "Connects the Internal Element with other Internal Elements that are part of the given Internal Element"@en,
-        skos:prefLabel "InternalElementPartOf"@en
+        skos:prefLabel "isPartOfIE"@en,
+        skos:altLabel "InternalElementPartOf"@en,
+        skos:definition "Connects the Internal Element with other Internal Elements that are part of the given Internal Element"@en
     
     SubPropertyOf: 
-        aml:isPartOf
+        cp:isPartOf
     
     Characteristics: 
         Transitive
@@ -533,17 +531,60 @@ ObjectProperty: aml:isPartOfIE
 ObjectProperty: aml:isPartOfSUC
 
     Annotations: 
-        skos:prefLabel "SystemUnitClassName"@en,
+        skos:altLabel "SystemUnitClassPartOf"@en,
+        skos:prefLabel "isPartOfSUC"@en,
         skos:definition "Connects the System Unit Class with another System Unit Class Elements"@en
     
     SubPropertyOf: 
-        aml:isPartOf
+        cp:isPartOf
+    
+    Characteristics: 
+        Transitive
     
     Domain: 
         aml:SystemUnitClass
     
     Range: 
         aml:SystemUnitClass
+    
+    
+ObjectProperty: aml:unit_of_measure
+
+    
+ObjectProperty: cp:isPartOf
+
+    Annotations: 
+        rdfs:isDefinedBy "http://www.ontologydesignpatterns.org/cp/owl/partof.owl"
+    
+    
+ObjectProperty: om:phenomenon
+
+    
+ObjectProperty: om:unit_of_measure
+
+    
+ObjectProperty: prov:wasGeneratedBy
+
+    Annotations: 
+        rdfs:isDefinedBy "http://www.w3.org/ns/prov#wasGeneratedBy"
+    
+    Domain: 
+        aml:CAEXFile
+    
+    Range: 
+        prov:Activity
+    
+    
+DataProperty: aml:hasAMLVersion
+
+    Annotations: 
+        skos:prefLabel "hasAMLVersion"@en
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:decimal
     
     
 DataProperty: aml:hasAttributeDataType
@@ -568,7 +609,7 @@ DataProperty: aml:hasAttributeDescription
         aml:Attribute
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     
 DataProperty: aml:hasAttributeName
@@ -585,23 +626,8 @@ DataProperty: aml:hasAttributeName
     
 DataProperty: aml:hasAttributeValue
 
-    Annotations: 
-        skos:prefLabel "has Value"@en
-    
     Domain: 
         aml:Attribute
-    
-    Range: 
-        xsd:string
-    
-    
-DataProperty: aml:hasAutomationMLVersion
-
-    Annotations: 
-        skos:prefLabel "has Automation ML Version"
-    
-    Domain: 
-        aml:AdditionalInformation
     
     Range: 
         xsd:string
@@ -610,8 +636,8 @@ DataProperty: aml:hasAutomationMLVersion
 DataProperty: aml:hasClassificationClass
 
     Annotations: 
-        skos:prefLabel "eClass classification Class"@en,
-        skos:definition "Points to the eClass classification Class a given Element"@en
+        skos:definition "Points to the eClass classification Class a given Element"@en,
+        skos:prefLabel "eClassClassificationClass"@en
     
     Domain: 
         aml:eClassSpecification
@@ -637,7 +663,7 @@ DataProperty: aml:hasExternalReferenceAlias
 
     Annotations: 
         skos:definition "A external Reference of a CAEX File has Alias",
-        skos:prefLabel "external Reference Alias"@en
+        skos:prefLabel "externalReferenceAlias"@en
     
     Domain: 
         aml:ExternalReference
@@ -649,7 +675,7 @@ DataProperty: aml:hasExternalReferenceAlias
 DataProperty: aml:hasExternalReferencePath
 
     Annotations: 
-        skos:prefLabel "external Reference Path"@en,
+        skos:prefLabel "externalReferencePath"@en,
         skos:definition "A external Reference of a CAEX File contains path to the file"
     
     Domain: 
@@ -659,14 +685,29 @@ DataProperty: aml:hasExternalReferencePath
         xsd:string
     
     
-DataProperty: aml:hasID
+DataProperty: aml:hasICID
 
+    Annotations: 
+        rdfs:comment "Unique ID for the Interface Class"@en
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        aml:InterfaceClass
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        dc:identifier
+    
     
 DataProperty: aml:hasIDIE
 
     Annotations: 
-        skos:prefLabel "internal Element Id"@en,
-        skos:definition "Unique Id of an Internal Element"@en
+        skos:definition "Unique Id of an Internal Element"@en,
+        skos:prefLabel "internalElementId"@en
     
     Characteristics: 
         Functional
@@ -678,13 +719,13 @@ DataProperty: aml:hasIDIE
         xsd:string
     
     SubPropertyOf: 
-        aml:hasID
+        dc:identifier
     
     
 DataProperty: aml:hasIRDIeClass
 
     Annotations: 
-        skos:prefLabel "eClass IRDI"@en,
+        skos:prefLabel "eClassIRDI"@en,
         skos:definition "Points to the eClass unique identification(IRDI) a given Element"@en
     
     Characteristics: 
@@ -697,31 +738,32 @@ DataProperty: aml:hasIRDIeClass
         xsd:string
     
     
-DataProperty: aml:hasLastWritingDate
-
-    Annotations: 
-        skos:prefLabel "has Writer Release"
-    
-    Domain: 
-        aml:AdditionalInformation
-    
-    Range: 
-        xsd:dateTime
-    
-    
 DataProperty: aml:hasName
 
+    
+DataProperty: aml:hasNameAttribute
+
+    Domain: 
+        aml:Attribute
+    
+    Range: 
+        rdf:PlainLiteral
+    
+    SubPropertyOf: 
+        aml:hasName
+    
     
 DataProperty: aml:hasNameFile
 
     Annotations: 
-        skos:prefLabel "has File Name"
+        skos:definition "The name of the main AutomationML File"@en,
+        skos:prefLabel "hasNameFile"
     
     Domain: 
         aml:CAEXFile
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -731,13 +773,14 @@ DataProperty: aml:hasNameIC
 
     Annotations: 
         skos:definition "Name of the Interface Class"@en,
-        skos:prefLabel "InterfaceClassName"@en
+        skos:prefLabel "hasNameIC"@en,
+        skos:altLabel "hasInterfaceClassName"@en
     
     Domain: 
         aml:InterfaceClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -747,7 +790,8 @@ DataProperty: aml:hasNameIE
 
     Annotations: 
         skos:definition "Name of an Internal Element"@en,
-        skos:prefLabel "internal Element Name"@en
+        skos:altLabel "hasInternalElementName"@en,
+        skos:prefLabel "hasNameIE"@en
     
     Characteristics: 
         Functional
@@ -756,7 +800,24 @@ DataProperty: aml:hasNameIE
         aml:InternalElement
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
+    
+    SubPropertyOf: 
+        aml:hasName
+    
+    
+DataProperty: aml:hasNameIH
+
+    Annotations: 
+        skos:altLabel "hasInstanceHierarchyName"@en,
+        skos:definition "Given Name of the Instance Hierarchy"@en,
+        skos:prefLabel "hasNameIH"@en
+    
+    Domain: 
+        aml:InstanceHierarchy
+    
+    Range: 
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -765,8 +826,9 @@ DataProperty: aml:hasNameIE
 DataProperty: aml:hasNameRC
 
     Annotations: 
+        skos:altLabel "hasRoleClassName"@en,
         skos:definition "Name for a RoleClass"@en,
-        skos:prefLabel "roleClassName"@en
+        skos:prefLabel "hasNameRC"@en
     
     Characteristics: 
         Functional
@@ -775,7 +837,7 @@ DataProperty: aml:hasNameRC
         aml:RoleClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -784,8 +846,9 @@ DataProperty: aml:hasNameRC
 DataProperty: aml:hasNameSUC
 
     Annotations: 
+        skos:prefLabel "hasNameSUC"@en,
         skos:definition "Given Name of the System Unit Class"@en,
-        skos:prefLabel "SystemUnitClassName"@en
+        skos:altLabel "hasSystemUnitClassName"@en
     
     Characteristics: 
         Functional
@@ -794,7 +857,7 @@ DataProperty: aml:hasNameSUC
         aml:SystemUnitClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasName
@@ -853,7 +916,7 @@ DataProperty: aml:hasRefBaseClassPathIC
         aml:InterfaceClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasRefBaseClassPath
@@ -865,7 +928,7 @@ DataProperty: aml:hasRefBaseClassPathRC
         aml:RoleClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasRefBaseClassPath
@@ -877,7 +940,7 @@ DataProperty: aml:hasRefBaseClassPathSUC
         aml:SystemUnitClass
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     SubPropertyOf: 
         aml:hasRefBaseClassPath
@@ -892,7 +955,8 @@ DataProperty: aml:hasRefBaseRoleClassPath
 DataProperty: aml:hasRefBaseSystemUnitPath
 
     Annotations: 
-        skos:prefLabel "Ref Base System Unit Path"@en
+        skos:altLabel "Ref Base System Unit Path"@en,
+        skos:prefLabel "refBaseSUPath"@en
     
     Domain: 
         aml:InternalElement
@@ -904,23 +968,8 @@ DataProperty: aml:hasRefBaseSystemUnitPath
 DataProperty: aml:hasRefRoleClassPath
 
     Annotations: 
-        skos:prefLabel "Ref Role Class Path"@en
-    
-    Range: 
-        xsd:string
-    
-    
-DataProperty: aml:hasRefSemantic
-
-    Annotations: 
-        skos:prefLabel "ref Semantic"@en,
-        skos:definition "Reference to the eClass IRDI identification"@en
-    
-    Characteristics: 
-        Functional
-    
-    Domain: 
-        aml:Attribute
+        skos:prefLabel "refRCPath"@en,
+        skos:altLabel "refRoleClassPath"@en
     
     Range: 
         xsd:string
@@ -929,28 +978,28 @@ DataProperty: aml:hasRefSemantic
 DataProperty: aml:hasSchemaVersion
 
     Annotations: 
-        skos:prefLabel "has Schema Version"
+        skos:prefLabel "hasSchemaVersion"
     
     Domain: 
         aml:CAEXFile
     
     Range: 
-        xsd:string
+        xsd:decimal
     
     
 DataProperty: aml:hasVersion
 
     Annotations: 
-        skos:prefLabel "has Version"@en
+        skos:prefLabel "hasVersion"@en
     
     Range: 
-        xsd:string
+        xsd:decimal
     
     
-DataProperty: aml:hasVersion_eClass
+DataProperty: aml:hasVersionEClass
 
     Annotations: 
-        skos:prefLabel "eClass Version"@en,
+        skos:prefLabel "eClassVersion"@en,
         skos:definition "Points to the eClass version for a given Element"@en
     
     Domain: 
@@ -974,23 +1023,30 @@ DataProperty: aml:hasWriterId
     Range: 
         xsd:string
     
+    SubPropertyOf: 
+        dc:identifier
+    
     
 DataProperty: aml:hasWriterName
 
     Annotations: 
-        skos:prefLabel "has Writer Name"
+        skos:definition "The name of the Writer, i.e., the tool that produced the file"@en,
+        skos:prefLabel "hasWriterName"
     
     Domain: 
         aml:AdditionalInformation
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
+    
+    SubPropertyOf: 
+        aml:hasName
     
     
 DataProperty: aml:hasWriterRelease
 
     Annotations: 
-        skos:prefLabel "has Writer Release"
+        skos:prefLabel "hasWriterRelease"@en
     
     Domain: 
         aml:AdditionalInformation
@@ -1002,19 +1058,31 @@ DataProperty: aml:hasWriterRelease
 DataProperty: aml:hasWriterVendor
 
     Annotations: 
-        skos:prefLabel "has Writer Vendor"
+        skos:prefLabel "hasWriterVendor"@en
     
     Domain: 
         aml:AdditionalInformation
     
     Range: 
-        xsd:string
+        rdf:PlainLiteral
     
     
 DataProperty: aml:hasWriterVendorURL
 
     Annotations: 
-        skos:prefLabel "has Writer Vendor URL"
+        skos:prefLabel "hasWriterVendorURL"@en
+    
+    Domain: 
+        aml:AdditionalInformation
+    
+    Range: 
+        xsd:anyURI
+    
+    
+DataProperty: aml:hasWriterVersion
+
+    Annotations: 
+        skos:prefLabel "hasWriterVersion"@en
     
     Domain: 
         aml:AdditionalInformation
@@ -1023,13 +1091,38 @@ DataProperty: aml:hasWriterVendorURL
         xsd:string
     
     
-DataProperty: aml:hasWriterVersion
+DataProperty: aml:lastWritingDateTime
 
-    Annotations: 
-        skos:prefLabel "has Writer Version"
-    
     Domain: 
         aml:AdditionalInformation
+    
+    Range: 
+        xsd:dateTime
+    
+    
+DataProperty: aml:numerical_value
+
+    
+DataProperty: aml:refBaseSystemUnitPath
+
+    Domain: 
+        aml:InternalElement
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: aml:refSemanticAttribute
+
+    Annotations: 
+        skos:prefLabel "refSemanticAttribute"@en,
+        skos:definition "Reference to the eClass IRDI identification"@en
+    
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        aml:Attribute
     
     Range: 
         xsd:string
@@ -1041,6 +1134,9 @@ DataProperty: dc:identifier
 DataProperty: dc:title
 
     
+DataProperty: om:numerical_value
+
+    
 DataProperty: schema:name
 
     Characteristics: 
@@ -1050,7 +1146,7 @@ DataProperty: schema:name
 Class: aml:AdditionalInformation
 
     Annotations: 
-        skos:prefLabel "Additional Information"@en,
+        skos:prefLabel "AdditionalInformation"@en,
         skos:definition "Additional Information for CAEX File"@en
     
     
@@ -1072,32 +1168,18 @@ Class: aml:BaseInterface
         aml:InterfaceClass
     
     
-Class: aml:CAEXBasicObject
-
-    Annotations: 
-        skos:prefLabel "CAEX Basic Object"@en,
-        skos:definition "CAEX basis object that comprises a basic set of attributes and header information which exist for all CAEX elements."@en
-    
-    
 Class: aml:CAEXFile
 
     Annotations: 
-        skos:definition "Root-element of the CAEX schema"@en,
-        skos:prefLabel "CAEX File"@en
+        skos:prefLabel "CAEXFile"@en,
+        skos:definition "Root-element of the CAEX schema"@en
     
-    
-Class: aml:ChangeMode
-
-    Annotations: 
-        skos:prefLabel "unit External Interface"@en,
-        skos:definition "Optionally describes the change state of an CAEX object. If used, the ChangeMode shall have the following value range: state, create, delete and change. This information should be used for further change management applications"@en
-    
-    
+   
 Class: aml:ExternalInterface
 
     Annotations: 
-        skos:prefLabel "External Interface"@en,
-		skos:altLabel "EI"@en
+        skos:altLabel "EI"@en,
+        skos:prefLabel "ExternalInterface"@en
     
     SubClassOf: 
         aml:InterfaceClass
@@ -1107,30 +1189,31 @@ Class: aml:ExternalReference
 
     Annotations: 
         skos:definition "External Reference for a CAEX File"@en,
-        skos:prefLabel "External Reference"@en
+        skos:prefLabel "ExternalReference"@en
     
     
 Class: aml:InstanceHierarchy
 
     Annotations: 
-        skos:prefLabel "Instance Hierarchy"@en,
-		skos:altLabel "IH"@en
+        skos:altLabel "IH"@en,
+        skos:definition "Describes the are to model the data to be exchanged. CAEX InstanceHierarchies serve for the storage of individual and project related engineering information. They form the centre of the AML top-level format and contain all individual data objects including properties, interfaces, relations and references."@en,
+        skos:prefLabel "InstanceHierarchy"@en
     
     
 Class: aml:InterfaceClass
 
     Annotations: 
         skos:definition "Defines the relations between AML Objects. Should be identified with its tag name"@en,
-        skos:prefLabel "Interface Class"@en,
-		skos:altLabel "IC"@en
+        skos:altLabel "IC"@en,
+        skos:prefLabel "InterfaceClass"@en
     
     
 Class: aml:InterfaceClassLib
 
     Annotations: 
-        skos:prefLabel "Interface Class Lib"@en,
-		skos:altLabel "IC Lib"@en,
-		skos:definition "Library containing AML Interface Classes"@en
+        skos:altLabel "IC Lib"@en,
+        skos:prefLabel "InterfaceClassLib"@en,
+        skos:definition "Library containing AML Interface Classes"@en
     
     
 Class: aml:InterfaceFamily
@@ -1139,17 +1222,17 @@ Class: aml:InterfaceFamily
 Class: aml:InternalElement
 
     Annotations: 
-        skos:definition "Shall be used in order to define nested objects inside of a SystemUnitClass or another InternalElement. Allows description of the internal structure of an CAEX object"@en,
-        skos:prefLabel "Internal Element"@en,
-		skos:altLabel "IE"@en
+        skos:altLabel "IE"@en,
+        skos:prefLabel "InternalElement"@en,
+        skos:definition "Shall be used in order to define nested objects inside of a SystemUnitClass or another InternalElement. Allows description of the internal structure of an CAEX object"@en
     
     
 Class: aml:InternalLink
 
     Annotations: 
-        skos:definition "@TODO Olga"@en,
-        skos:prefLabel "InternalLink"@en,
-		skos:altLabel "IL"@en
+        skos:altLabel "IL"@en,
+        skos:definition "Connects two CAEX elements like InternalElements"@en,
+        skos:prefLabel "InternalLink"@en
     
     
 Class: aml:Order
@@ -1172,16 +1255,6 @@ Class: aml:PPRConnector
         aml:InterfaceClass
     
     
-Class: aml:PortConnector
-
-    Annotations: 
-        skos:prefLabel "Order"@en,
-        skos:definition "Provide a high level relation between ports"@en
-    
-    SubClassOf: 
-        aml:InterfaceClass
-    
-    
 Class: aml:Project
 
     Annotations: 
@@ -1193,48 +1266,340 @@ Class: aml:RoleClass
 
     Annotations: 
         skos:definition "RoleClasses are vendor independent and generic entities. They are used to assign a generic semantics to an object instance and to describe requirements of this object instance. Also, they can help in mapping data models of different engineering tools."@en,
-        skos:prefLabel "RoleClass"@en,
-		skos:altLabel "RC"@en
+        skos:altLabel "RC"@en,
+        skos:prefLabel "RoleClass"@en
     
     
 Class: aml:RoleClassLib
 
     Annotations: 
+        skos:altLabel "RC Lib"@en,
         skos:definition "Definitions of abstract characteristics of CAEX objects and thus serve the automatic semantic interpretation of user-defined AML objects"@en,
-        skos:prefLabel "RoleClassLib"@en,
-		skos:altLabel "RC Lib"@en
+        skos:prefLabel "RoleClassLib"@en
     
     
 Class: aml:SystemUnitClass
 
     Annotations: 
-        skos:prefLabel "System Unit Class"@en,
-        skos:definition "Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed."@en,
-		skos:altLabel "SUC"@en
+        skos:altLabel "SUC"@en,
+        skos:prefLabel "SystemUnitClass"@en,
+        skos:definition "Describe concrete types of objects reused within engineering. Allows for different user-defined classes. Inheritance between a SystemUnitClass and an object instance is not allowed."@en
     
     
 Class: aml:SystemUnitClassLib
 
     Annotations: 
-        skos:prefLabel "System Unit ClassLib"@en,
+        skos:altLabel "SUC Lib"@en,
         skos:definition "Store vendor specific AML classes"@en,
-		skos:altLabel "SUC Lib"@en
-    
-    
-Class: aml:SystemUnitFamily
-
-    Annotations: 
-        skos:prefLabel "System Unit Family"@en,
-        skos:definition "@TODO Olga"@en
-    
+        skos:prefLabel "SystemUnitClassLib"@en
     
 Class: aml:eClassSpecification
+    
+	SubClassOf: 
+        aml:ExternalStandard
+    Annotations: 
+        skos:prefLabel "eClassSpecification"@en,
+        skos:definition "Describe the necessary links to eCl@ass Standard(e.g., version, classification and IRDI)"@en
+		
+Class: aml:ExternalStandard
 
     Annotations: 
-        skos:prefLabel "eClassInterlink"@en,
-        skos:definition "Describe the necessary links to eCl@ass Standard(e.g., version, classification and IRDI)"@en
+        skos:prefLabel "ExternalSemanticStd"@en,
+        skos:definition "Represent an External Standard which is used to provide unique Semantic reference for AML elements, e.g., eClass"@en
     
+    
+Class: om:Measure
+
+    
+Class: om:Speed
+
+    
+Class: om:Unit_of_measure
+
     
 Class: owl:Thing
 
+    
+Class: prov:Activity
+
+    Annotations: 
+        rdfs:isDefinedBy "https://www.w3.org/TR/prov-o/#Activity"
+    
+    
+Class: schema:Person
+
+    
+Individual: <http://eis.iai.uni-bonn.de/Irlan>
+
+    Annotations: 
+        schema:affiliation <http://dbpedia.org/resource/University_of_Bonn>,
+        rdfs:label "Irlan Grangel-Gonzalez"
+    
+    Types: 
+        schema:Person
+    
+    
+Individual: <https://at.linkedin.com/in/olga-kovalenko-979552108/>
+
+    Annotations: 
+        rdfs:label "Olga Kovalenko"
+    
+    Types: 
+        schema:Person
+    
+    
+Individual: aml:AILevelSW
+
+    Types: 
+        aml:ExternalInterface
+    
+    Facts:  
+     aml:hasICID  "91a89c81-b794-421c-8f24-458f51307f72",
+     aml:hasNameIC  "AI Level SW"@en,
+     aml:hasRefBaseClassPathIC  "NE150InterfaceLibrary/SWSignal"
+    
+    
+Individual: aml:AdditionalInformation1
+
+    Types: 
+        aml:AdditionalInformation
+    
+    Facts:  
+     aml:hasAMLVersion  2.0,
+     aml:hasWriterId  "916578CA-FE0D-474E-A4FC-9E1719892369",
+     aml:hasWriterName  "AutomationML Editor"@en,
+     aml:hasWriterRelease  "4.1.5.0",
+     aml:hasWriterVendor  "AutomationML e.V."@en,
+     aml:hasWriterVendorURL  "www.AutomationML.org"^^xsd:anyURI,
+     aml:hasWriterVersion  "4.1.5",
+     aml:lastWritingDateTime  "2001-10-26T21:32:52"^^xsd:dateTime
+    
+    
+Individual: aml:AttValue1
+
+    Facts:  
+     aml:numerical_value  0
+    
+    
+Individual: aml:DemoArea
+
+    Types: 
+        aml:InternalElement
+    
+    Facts:  
+     aml:isPartOfIE  aml:DemoSite,
+     aml:hasIDIE  "33a47300-eb7e-4831-9448-b358d4246dcd",
+     aml:hasNameIE  "DemoArea"@en
+    
+    
+Individual: aml:DemoEnterprise
+
+    Types: 
+        aml:InternalElement
+    
+    Facts:  
+     aml:hasIDIE  "d812ea1e-eaa2-45f4-8c82-72ecc50236c5",
+     aml:hasNameIE  "DemoEnterprise"@en
+    
+    
+Individual: aml:DemoSite
+
+    Types: 
+        aml:InternalElement
+    
+    Facts:  
+     aml:isPartOfIE  aml:DemoEnterprise,
+     aml:hasIDIE  "38d6171f-0cb1-48e0-925f-f03902af8ee2",
+     aml:hasNameIE  "DemoSite"@en
+    
+    
+Individual: aml:ExampleInstanceHierarchy
+
+    Types: 
+        aml:CAEXFile
+    
+    
+Individual: aml:FlowchartNumber
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasAttributeDataType  "xs:string",
+     aml:hasAttributeDescription  "Drawing number of P&amp;I flowchart (pipework and instrumentation flowchart)"@en,
+     aml:hasAttributeValue  "1000_4",
+     aml:hasNameAttribute  "FlowchartNumber"@en,
+     aml:refSemanticAttribute  "NE 150 v1.0 Annex 1.1.5"
+    
+    
+Individual: aml:GMA6.16BeispielPIDVersion2.97
+
+    Types: 
+        aml:CAEXFile
+    
+    Facts:  
+     aml:hasAdditionalInformation  aml:AdditionalInformation1,
+     aml:hasNameFile  "GMA 6.16Beispiel PID Version 2.97 - AutomationML Datei.aml"@de,
+     aml:hasSchemaVersion  2.15
+    
+    
+Individual: aml:L1001
+
+    Types: 
+        aml:InternalElement
+    
+    Facts:  
+     aml:hasAttribute  aml:PCEDescription,
+     aml:isPartOfIE  aml:DemoArea,
+     aml:hasIDIE  "044a8a9d-458e-4632-a19d-f240a0e64e95",
+     aml:hasNameIE  "L 1001"@en,
+     aml:refBaseSystemUnitPath  "NE150SUCLibrary/PCELoop"
+    
+    
+Individual: aml:LIRCS1
+
+    Types: 
+        aml:InternalElement
+    
+    Facts:  
+     aml:hasAttribute  aml:PCEDescription,
+     aml:hasAttributeIE  aml:FlowchartNumber,
+     aml:hasAttributeIE  aml:PCEFunction,
+     aml:hasAttributeIE  aml:PCEInitial,
+     aml:hasExternalInterface  aml:AILevelSW,
+     aml:isPartOfIE  aml:L1001,
+     aml:hasIDIE  "adb2ebf7-dc6f-479b-abfe-64a4fd69c209",
+     aml:hasNameIE  "LIRCS+-A+-"@en,
+     aml:refBaseSystemUnitPath  "NE150SUCLibrary/PCERequest"
+    
+    
+Individual: aml:MaxConveyingSpeed
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasUnitAttribute  aml:speedMeasurement,
+     aml:hasNameAttribute  "maxConveyingSpeed"@en
+    
+    
+Individual: aml:MeasurementRangeEnd
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasAttributeDataType  "xs:double",
+     aml:hasAttributeDescription  "Actual measurement range end of sensor in field"@en,
+     aml:refSemanticAttribute  "NE 150 v1.0 Annex 3.3.5"
+    
+    
+Individual: aml:MeasurementRangeStart
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasAttributeDataType  "xs:double",
+     aml:hasAttributeDescription  "Actual measurement range start of sensor in field"@en,
+     aml:hasNameAttribute  "MeasurementRangeStart"@en
+    
+    
+Individual: aml:NE150DemoProject
+
+    Types: 
+        aml:InstanceHierarchy
+    
+    Facts:  
+     aml:hasInternalElement  aml:DemoEnterprise,
+     aml:hasNameIH  "NE150DemoProject"@en
+    
+    
+Individual: aml:OldPCE
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasAttributeDataType  "xs:string",
+     aml:hasAttributeDescription  "Old PCE designation for migration or renaming"@en,
+     aml:hasAttributeValue  "L 1101",
+     aml:hasNameAttribute  "OldPCE"^^xsd:string,
+     aml:refSemanticAttribute  "NE 150 v1.0 Annex 2.1.4"
+    
+    
+Individual: aml:PCEDescription
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasAttributeDataType  "xs:string",
+     aml:hasAttributeDescription  "Complete PCE description"@en,
+     aml:hasAttributeValue  "Level Control B1000",
+     aml:hasNameAttribute  "PCEDescription"@en,
+     aml:refSemanticAttribute  "NE 150 v1.0 Annex 2.1.3"
+    
+    
+Individual: aml:PCEFunction
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasAttributeDataType  "xs:string",
+     aml:hasAttributeDescription  "The PCE function describes the device-independent PCE task solution"@en,
+     aml:hasAttributeValue  "LIRCS+-A+-",
+     aml:hasNameAttribute  "PCEFunction"@en,
+     aml:refSemanticAttribute  "NE 150 v1.0 Annex 2.1.1"
+    
+    
+Individual: aml:PCEInitial
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasAttributeDataType  "xs:string",
+     aml:hasAttributeDescription  "PCE category, e.g.: L"@en,
+     aml:hasAttributeValue  "L",
+     aml:hasNameAttribute  "PCEInitial"@en,
+     aml:refSemanticAttribute  "NE 150 v1.0 Annex 2.1.2"
+    
+    
+Individual: aml:SoftwareSignalName
+
+    Types: 
+        aml:Attribute
+    
+    Facts:  
+     aml:hasAttributeIC  aml:SoftwareSignalName,
+     aml:hasAttributeDataType  "xs:string",
+     aml:hasAttributeDescription  "Unequivocal PCS input or output name"@en,
+     aml:hasAttributeValue  "L1001_PV",
+     aml:hasNameAttribute  "SoftwareSignalName"@en,
+     aml:refSemanticAttribute  "NE 150 v1.0 Annex"
+    
+    
+Individual: aml:milliampere
+
+    Types: 
+        om:Unit_of_measure
+    
+    
+Individual: aml:speedMeasurement
+
+    Types: 
+        om:Measure
+    
+    Facts:  
+     aml:unit_of_measure  om:metre_per_second-time,
+     aml:numerical_value  1.5
+    
+    
+Individual: om:metre_per_second-time
+
+    Types: 
+        om:Unit_of_measure
+    
     
