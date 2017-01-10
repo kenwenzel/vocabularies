@@ -1172,8 +1172,8 @@ Class: aml:ExternalReference
 Class: aml:ExternalStandard
 
     Annotations: 
-        skos:prefLabel "ExternalSemanticStd"@en,
-        skos:definition "Represent an External Standard which is used to provide unique Semantic reference for AML elements, e.g., eClass"@en
+        skos:prefLabel "ExternalStandard"@en,
+        skos:definition "Represents an External Standard which is used to provide unique Semantic reference for AML elements, e.g., eClass"@en
     
     
 Class: aml:InstanceHierarchy
@@ -1237,8 +1237,8 @@ Class: aml:RoleClass
 Class: aml:RoleClassLib
 
     Annotations: 
-        skos:altLabel "RC Lib"@en,
-        skos:definition "Definitions of abstract characteristics of CAEX objects and thus serve the automatic semantic interpretation of user-defined AML objects"@en,
+        skos:altLabel "RCL"@en,
+        skos:definition "Provides definitions of abstract characteristics of CAEX objects and thus serve the automatic semantic interpretation of user-defined AML objects"@en,
         skos:prefLabel "RoleClassLib"@en
     
     
