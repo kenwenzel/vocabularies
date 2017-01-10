@@ -1203,9 +1203,6 @@ Class: aml:InterfaceClassLib
         skos:definition "Library containing AML Interface Classes"@en
     
     
-Class: aml:InterfaceFamily
-
-    
 Class: aml:InternalElement
 
     Annotations: 
