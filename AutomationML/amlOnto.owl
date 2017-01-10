@@ -191,7 +191,7 @@ ObjectProperty: aml:hasBaseSystemUnitClass
         aml:SystemUnitClass
     
     
-ObjectProperty: aml:hasDataType
+ObjectProperty: aml:hasUnit
 
     Domain: 
         aml:Attribute
