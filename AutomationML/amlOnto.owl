@@ -336,7 +336,10 @@ ObjectProperty: aml:hasRefPartnerSideB
         aml:InternalLink
     
     
-ObjectProperty: aml:hasRefSem
+ObjectProperty: aml:hasSemanticRef
+    Annotations: 
+        skos:prefLabel "hasSemanticRef"@en,
+        skos:definition "General property which points to an external standard to provide semantic identification for a given element"@en
 
     Range: 
         aml:ExternalStandard
@@ -345,7 +348,7 @@ ObjectProperty: aml:hasRefSem
 ObjectProperty: aml:hasRefSemAttribute
 
     SubPropertyOf: 
-        aml:hasRefSem
+        aml:hasSemanticRef
     
     Domain: 
         aml:Attribute
@@ -362,7 +365,7 @@ ObjectProperty: aml:hasRefSemRC
         skos:prefLabel "eClassRCReference"
     
     SubPropertyOf: 
-        aml:hasRefSem
+        aml:hasSemanticRef
     
     Domain: 
         aml:RoleClass
