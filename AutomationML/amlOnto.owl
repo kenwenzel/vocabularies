@@ -110,6 +110,16 @@ Datatype: xsd:integer
 Datatype: xsd:string
 
     
+ObjectProperty: aml:contains
+
+    Annotations: 
+        skos:prefLabel "contains"@en
+        skos:definition "Superproperty to describe the connection of the CAEX file with the main CAEX library elements, e.g., InterfaceClassLib, RoleClassLib, and SystemUnitClassLib"@en
+    
+    Domain: 
+        aml:CAEXFile
+    
+		
 ObjectProperty: aml:hasAdditionalInformation
 
     Annotations: 
@@ -203,8 +213,8 @@ ObjectProperty: aml:hasUnit
 ObjectProperty: aml:hasExternalInterface
 
     Annotations: 
-        rdfs:label "hasExternalInterface"@en,
-        rdfs:comment "Connects the Internal Element with an External Interface"@en
+        skos:prefLabel "hasExternalInterface"@en,
+        skos:definition "Connects the Internal Element with an External Interface"@en
     
     Domain: 
         aml:InternalElement
