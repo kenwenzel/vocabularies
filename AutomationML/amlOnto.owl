@@ -113,12 +113,71 @@ Datatype: xsd:string
 ObjectProperty: aml:contains
 
     Annotations: 
-        skos:prefLabel "contains"@en
+        skos:prefLabel "contains"@en,
         skos:definition "Superproperty to describe the connection of the CAEX file with the main CAEX library elements, e.g., InterfaceClassLib, RoleClassLib, and SystemUnitClassLib"@en
     
     Domain: 
         aml:CAEXFile
+		
+ObjectProperty: aml:hasInstanceHierarchy
+
+    Annotations: 
+        skos:prefLabel "hasInstanceHierarchy"@en,
+        skos:definition "Points the CAEX file to the Instance Hierarchy"@en
     
+    Domain: 
+        aml:CAEXFile
+
+    Range:		
+        aml:InstanceHierarchy
+		
+	SubPropertyOf: 
+        aml:contains	
+		
+ObjectProperty: aml:hasInterfaceClassLib
+
+    Annotations: 
+        skos:prefLabel "hasInterfaceClassLib"@en,
+        skos:definition "Points the CAEX file to the InterfaceClassLib"@en
+    
+    Domain: 
+        aml:CAEXFile
+
+    Range:		
+        aml:InterfaceClassLib
+		
+	SubPropertyOf: 
+        aml:contains			
+		
+ObjectProperty: aml:hasSystemUnitClassLib
+
+    Annotations: 
+        skos:prefLabel "hasInterfaceClassLib"@en,
+        skos:definition "Points the CAEX file to the SystemUnitClassLib"@en
+    
+    Domain: 
+        aml:CAEXFile
+
+    Range:		
+        aml:SystemUnitClassLib
+		
+	SubPropertyOf: 
+        aml:contains				
+
+ObjectProperty: aml:hasRoleClassLib
+
+    Annotations: 
+        skos:prefLabel "hasRoleClassLib"@en,
+        skos:definition "Points the CAEX file to the RoleClassLib"@en
+    
+    Domain: 
+        aml:CAEXFile
+
+    Range:		
+        aml:RoleClassLib
+		
+	SubPropertyOf: 
+        aml:contains			
 		
 ObjectProperty: aml:hasAdditionalInformation
 
