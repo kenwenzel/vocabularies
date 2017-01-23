@@ -1066,6 +1066,18 @@ DataProperty: aml:hasVersionEClass
     
     Range: 
         xsd:string
+		
+DataProperty: aml:hasVersionSUC
+
+    Annotations: 
+        skos:definition "Points to the version for a System Unit Class"@en,
+        skos:prefLabel "hasVersionSUC"@en
+    
+    Domain: 
+        aml:SystemUnitClass
+    
+    Range: 
+        xsd:decimal
     
     
 DataProperty: aml:hasWriterId
