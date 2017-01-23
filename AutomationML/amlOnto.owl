@@ -1078,12 +1078,36 @@ DataProperty: aml:hasVersionSUC
     
     Range: 
         xsd:decimal
+		
+DataProperty: aml:hasVersionRCL
+
+    Annotations: 
+        skos:definition "Points to the version for a Role Class Lib"@en,
+        skos:prefLabel "hasVersionRCL"@en
+    
+    Domain: 
+        aml:RoleClassLib
+    
+    Range: 
+        xsd:string
+		
+DataProperty: aml:hasVersionICL
+
+    Annotations: 
+        skos:definition "Points to the version for a Interface Class Lib"@en,
+        skos:prefLabel "hasVersionICL"@en
+    
+    Domain: 
+        aml:InterfaceClassLib
+    
+    Range: 
+        xsd:string
     
     
 DataProperty: aml:hasWriterId
 
     Annotations: 
-        skos:prefLabel "has Writer Id"
+        skos:prefLabel "hasWriterId"
     
     Characteristics: 
         Functional
