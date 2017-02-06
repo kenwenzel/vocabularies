@@ -49,11 +49,9 @@
 #################################################################
 
 
-###  http://www.w3.org/ns/prov#wasGeneratedBy
-prov:wasGeneratedBy rdf:type owl:ObjectProperty ;
-                    rdfs:domain aml:CAEXFile ;
-                    rdfs:range prov:Activity ;
-                    rdfs:isDefinedBy "http://www.w3.org/ns/prov#wasGeneratedBy" .
+opcua:hasReference rdf:type owl:ObjectProperty ;
+                    rdfs:domain opcua:UAObject ;
+                    rdfs:range opcua:Reference .
 
 
 #################################################################
@@ -101,14 +99,15 @@ opcua:description rdf:type owl:DatatypeProperty ;
 ###  http://schema.org/Person
 schema:Person rdf:type owl:Class .
 
-###  https://w3id.org/i40/aml#Attribute
 opcua:UAObject rdf:type owl:Class ;
               skos:definition "TODO"@en ;
               skos:prefLabel "UAObject"@en .
               
-###  https://w3id.org/i40/aml#Attribute
 opcua:Reference rdf:type owl:Class ;
               skos:definition "TODO"@en ;
               skos:prefLabel "Reference"@en .              
-              
+
+opcua:UAVariable rdf:type owl:Class ;
+              skos:definition "TODO"@en ;
+              skos:prefLabel "UAVariable"@en .              
 
