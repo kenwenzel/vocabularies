@@ -68,11 +68,31 @@ dc:identifier rdf:type owl:DatatypeProperty .
 dc:title rdf:type owl:DatatypeProperty .
 
 
-###  https://w3id.org/i40/aml#hasAMLVersion
-aml:hasAMLVersion rdf:type owl:DatatypeProperty ;
-                  rdfs:domain aml:AdditionalInformation ;
-                  rdfs:range xsd:decimal ;
-                  skos:prefLabel "hasAMLVersion"@en .
+opcua:hasNodeId rdf:type owl:DatatypeProperty ;
+                  rdfs:domain opcua:UAObject ;
+                  rdfs:range xsd:string ;
+                  skos:prefLabel "hasNodeId"@en ;
+                  skos:example "TODO, which is the proper model for this NodeId="ns=2;i=1"";
+                  rdfs:label "hasNodeId"@en .
+                  
+opcua:displayName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain opcua:UAObject ;
+                  rdfs:range xsd:string ;
+                  skos:prefLabel "DisplayName"@en ;
+                  rdfs:label "DisplayName"@en .  
+                  
+opcua:browseName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain opcua:UAObject ;
+                  rdfs:range xsd:string ;
+                  skos:prefLabel "BrowseName"@en ;
+                  rdfs:label "BrowseName"@en .                     
+                  
+opcua:description rdf:type owl:DatatypeProperty ;
+                  rdfs:domain opcua:UAObject ;
+                  rdfs:range xsd:string ;
+                  skos:prefLabel "Description"@en ;
+                  rdfs:label "Description"@en .                      
+                 
 
 #################################################################
 #    Classes
@@ -82,8 +102,13 @@ aml:hasAMLVersion rdf:type owl:DatatypeProperty ;
 schema:Person rdf:type owl:Class .
 
 ###  https://w3id.org/i40/aml#Attribute
-aml:Attribute rdf:type owl:Class ;
-              rdfs:isDefinedBy "1417686950-AutomationML Whitepaper Part 1 - AutomationML Architecture v2_Oct2014, page 11" ;
-              skos:definition "Property which belongs to an AML object"@en ;
-              skos:prefLabel "Attribute"@en .
+opcua:UAObject rdf:type owl:Class ;
+              skos:definition "TODO"@en ;
+              skos:prefLabel "UAObject"@en .
+              
+###  https://w3id.org/i40/aml#Attribute
+opcua:Reference rdf:type owl:Class ;
+              skos:definition "TODO"@en ;
+              skos:prefLabel "Reference"@en .              
+              
 
