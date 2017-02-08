@@ -1,9 +1,8 @@
-@prefix : <https://w3id.org/i40/aml#> .
+@prefix : <https://w3id.org/i40/opcua#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix cp: <http://www.ontologydesignpatterns.org/cp/owl/partof.owl#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix om: <http://www.wurvoc.org/vocabularies/om-1.8/> .
-@prefix opcua: <https://w3id.org/i40/opcua#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -15,43 +14,170 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix voaf: <http://purl.org/vocommons/voaf#> .
 @prefix void: <http://rdfs.org/ns/void#> .
+@prefix opcua: <https://w3id.org/i40/opcua#> .
 @prefix terms: <http://purl.org/dc/terms/> .
 @prefix schema: <http://schema.org/> .
 @base <https://w3id.org/i40/opcua#> .
 
 <https://w3id.org/i40/opcua#> rdf:type owl:Ontology ;
-                             void:vocabulary foaf: ,
-                                             rdf: ;
-                             rdfs:comment "A vocabulary to represents the information model of the UA Standard - IEC 62541"@en ;
-                             void:vocabulary rdfs: ,
-                                             skos: ;
-                             skos:prefLabel "aml"@en ;
-                             terms:creator <http://eis.iai.uni-bonn.de/Irlan> ;
-                             void:vocabulary dc: ;
-                             vann:preferredNamespacePrefix "opcua" ;
-                             skos:altLabel ""@en ;
-                             void:vocabulary terms: ;
-                             owl:versionInfo "0.1" ;
-                             void:vocabulary xsd: ;
-                             terms:license <http://creativecommons.org/licenses/by-nc-sa/2.0/> ;
-                             terms:created "2017-02-06"^^xsd:date ;
-                             <http://usefulinc.com/ns/doap#repository> <https://github.com/i40-Tools/vocabularies/> ;
-                             void:vocabulary xml: ;
-                             vann:preferredNamespaceUri "https://w3id.org/i40/opcua/" ;
-                             void:vocabulary <https://w3id.org/i40/opcua#> ;
-                             rdfs:isDefinedBy <https://w3id.org/i40/opcua#> ;
-                             skos:definition "A vocabulary to represents the information model of the UA Standard - IEC 62541"@en .
+                               void:vocabulary foaf: ;
+                               rdfs:comment "A vocabulary to represents the information model of the UA Standard - IEC 62541"@en ;
+                               void:vocabulary rdf: ;
+                               skos:altLabel ""@en ;
+                               vann:preferredNamespaceUri "https://w3id.org/i40/opcua/" ;
+                               void:vocabulary rdfs: ,
+                                               <https://w3id.org/i40/opcua#> ,
+                                               skos: ;
+                               skos:prefLabel "aml"@en ;
+                               terms:creator <http://eis.iai.uni-bonn.de/Irlan> ;
+                               skos:definition "A vocabulary to represents the information model of the UA Standard - IEC 62541"@en ;
+                               void:vocabulary dc: ,
+                                               terms: ;
+                               owl:versionInfo "0.1" ;
+                               void:vocabulary xsd: ;
+                               rdfs:isDefinedBy <https://w3id.org/i40/opcua#> ;
+                               terms:license <http://creativecommons.org/licenses/by-nc-sa/2.0/> ;
+                               <http://usefulinc.com/ns/doap#repository> <https://github.com/i40-Tools/vocabularies/> ;
+                               void:vocabulary xml: ;
+                               vann:preferredNamespacePrefix "opcua" ;
+                               terms:created "2017-02-06"^^xsd:date .
 
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/i40/opcua#hasUri
+opcua:hasUri rdf:type owl:AnnotationProperty ;
+             rdfs:range xsd:string ;
+             rdfs:domain opcua:UriTable .
 
 
 #################################################################
 #    Object Properties
 #################################################################
 
+###  https://w3id.org/i40/opcua#hasAlias
+opcua:hasAlias rdf:type owl:ObjectProperty ;
+               rdfs:domain opcua:AliasTable ;
+               rdfs:range opcua:NodeIdAlias .
 
+
+###  https://w3id.org/i40/opcua#hasAliases
+opcua:hasAliases rdf:type owl:ObjectProperty ;
+                 rdfs:domain opcua:UANodeSet ;
+                 rdfs:range opcua:AliasTable .
+
+
+###  https://w3id.org/i40/opcua#hasExtension
+opcua:hasExtension rdf:type owl:ObjectProperty ;
+                   rdfs:domain opcua:ListOfExtensions .
+
+
+###  https://w3id.org/i40/opcua#hasExtensions
+opcua:hasExtensions rdf:type owl:ObjectProperty ;
+                    rdfs:domain opcua:UANodeSet ;
+                    rdfs:range opcua:ListOfExtensions .
+
+
+###  https://w3id.org/i40/opcua#hasModel
+opcua:hasModel rdf:type owl:ObjectProperty ;
+               rdfs:domain opcua:ModelTable ;
+               rdfs:range opcua:ModelTableEntry .
+
+
+###  https://w3id.org/i40/opcua#hasModels
+opcua:hasModels rdf:type owl:ObjectProperty ;
+                rdfs:domain opcua:UANodeSet ;
+                rdfs:range opcua:ModelTable .
+
+
+###  https://w3id.org/i40/opcua#hasNamespaceUris
+opcua:hasNamespaceUris rdf:type owl:ObjectProperty ;
+                       rdfs:domain opcua:UANodeSet ;
+                       rdfs:range opcua:URITable .
+
+
+###  https://w3id.org/i40/opcua#hasReference
 opcua:hasReference rdf:type owl:ObjectProperty ;
-                    rdfs:domain opcua:UAObject ;
-                    rdfs:range opcua:Reference .
+                   rdfs:domain opcua:UAObject ;
+                   rdfs:range opcua:Reference .
+
+
+###  https://w3id.org/i40/opcua#hasRequiredModel
+opcua:hasRequiredModel rdf:type owl:ObjectProperty ;
+                       rdfs:domain opcua:ModelTableEntry ;
+                       rdfs:range opcua:ModelTableEntry .
+
+
+###  https://w3id.org/i40/opcua#hasServerUris
+opcua:hasServerUris rdf:type owl:ObjectProperty ;
+                    rdfs:domain opcua:UANodeSet ;
+                    rdfs:range opcua:URITable .
+
+
+###  https://w3id.org/i40/opcua#hasUADataType
+opcua:hasUADataType rdf:type owl:ObjectProperty ;
+                    rdfs:domain opcua:UANodeSet ;
+                    rdfs:range opcua:UADataType .
+
+
+###  https://w3id.org/i40/opcua#hasUAMethod
+opcua:hasUAMethod rdf:type owl:ObjectProperty ;
+                  rdfs:domain opcua:UANodeSet ;
+                  rdfs:range opcua:UAMethod .
+
+
+###  https://w3id.org/i40/opcua#hasUAObject
+opcua:hasUAObject rdf:type owl:ObjectProperty ;
+                  rdfs:domain opcua:UANodeSet ;
+                  rdfs:range opcua:UAObject .
+
+
+###  https://w3id.org/i40/opcua#hasUAObjectType
+opcua:hasUAObjectType rdf:type owl:ObjectProperty ;
+                      rdfs:domain opcua:UANodeSet ;
+                      rdfs:range opcua:UAObjectType .
+
+
+###  https://w3id.org/i40/opcua#hasUAReferenceType
+opcua:hasUAReferenceType rdf:type owl:ObjectProperty ;
+                         rdfs:domain opcua:UANodeSet ;
+                         rdfs:range opcua:UAReferenceType .
+
+
+###  https://w3id.org/i40/opcua#hasUAVariable
+opcua:hasUAVariable rdf:type owl:ObjectProperty ;
+                    rdfs:domain opcua:UANodeSet ;
+                    rdfs:range opcua:UAVariable .
+
+
+###  https://w3id.org/i40/opcua#hasUAVariableType
+opcua:hasUAVariableType rdf:type owl:ObjectProperty ;
+                        rdfs:domain opcua:UANodeSet ;
+                        rdfs:range opcua:UAVariableType .
+
+
+###  https://w3id.org/i40/opcua#hasUAView
+opcua:hasUAView rdf:type owl:ObjectProperty ;
+                rdfs:domain opcua:UANodeSet ;
+                rdfs:range opcua:UAView .
+
+
+###  https://w3id.org/i40/opcua#hasUri
+opcua:hasUri rdf:type owl:ObjectProperty ;
+             rdfs:domain opcua:URITable .
 
 
 #################################################################
@@ -66,31 +192,82 @@ dc:identifier rdf:type owl:DatatypeProperty .
 dc:title rdf:type owl:DatatypeProperty .
 
 
-opcua:hasNodeId rdf:type owl:DatatypeProperty ;
-                  rdfs:domain opcua:UAObject ;
-                  rdfs:range xsd:string ;
-                  skos:prefLabel "hasNodeId"@en ;
-                  skos:example "TODO, which is the proper model for this NodeId="ns=2;i=1"";
-                  rdfs:label "hasNodeId"@en .
-                  
-opcua:displayName rdf:type owl:DatatypeProperty ;
-                  rdfs:domain opcua:UAObject ;
-                  rdfs:range xsd:string ;
-                  skos:prefLabel "DisplayName"@en ;
-                  rdfs:label "DisplayName"@en .  
-                  
+###  https://w3id.org/i40/opcua#NodeId
+opcua:NodeId rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+
+###  https://w3id.org/i40/opcua#QualifiedName
+opcua:QualifiedName rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:string .
+
+
+###  https://w3id.org/i40/opcua#alias
+opcua:alias rdf:type owl:DatatypeProperty ;
+            rdfs:domain opcua:NodeIdAlias ;
+            rdfs:range xsd:string .
+
+
+###  https://w3id.org/i40/opcua#browseName
 opcua:browseName rdf:type owl:DatatypeProperty ;
-                  rdfs:domain opcua:UAObject ;
-                  rdfs:range xsd:string ;
-                  skos:prefLabel "BrowseName"@en ;
-                  rdfs:label "BrowseName"@en .                     
-                  
+                 rdfs:domain opcua:UAObject ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "BrowseName"@en ;
+                 skos:prefLabel "BrowseName"@en .
+
+
+###  https://w3id.org/i40/opcua#description
 opcua:description rdf:type owl:DatatypeProperty ;
                   rdfs:domain opcua:UAObject ;
                   rdfs:range xsd:string ;
-                  skos:prefLabel "Description"@en ;
-                  rdfs:label "Description"@en .                      
-                 
+                  rdfs:label "Description"@en ;
+                  skos:prefLabel "Description"@en .
+
+
+###  https://w3id.org/i40/opcua#displayName
+opcua:displayName rdf:type owl:DatatypeProperty ;
+                  rdfs:domain opcua:UAObject ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "DisplayName"@en ;
+                  skos:prefLabel "DisplayName"@en .
+
+
+###  https://w3id.org/i40/opcua#hasNodeId
+opcua:hasNodeId rdf:type owl:DatatypeProperty ;
+                rdfs:domain opcua:UAObject ;
+                rdfs:range xsd:string ;
+                rdfs:label "hasNodeId"@en ;
+                skos:example "TODO, which is the proper model for this NodeId=ns=2;i=1" ;
+                skos:prefLabel "hasNodeId"@en .
+
+
+###  https://w3id.org/i40/opcua#hasUri
+opcua:hasUri rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/i40/opcua#lastModified
+opcua:lastModified rdf:type owl:DatatypeProperty ;
+                   rdfs:domain opcua:UANodeSet ;
+                   rdfs:range xsd:dateTime .
+
+
+###  https://w3id.org/i40/opcua#modelURI
+opcua:modelURI rdf:type owl:DatatypeProperty ;
+               rdfs:domain opcua:ModelTableEntry ;
+               rdfs:range xsd:string .
+
+
+###  https://w3id.org/i40/opcua#publicationDate
+opcua:publicationDate rdf:type owl:DatatypeProperty ;
+                      rdfs:domain opcua:ModelTableEntry ;
+                      rdfs:range xsd:dateTime .
+
+
+###  https://w3id.org/i40/opcua#version
+opcua:version rdf:type owl:DatatypeProperty ;
+              rdfs:domain opcua:ModelTableEntry ;
+              rdfs:range xsd:string .
+
 
 #################################################################
 #    Classes
@@ -99,15 +276,108 @@ opcua:description rdf:type owl:DatatypeProperty ;
 ###  http://schema.org/Person
 schema:Person rdf:type owl:Class .
 
-opcua:UAObject rdf:type owl:Class ;
-              skos:definition "TODO"@en ;
-              skos:prefLabel "UAObject"@en .
-              
+
+###  https://w3id.org/i40/opcua#AliasTable
+opcua:AliasTable rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#ArrayDimensions
+opcua:ArrayDimensions rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#EventNotifier
+opcua:EventNotifier rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#ListOfExtensions
+opcua:ListOfExtensions rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#Locale
+opcua:Locale rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#LocalizedText
+opcua:LocalizedText rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#ModelTable
+opcua:ModelTable rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#ModelTableEntry
+opcua:ModelTableEntry rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#NodeIdAlias
+opcua:NodeIdAlias rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#Reference
 opcua:Reference rdf:type owl:Class ;
-              skos:definition "TODO"@en ;
-              skos:prefLabel "Reference"@en .              
+                skos:definition "TODO"@en ;
+                skos:prefLabel "Reference"@en .
 
+
+###  https://w3id.org/i40/opcua#UADataType
+opcua:UADataType rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#UAMethod
+opcua:UAMethod rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#UANodeSet
+opcua:UANodeSet rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#UAObject
+opcua:UAObject rdf:type owl:Class ;
+               skos:definition "TODO"@en ;
+               skos:prefLabel "UAObject"@en .
+
+
+###  https://w3id.org/i40/opcua#UAObjectType
+opcua:UAObjectType rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#UAReferenceType
+opcua:UAReferenceType rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#UAVariable
 opcua:UAVariable rdf:type owl:Class ;
-              skos:definition "TODO"@en ;
-              skos:prefLabel "UAVariable"@en .              
+                 skos:definition "TODO"@en ;
+                 skos:prefLabel "UAVariable"@en .
 
+
+###  https://w3id.org/i40/opcua#UAVariableType
+opcua:UAVariableType rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#UAView
+opcua:UAView rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#URITable
+opcua:URITable rdf:type owl:Class ;
+               skos:definition "TODO"@en ;
+               skos:prefLabel "URITable"@en .
+
+
+###  https://w3id.org/i40/opcua#ValueRank
+opcua:ValueRank rdf:type owl:Class .
+
+
+###  https://w3id.org/i40/opcua#WriteMask
+opcua:WriteMask rdf:type owl:Class .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+opcua:hasUri rdfs:label "hasURI"@en .
+
+
+###  Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
