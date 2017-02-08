@@ -232,6 +232,12 @@ opcua:displayName rdf:type owl:DatatypeProperty ;
                   skos:prefLabel "DisplayName"@en .
 
 
+###  https://w3id.org/i40/opcua#hasComponent
+opcua:hasComponent rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf opcua:hasReferenceType ;
+                   rdfs:range xsd:string .
+
+
 ###  https://w3id.org/i40/opcua#hasNodeId
 opcua:hasNodeId rdf:type owl:DatatypeProperty ;
                 rdfs:domain opcua:UAObject ;
@@ -241,8 +247,31 @@ opcua:hasNodeId rdf:type owl:DatatypeProperty ;
                 skos:prefLabel "hasNodeId"@en .
 
 
+###  https://w3id.org/i40/opcua#hasProperty
+opcua:hasProperty rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf opcua:hasReferenceType ;
+                  rdfs:range xsd:string .
+
+
+###  https://w3id.org/i40/opcua#hasReferenceType
+opcua:hasReferenceType rdf:type owl:DatatypeProperty ;
+                       rdfs:domain opcua:Reference .
+
+
+###  https://w3id.org/i40/opcua#hasTypeDefinition
+opcua:hasTypeDefinition rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf opcua:hasReferenceType ;
+                        rdfs:range xsd:string .
+
+
 ###  https://w3id.org/i40/opcua#hasUri
 opcua:hasUri rdf:type owl:DatatypeProperty .
+
+
+###  https://w3id.org/i40/opcua#isForward
+opcua:isForward rdf:type owl:DatatypeProperty ;
+                rdfs:domain opcua:Reference ;
+                rdfs:range xsd:boolean .
 
 
 ###  https://w3id.org/i40/opcua#lastModified
@@ -255,6 +284,12 @@ opcua:lastModified rdf:type owl:DatatypeProperty ;
 opcua:modelURI rdf:type owl:DatatypeProperty ;
                rdfs:domain opcua:ModelTableEntry ;
                rdfs:range xsd:string .
+
+
+###  https://w3id.org/i40/opcua#organizes
+opcua:organizes rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf opcua:hasReferenceType ;
+                rdfs:range xsd:string .
 
 
 ###  https://w3id.org/i40/opcua#publicationDate
