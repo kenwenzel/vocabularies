@@ -24,12 +24,13 @@ rami:
      rdfs:isDefinedBy rami: ;
      skos:prefLabel "rami"@en ;
      dct:created "2015-11-30"^^xsd:date ;
-     dct:creator "Irlan Grangel" , "Niklas Petersen" ;
+	 terms:creator <http://eis.iai.uni-bonn.de/Irlan>; 
+	 terms:creator <http://eis.iai.uni-bonn.de/NiklasPetersen>;
      dct:publisher <http://de.dbpedia.org/resource/Fraunhofer-Gesellschaft> ;
      vann:preferredNamespacePrefix "rami" ;
      vann:preferredNamespaceUri "https://w3id.org/i40/rami#" ;
      void:vocabulary rdfs: , dc: , rdf: , xsd: , foaf: , skos: , dct: , <http://www.w3.org/XML/1998/namespace>;
-     owl:versionInfo "SNAPSHOT" ;
+     owl:versionInfo "0.1" ;
 	.  
 
 rami:AdminShell 
