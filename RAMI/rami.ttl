@@ -58,13 +58,13 @@ rami:Machine
       a owl:Class ;
 	  rdfs:subClassOf rami:Object ;
 	  skos:prefLabel "Machine"@en ;
-      skos:definition "A machine is ordered, designed, commissioned, operated, serviced, converted and recycled."@en ,
+      skos:definition "A machine is ordered, designed, commissioned, operated, serviced, converted and recycled."@en ;
     .
 	
 rami:Order
       a owl:Class ;
 	  skos:prefLabel "Order"@en ;
-      skos:definition "Each order for manufacturing runs through a life cycle and its specifics necessarily have an impact on the production facility during performance of the order"@en ,
+      skos:definition "Each order for manufacturing runs through a life cycle and its specifics necessarily have an impact on the production facility during performance of the order"@en ;
     .		
 	  
 rami:ApplicationData
