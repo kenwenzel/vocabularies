@@ -1,0 +1,17 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+<https://w3id.org/i40/aml#> a prov:Entity;
+	 dc:title "AutomationML Ontology";
+	 prov:wasAttributedTo <https://at.linkedin.com/in/olga-kovalenko-979552108/>;
+	 dc:creator <https://at.linkedin.com/in/olga-kovalenko-979552108/>;
+	 prov:wasAttributedTo <http://eis.iai.uni-bonn.de/Irlan>;
+	 dc:creator <http://eis.iai.uni-bonn.de/Irlan>;
+	 prov:wasAttributedTo <https://at.linkedin.com/in/marta-sabou-0b310a1/>;
+	 dc:contributor <https://at.linkedin.com/in/marta-sabou-0b310a1/>;
+	 prov:wasAttributedTo <http://eis.iai.uni-bonn.de/SoerenAuer.html>;
+	 dc:contributor <http://eis.iai.uni-bonn.de/SoerenAuer.html>;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <https://w3id.org/i40/aml#>;
+	 prov:wasGeneratedAt "2016-03-23";
+.
