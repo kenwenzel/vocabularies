@@ -107,14 +107,6 @@ rami:Standard
 	  skos:definition "Standards that are used to describe the actual I4.0 Entity/Object"@en ;
 	.	
 	
-rami:eClass
-      a owl:Class ;
-	  rdfs:subClassOf rami:Standard ;
-      skos:prefLabel "eClass"@en , 
-	                 "eClass"@de ;
-	  skos:definition "Class to represent the connection of an I4.0 Entity/Object with the eCl@ss Standard"@en ;
-	.	
-	
 rami:version
       a owl:DatatypeProperty ;
       skos:prefLabel "Version"@en ;
@@ -286,6 +278,20 @@ rami:RAMIHierarchyLevel a owl:Class ;
       rdfs:seeAlso <http://www.zvei.org/en/subjects/Industry-40/Pages/The-Reference-Architectural-Model-RAMI-40-and-the-Industrie-40-Component.aspx> ;
 	  owl:oneOf (rami:ConnectedWorld rami:Enterprise rami:WorkCenter rami:Station rami:ControlDevice rami:FieldDevice rami:Product) ;
 	.  
+	
+rami:RAMILifeCycleLayer a owl:Class ;
+      skos:prefLabel "RAMI Layer"@en ;
+	  skos:definition "It describes the different Life Cycle and Value Stream layers for the RAMI model according to the IEC 62890 Standard."@en ;
+      rdfs:seeAlso <http://www.zvei.org/en/subjects/Industry-40/Pages/The-Reference-Architectural-Model-RAMI-40-and-the-Industrie-40-Component.aspx> ;
+	  owl:oneOf (rami:Business rami:Functional rami:Information rami:Communication rami:Integration rami:Asset) ;
+	.  	
+	
+rami:hasRAMILifeCycleLayer
+     a owl:ObjectProperty ;
+     skos:prefLabel "has RAMI Life Cycle Layer" ;
+	 skos:definition "Connects the concepts with the correspondent layer in the RAMI Hierarchy Levels"@en ;
+     rdfs:range rami:RAMILayer ;
+	.  	
 	
 # RAMIHierarchyLevel ---------------------------------------			  
 rami:Product a rami:RAMIHierarchyLevel ;
