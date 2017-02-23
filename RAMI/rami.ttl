@@ -326,7 +326,7 @@ rami:Enterprise a rami:RAMIHierarchyLevel ;
 
 rami:ConnectedWorld a rami:RAMIHierarchyLevel ;
 			  skos:prefLabel "Connected World"@en ;
-			  skos:definition "Connected World hierarchy level of RAMI 4.0.  Group of Factories, and the collaboration with external engineering firms, component suppliers and customers"@en ;
+			  skos:definition "Connected World hierarchy level of RAMI 4.0. Group of Factories, and the collaboration with external engineering firms, component suppliers and customers"@en ;
      .		  
 
 rami:standardName
